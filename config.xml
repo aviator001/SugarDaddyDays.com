@@ -1,0 +1,117 @@
+		<?xml version="1.0" encoding="UTF-8"?>
+	<widget xmlns = "http://www.w3.org/ns/widgets"
+		xmlns:gap = "http://phonegap.com/ns/1.0"
+		xmlns:android = "http://schemas.android.com/apk/res/android"
+		id        = "sddays"
+		versionCode=""
+		version   = "1.0.0">
+		<name>SugarDaddyDays.com		</name>
+		<description>SD Dating		</description>
+		<author href="https://sugardaddydays.com" email="g@txt.am">Gautam Sharma		</author>
+   <content src="index.html" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="EnableViewportScale" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <plugin name="cordova-plugin-whitelist" version="1.0.0" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+		
+		<feature name="http://api.phonegap.com/1.0/battery" />
+		<feature name="http://api.phonegap.com/1.0/camera" />
+		<feature name="http://api.phonegap.com/1.0/contacts" />
+		<feature name="http://api.phonegap.com/1.0/file" />
+		<feature name="http://api.phonegap.com/1.0/geolocation" />
+		<feature name="http://api.phonegap.com/1.0/media" />
+		<feature name="http://api.phonegap.com/1.0/network" />
+		<feature name="http://api.phonegap.com/1.0/notification" />
+		<plugin name="cordova-plugin-camera"  spec="https://github.com/eface2face/cordova-plugin-camera" />
+		<plugin name="cordova-plugin-device"  spec="^1.0.1" />
+		<plugin name="undefined" version="" source="npm"  />
+		<plugin name="undefined" version="https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview" source="npm"  />
+		<plugin name="undefined" version="" source="npm"  />
+		<plugin name="undefined" version="" source="npm"  />
+		<plugin name="undefined" version="https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview" source="npm"  />
+		<plugin name="undefined" version="" source="npm"  />
+		<preference name="phonegap-version" value="cli-6.3.0" />
+		<preference name="android-build-tool" value="gradle" />
+		<preference name="orientation" value="default" />
+		<preference name="fullscreen" value="true" />
+		<preference name="target-device" value="universal" />
+		<preference name="webviewbounce" value="true" />
+		<preference name="prerendered-icon" value="true" />
+		<preference name="stay-in-webview" value="true" />
+		<preference name="ios-statusbarstyle" value="black-opaque" />
+		<preference name="detect-data-types" value="true" />
+		<preference name="exit-on-suspend" value="true" />
+		<preference name="show-splash-screen-spinner" value="true" />
+		<preference name="auto-hide-splash-screen" value="true" />
+		<preference name="FadeSplashScreen " value="true" />
+		<preference name="EnableViewportScale" value="true" />
+		<preference name="MediaPlaybackRequiresUserAction" value="false" />
+		<preference name="AllowInlineMediaPlayback" value="true" />
+		<preference name="BackupWebStorage" value="local" />
+		<preference name="TopActivityIndicator" value="white" />
+		<preference name="KeyboardDisplayRequiresUserAction" value="true" />
+		<preference name="KeyboardShrinksView " value="true" />
+		<preference name="HideKeyboardFormAccessoryBar" value="true" />
+		<preference name="SuppressesIncrementalRendering" value="true" />
+		<preference name="windows-identity-name" value="" />
+		<preference name="android-installLocation" value="auto" />
+		<preference name="SplashScreenDelay" value="2000" />
+		<preference name="ErrorUrl" value="null" />
+		<preference name="BackgroundColor" value="0x000000" />
+		<preference name="DisallowOverscroll" value="true" />
+		<preference name="LoadingDialog" value="," />
+		<preference name="LoadUrlTimeoutValue" value="null" />
+		<platform name="ios">
+		</platform>
+		<platform name="android">
+		</platform>
+		<platform name="winphone">
+		</platform>
+		 <icon src="icon.png" />
+		<allow-intent href="http://*/*" />
+		<allow-intent href="https://*/*" />
+		<allow-intent href="tel:*" />
+		<allow-intent href="sms:*" />
+		<allow-intent href="mailto:*" />
+		<allow-intent href="geo:*" />
+		<platform name="android" >
+		<allow-intent href="market:*" />
+		</platform>
+		<platform name="ios" >
+		<allow-intent href="itms:*" />
+		</platform>
+		<platform name="ios" >
+		<allow-intent href="itms-apps:*" />
+		</platform>
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <hook type="after_platform_add" src="hooks/iosrtc-swift-support.js" />
+    </platform>		
+		<allow-intent href="http://*/*" />
+		<allow-intent href="https://*/*" />
+		<allow-intent href="tel:*" />
+		<allow-intent href="sms:*" />
+		<allow-intent href="mailto:*" />
+		<allow-intent href="geo:*" />
+		<platform name="android" >
+		<allow-intent href="market:*" />
+		</platform>
+		<platform name="ios" >
+		<allow-intent href="itms:*" />
+		</platform>
+		<platform name="ios" >
+		<allow-intent href="itms-apps:*" />
+		</platform>
+		</widget>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>		
+		<title>SugarDaddyDays.com :: Sugar Daddy Dating Site</title>
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />		
+		
+	</head>
+	<div id="panel_menu" style="display:none;position:fixed;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background:#000;z-index:999999999999999999999999999999999999;opacity:0.8"></div>
+	<div  id="panel_menu2" class="www_box2 www_box5" style="display:none;border-left:15px solid rgba(0,0,0,0.3);box-shadow:5px 5px 10px rgba(0,0,0,0.5);display:;width:200px;height:100%;z-index:9999999999999999999999999999999999999;position:fixed;right:-0px;top:40px;bottom:0;background:#f0f0f0;opacity:1">
+		<table cellpadding=10 STYLE="BACKGROUND:NONE;font-family:Open Sans Condensed!Important;font-size:24px!Important;">	
+			<tr style="border-top:1px solid silver"><td colspan=2><br></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="home.html"><span><i class="fa fa-home" style="margin-left:5px;font-size:18px;color:grey"></i></span></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="home.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">MEMBERS HOME</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="view_album.html"><i class="fa fa-camera" style="margin-left:5px;color:grey;font-size:18px"></i></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="view_album.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">MY ALBUM</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="javascript:view_profile()"><i class="fa fa-male" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="javascript:view_profile()"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">MY PROFILE</span></a></div></td></tr>					
+			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="javascript:upload_photos()"><i class="fa fa-upload" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="javascript:upload_photos()"<span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">UPLOAD PICS</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="search.html"><i class="fa fa-search" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="search.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">SEARCH</span></a></div></td></tr>	
+			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="my_account.html"><i class="fa fa-archive" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="my_account.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">MY ACCOUNT</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="user_hot_lists.html"><i class="fa fa-flash" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="user_hot_lists.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">HOTLISTS</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="mail.html"><i class="fa fa-inbox" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="mail.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">INBOX</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="view_album.html?edit=yes"><i class="fa fa-edit" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="view_album.html?edit=yes"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">EDIT PHOTOS</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="reports.html"><i class="fa fa-dashboard" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="reports.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">REPORTS</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="logout.html"><i class="fa fa-sign-out" style="margin-left:5px;font-size:18px;color:grey"></i></a></td><td style="text-align:left;padding-left:5px"><a href="logout.html"><span style=";text-shadow:none"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">LOGOUT</span></a></div></td></tr>
+		</table>
+	</div>	
+	<script type="text/javascript" src="https://sugardaddydays.com/assets/js/jquery.min.js"></script> 
+	
+	<script>
+	setTimeout('mail()',10)
+	
+	function mail() {
+		var x_url = 'https://sugardaddydays.com/page.php?page=mail'
+		var request = $.ajax({
+			url: x_url, 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				document.getElementById('container').innerHTML=msg
+			}
+		})
+	}
+	function toggle_photo(sid) {
+		if (photo_on) {
+			document.getElementById('moo').style.display='block'
+			document.getElementById('MyDropZoneForm_' + sid).style.display='block'
+			document.getElementById('MyDropZoneForm_' + sid).style.fontSize='24px'
+			document.getElementById('MyDropZoneForm_' + sid).style.height='50px'
+			document.getElementById('MyDropZoneForm_' + sid).textContent=''
+			photo_on=''
+			xxid=sid
+		} else {
+			if (!sid) sid = xxid
+			document.getElementById('MyDropZoneForm_' + sid).style.display='none'
+			photo_on=1
+		}
+	}
+		function ntfy(str,xCol) {
+			if(!xCol) xCol='#333'
+			window.top.frames[0].frameElement.contentWindow.document.getElementById('notify').style.background=xCol
+			window.top.frames[0].frameElement.contentWindow.document.getElementById('notify').style.display='block'
+			window.top.frames[0].frameElement.contentWindow.document.getElementById('notify_txt').innerHTML=str
+			setTimeout('hide_ntfy()',5000)
+		}
+
+		function hide_ntfy() {
+			window.top.frames[0].frameElement.contentWindow.document.getElementById('notify').style.display='none'
+			window.top.frames[0].frameElement.contentWindow.document.getElementById('notify_txt').innerHTML=''
+		}
+
+	function show_details(xid,mid,xi) {
+		var message=document.getElementById('reply_text_' + xid).innerHTML
+		var from=mid
+		var url = 'https://sugardaddydays.com/inc/x_get_mobile_mail.php?xid=' + xid + '&mid=' + mid + '&xi=' + xi
+		console.log(url)
+		get_messages(url,xid)
+
+	} 
+
+	function del_all(xid,mid) {
+		var url = 'https://sugardaddydays.com/inc/x_del_multi.php?xid=' + xid + '&mid=' + mid
+		get_messages(url,xid)
+		location.reload()
+	}
+
+	function hide_details(cid) {
+		document.getElementById('panel_header_' + cid).style.display='block'
+		document.getElementById('acordion'+cid).className='collapse'
+	}
+
+	function ff(i) {
+		if (document.getElementById('rr'+i).src=='https://sugardaddydays.com/assets/images/folder-open.png') {
+			document.getElementById('rr'+i).src='https://sugardaddydays.com/assets/images/folder7.png'
+		} else {
+			document.getElementById('rr'+i).src='https://sugardaddydays.com/assets/images/folder-open.png'
+		}
+	}
+	function hidebtns(xid) {
+	//	document.getElementById('old_btns').style.display='none'
+	//	document.getElementById('rt').style.display='none'
+
+	}
+
+	function send(sid,mid) {
+		var message=document.getElementById('reply_text_' + sid).innerText
+		var to=sid
+		var from=mid
+		var url = 'https://sugardaddydays.com/inc/x_send_mail.php?to=' + to + '&from=' + from + '&message=' + message
+		document.getElementById('reply_text_' + sid).innerText=''
+		remote_script(url,sid,mid)
+	}
+
+	function get_messages(m_url,xid) {
+		console.log(m_url)
+		var request = $.ajax({
+			url: m_url, 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				document.getElementById('m_text_'+xid).innerHTML=msg
+				document.getElementById(xid).style.display='block'
+
+				
+			}
+		})
+	}
+
+	function remote_script(x_url,x_id,m_id) {
+		var request = $.ajax({
+			url: x_url, 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				if (msg=='') {
+					show_details(x_id,m_id)
+				} else {
+					jalert(msg)
+				}
+			}
+		})
+	}
+
+	function xxx_delete_message(msg_id,rid) {
+		var x_url = 'https://sugardaddydays.com/inc/x_delete_message.php?message_id=' + msg_id
+		var request = $.ajax({
+			url: x_url, 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				for (var k=0;k<=rid;k++) {
+					document.getElementById('acordion'+k).className='collapse'
+				}
+				document.getElementById('big_'+rid).style.display='none'
+			}
+		})
+	}
+
+	function delete_single_message(msg_id,xid,mid) {
+		var x_url = 'https://sugardaddydays.com/inc/x_delete_message.php?message_id=' + msg_id
+		var request = $.ajax({
+			url: x_url, 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				show_details(xid,mid)
+			}
+		})
+	}
+
+	function show_reply(xid,xi) {
+		document.getElementById(xid).style.display='block'
+		document.getElementById('bottom_barx').style.display='none'
+		document.getElementById('vspacer').style.display='block'
+		
+	}
+	function cancel_reply(xid) {
+		document.getElementById(xid).style.display='none'
+	}
+
+	function collapse_msg(xi) {
+		document.getElementById('acordion'+xi).className='collapse'
+	}
+
+	function onMouseOverOut(Obj) {
+		setTimeout(function() { onMouseOverOut1(Obj) }, 300);
+	}
+
+	function onMouseOverOut1(x) {
+
+		var ODiv = document.getElementById(x);
+		var currBg = ODiv.style.background;
+
+		if (currBg == "orange") return false;
+		if (x == "jTopBar_start") return false;
+		if (x == "jTopBar_end") return false;
+
+		if (ODiv.style.background.indexOf("silver") < 0)
+			ODiv.style.background = "silver";
+		else
+		if (ODiv.style.background.indexOf("#f0f0f0") < 0)
+				ODiv.style.background = "#f0f0f0";
+	}
+
+	function onMouseOverOutE(Obj) {
+		setTimeout(function() { onMouseOverOutE1(Obj) }, 300);
+	}		
+
+	function onMouseOverOutE1(Obj) {
+		var ODiv = document.getElementById(Obj);
+		if (ODiv.style.border.indexOf("grey") < 0)
+				ODiv.style.border = "1px solid grey";
+		else
+		if (ODiv.style.border.indexOf("silver") < 0)
+				ODiv.style.border = "1px solid silver";
+
+		if (ODiv.style.background.indexOf("white") < 0)
+				ODiv.style.background = "white";
+		else
+		if (ODiv.style.background.indexOf("grey") < 0)
+				ODiv.style.background = "grey";
+	}	
+	
+</script>
+<body>
+<div id="container"></div>
+</body>
+

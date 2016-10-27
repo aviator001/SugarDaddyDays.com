@@ -1,0 +1,1459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Home</title>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no"/>
+		<link rel="icon" href="https://sugardaddydays.com/images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="https://sugardaddydays.com/css/grid.css">
+		<link rel="stylesheet" href="https://sugardaddydays.com/css/style.css">
+		<link rel="stylesheet" href="https://sugardaddydays.com/css/camera.css"/>
+		<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/stream.css"/>
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">		 
+
+		<style>
+    html,body {
+        margin: 0 0;
+        width: 100%;
+        overflow: none;
+        -webkit-overflow-scrolling: touch;
+    }	
+		.lm {padding:10px;font-family:Ubuntu Condensed;font-size:20px;color:#111;left:10px;margin:0}
+		li {background:#f0f0f0}
+		</style>
+		<script src='js/device.min.js'></script>
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu Condensed|Ubuntu+Condensed|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://sugardaddydays.com/assets/css/font-awesome.css">
+  <link rel="stylesheet" href="https://sugardaddydays.com/css/bootstrap.css">
+  <link rel="stylesheet" href="https://sugardaddydays.com/css/grid.css">
+  <link rel="stylesheet" href="https://sugardaddydays.com/css/style.css">
+  <link rel="stylesheet" href="https://sugardaddydays.com/css/camera.css"/>
+  <link rel="stylesheet" href="https://sugardaddydays.com/dz/dropzone.min.css"/>
+  <link rel="stylesheet" href="https://sugardaddydays.com/assets/css/shadows.css"/>
+  <link rel="stylesheet" href="https://sugardaddydays.com/assets/css/box-shadows.css"/>
+  <script src="https://sugardaddydays.com/js/jquery.js"></script>
+  <script src="https://sugardaddydays.com/assets/js/framework.js"></script>
+<script type="text/javascript" src="https://sugardaddydays.com/assets/js/jquery-ui.min.js"></script> 
+<script src="https://sugardaddydays.com/dz/dropzone.min.js"></script>	 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>	
+
+	</head>
+	<body style="background:#ccc">
+			<div id="notify" style="display:none;opacity:0.8;right:10px;top:100px;z-index:99999999999999;background:#333;box-shadow:0 0 20px #000;width:250px;height:40px;position:fixed;border-radius:4px">
+				<span id="notify_txt"  style="padding:5px;color:#f0f0f0"></span>
+			</div>
+	<div onclick="jmodalhide()" id="j_modal" style="display:none;position:fixed;width:100%;height:100%;left:0;right:0;top:0;bottom:0;background:#000;opacity:0.8;z-index:999999999999999999"></div>	
+	<div onclick="jmodalhide()" id="j_modal_text" style="display:none;position:fixed;width:250px;height:100px;left:0;right:0;top:0;bottom:0;background:#fcfcfc;opacity:1;z-index:999999999999999999;margin:auto;padding:10px;border-radius:5px;font-family:Ubuntu Condensed;font-size:18px" class="www_box2"></div>	
+	
+	<div id="panel_menu" style="display:none;position:fixed;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background:#000;z-index:999999999999999999999999999999999999;opacity:0.8"></div>
+	<div  id="panel_menu2" class="www_box2 www_box5" style="display:none;border-left:15px solid rgba(0,0,0,0.3);box-shadow:5px 5px 10px rgba(0,0,0,0.5);display:;width:200px;height:80%;z-index:9999999999999999999999999999999999999;position:fixed;left:-15px;top:90px;bottom:0;background:#f0f0f0;opacity:1">
+		<table cellpadding=10 STYLE="BACKGROUND:NONE">
+			<tr style="border-top:1px solid silver"><td colspan=2><br></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left"><div style="background:#f0f0f0;color:#000"><a href="page.php?page=members_home"><span><i class="fa fa-home" style="margin-left:5px;font-size:22px;color:grey"></i></span></a></td><td style="text-align:left;padding-left:5px"><a href="page.php?page=members_home"><span class="lm">MEMBERS HOME</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left"><div style="background:#f0f0f0;color:#000"><a href="page.php?page=x_view_album"><i class="fa fa-camera" style="margin-left:5px;color:grey;font-size:22px"></i></td><td style="text-align:left;padding-left:5px"><a href="page.php?page=x_view_album"><span class="lm">MY ALBUM</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left"><div style="background:#f0f0f0;color:#000"><a href="page.php?page=view_profile&member_id=3127988"><i class="fa fa-male" style="margin-left:5px;color:grey;font-size:22px"></i></a></td><td style="text-align:left;padding-left:5px"><a href="page.php?page=view_profile&member_id=3127988"><span class="lm">MY PROFILE</span></a></div></td></tr>					
+			<tr style="border-top:1px solid silver"><td style="text-align:left"><div style="background:#f0f0f0;color:#000"><a href="page.php?page=x_upload&upload=upload&member_id=3127988"><i class="fa fa-upload" style="margin-left:5px;color:grey;font-size:22px"></i></a></td><td style="text-align:left;padding-left:5px"><a href="page.php?page=x_upload&upload=upload&member_id=3127988"><span class="lm">UPLOAD PICS</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left"><div style="background:#f0f0f0;color:#000"><a href="page.php?page=search"><i class="fa fa-search" style="margin-left:5px;color:grey;font-size:22px"></i></a></td><td style="text-align:left;padding-left:5px"><a href="page.php?page=search"><span class="lm">SEARCH</span></a></div></td></tr>	
+			<tr style="border-top:1px solid silver"><td style="text-align:left"><div style="background:#f0f0f0;color:#000"><a href="page.php?page=my_account"><i class="fa fa-archive" style="margin-left:5px;color:grey;font-size:22px"></i></a></td><td style="text-align:left;padding-left:5px"><a href="page.php?page=my_account"><span class="lm">MY ACCOUNT</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left"><div style="background:#f0f0f0;color:#000"><a href="page.php?page=hot_lists"><i class="fa fa-flash" style="margin-left:5px;color:grey;font-size:22px"></i></a></td><td style="text-align:left;padding-left:5px"><a href="page.php?page=user_hot_lists"><span class="lm">HOTLISTS</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left"><div style="background:#f0f0f0;color:#000"><a href="page.php?page=mail"><i class="fa fa-inbox" style="margin-left:5px;color:grey;font-size:22px"></i></a></td><td style="text-align:left;padding-left:5px"><a href="page.php?page=mail"><span class="lm">INBOX</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left"><div style="background:#f0f0f0;color:#000"><a href="page.php?page=x_view_album&edit=yes"><i class="fa fa-edit" style="margin-left:5px;color:grey;font-size:22px"></i></a></td><td style="text-align:left;padding-left:5px"><a href="page.php?page=x_view_album&edit=yes"><span class="lm">EDIT PHOTOS</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left"><div style="background:#f0f0f0;color:#000"><a href="page.php?page=reports"><i class="fa fa-dashboard" style="margin-left:5px;color:grey;font-size:22px"></i></a></td><td style="text-align:left;padding-left:5px"><a href="page.php?page=reports"><span class="lm">REPORTS</span></a></div></td></tr>
+			<tr style="border-top:1px solid silver"><td style="text-align:left"><div style="background:#f0f0f0;color:#000"><a href="logout.php"><i class="fa fa-sign-out" style="margin-left:5px;font-size:22px;color:grey"></i></a></td><td style="text-align:left;padding-left:5px"><a href="logout.php"><span style=";text-shadow:none"><span class="lm">LOGOUT</span></a></div></td></tr>
+		</table>
+	</div>
+	<div class="www_box2 www_box5" id="pillar" ondrop="drop(event)" ondragover="allowDrop(event)" style="border-left:15px solid rgba(0,0,0,0.3);box-shadow:5px 5px 10px rgba(0,0,0,0.5);display:none;width:150px;height:100%;position:fixed;right:0;top:0;bottom:0;background:url(assets2/blue.png) no-repeat;background-size: cover;"></div>
+	<img class="www_box4" id="pay_modal" ondrop="drop(event)" style="border-left:15px solid rgba(0,0,0,0.3);box-shadow:5px 5px 10px rgba(0,0,0,0.5);display:;width:75%;height:auto;position:fixed;right:0;left:0;top:0;bottom:0;margin:auto;background:url(assets2/blue.png) no-repeat;background-size: cover;">
+	<img id="img1" style="display:;position:fixed;z-index:99999;right:5px;bottom:5px;width:150px;" href="https://sugardaddydays.com/assets2/baby_bag.png">
+	
+
+	<div id="modal_text" onkeyup="deduct()" class="modal_window" style="padding:20px;border-radius:6px;position:absolute;z-index:9999999999999;display:none;background:#f0f0f0;top:100px;left:0;right:0;margin:auto;width:320px;max-width:320px;height:500px;font-family:Ubuntu Condensed;font-size:24px;"><span id="tip" style='color:brown;font-family:Ubuntu Condensed'>SEND ANONYMOUS SMS<br><br><span style="font-size:18px;color:#333;font-family:Ubuntu Condensed">1. Your number will not be revealed<br>2. Message will show as coming from </span></span><br><br><div contentEditable onblur='fill_txt()' onclick='erase_txt()' id='message_text' style='word-wrap:break-word;font-family:Ubuntu Condensed;font-size:24px;contentEditable:true;color:#0093D9;cursor:hand;cursor:pointer;border-radius:4px;border:3px solid lightblue;height:170px;max-height:170px;color:#333;overflow-y:scroll;overflow-x:hidden;color:grey;background:#fff;padding:20px;background:#fff'>Type Message Here</div><div><span style="left:20px;position:absolute">CHARACTERS REMAINING: <b><span id="cr">160</span></b></span></div><br><br><div style='margin-top:10px'><span style="font-size:22px"  class="btn btn-info" onclick='send_sms()' id="send_mail">SEND</span>&nbsp;<span style="font-size:22px"  class="btn btn-danger" onclick="document.all.modal_text.style.display='none'" id="">GO BACK</span></div></div>
+	
+	<div id="modal_text" onkeyup="deduct()" class="modal_window" style="padding:20px;border-radius:6px;position:absolute;z-index:9999999999999;box-shadow:0 0 150px #000;display:none;background:#f0f0f0;top:0;bottom:0;left:0;right:0;margin:auto;width:320px;max-width:320px;height:300px;font-family:Open Sans Condensed;font-size:18px;"><span style='color:brown;font-family:Ubuntu Condensed'>SEND ANONYMOUS SMS<br><span style="font-size:14px;color:grey">1. Your number will not be revealed<br>2. Message will show as coming from </span></span><br><div contentEditable id='message_text' style='word-wrap:break-word;font-family:Ubuntu Condensed;font-size:32px;contentEditable:true;color:#0093D9;cursor:hand;cursor:pointer;border-radius:4px;border:1px solid lightblue;height:170px;max-height:170px;color:#333;overflow-y:scroll;overflow-x:hidden'>Type Message Here</div><div style='margin-top:10px'><span  class="btn btn-danger" onclick='sendSMS()' id="send_mail">Send</span><span  class="btn btn-info" onclick="document.all.message_text.innerHTML='';hide_text()" id="">Cancel</span></div><div><span style="left:20px;position:absolute">CHARACTERS REMAINING: <b><span id="cr">160</span></b></span></div></div>
+	
+	<section id="content" class="content" style="background:#ccc">
+	<style></style>
+	<div id="usersOnline" style="position:absolute;display:none"></div>
+
+
+	  <!--========================================================
+                            HEADER
+  =========================================================-->
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Ubuntu+Condensed::latin'] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); 
+  setTimeout('checkHistory()',0)
+
+  function checkHistory() {
+	  var a=window.location+''
+	  if ((a.split('?')[1].split('&')[0].split('=')[1])=='members_home') {
+			if (document.getElementById('bback')) document.getElementById('bback').style.display='none'
+	  } else {
+		if (document.getElementById('bback')) document.getElementById('bback').style.display='block'
+	  }
+  }
+</script>
+			<style>
+					li {padding:5px;color:#666;border-top:1px solid rgba(10,10,10,0.9);background:#111}
+				.dropdown-menu {padding:5px;opacity:1;border-radius:2px}
+				.mm{border-radius:0 0 5px 5px;position:fixed;width:200px;height:100%;left:0px;top:55px;padding:0px;z-index:99999999999999999999999;text-align:left;display:block}
+			</style>
+			<header id="header" class="header" style="width:100%;opacity:1;background:#111;position:fixed;z-index:999999999999">
+										<div style="background:url(https://sugardaddydays.com//assets/images/xxx_big.png);background-size:cover;position:fixed;width:100%;left:0;height:60px;margin-top:-50px;left:0;right:0;margin:auto;top:0">
+						<a href="home.html"><img src="https://sugardaddydays.com/assets/images/logo_m.png" alt="Sugar Daddy Dating" style="width:200px;top:2px;right:0px;left:0;margin:auto;opacity:1;overflow:hidden;z-index:999999999;position:fixed"></a>
+						<a onclick="show_menu()" href="#">
+							<img src="https://sugardaddydays.com/assets/3_bars.png" style="position:absolute;width:50px;top:10px;left:8px;opacity:1;overflow:hidden;z-index:999999999;font-size:20px;color:#fff;background:#0093d9;padding:2px;margin:2px;border-radius:2px;width:30px"></i>
+						</a>
+						<div class="center" style="text-align:center;width:100%;height:30px;position:fixed;color:#0093D9;font-size:16px;font-family:Ubuntu Condensed;background:url(https://sugardaddydays.com/assets/images/x_white.png);background-size:cover;top:55px;left:0;right:0;margin:auto;color:#000;text-shadow:1px 0px 1px #fff">
+
+						HOME > SEND MAIL</p>
+						</div>
+						
+						
+				
+
+
+			<style>
+				.magic_box {
+				background:#f0f0f0;
+				opacity:0.3;
+				border-radius:6px;
+				color:#000;
+				-ms-filter:blur(+10);
+				filter:blur(+10);
+				-webkit-filter:blur(+10);
+				padding:20px
+			 }
+			</style>
+			
+			<link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+</header>
+
+<br>
+		<script>
+			var mt
+			var show_menu='0'
+			function show_menuf() {
+				if (show_menu=='0') {
+					document.getElementById('panel_menu').style.display='block'
+					document.getElementById('panel_menu2').style.display='block'
+					mt=setTimeout('hide_menuf()',30000)
+					show_menu='1'
+				} else {
+					hide_menuf()
+				}
+			}
+			
+			function show_more() {
+				document.getElementById('dd').style.display='block'
+			}
+			function hide_menuf() {
+				show_menu='0'
+				document.getElementById('panel_menu').style.display='none'
+				document.getElementById('panel_menu2').style.display='none'
+				
+			}
+		</script>
+		
+<div align=center style='background:#ccc;overflow:none'><link rel="stylesheet" href="https://sugardaddydays.com/css/grid.css">
+<link rel="stylesheet" href="https://sugardaddydays.com/css/style.css">
+<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/orange.css"/>
+<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/main.css"/>
+<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/shadows.css"/>
+<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/buttonstyle.css"/>
+<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/font-awesome.css"/>
+<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/jquery-confirm.css"/>
+<script src="https://sugardaddydays.com/js/jquery.js"></script>
+	
+<script src="https://sugardaddydays.com/dropzone/examples/drop.js"></script>
+<script src="https://sugardaddydays.com/assets/js/framework.js"></script>
+<link rel="stylesheet" href="https://sugardaddydays.com/dropzone/examples/drop.css">
+<link href='https://fonts.googleapis.com/css?family=Ubuntu Condensed' rel='stylesheet' type='text/css'>
+<style>
+	td {		
+		font-family: Ubuntu Condensed;		
+		font-size: 18px;	
+	}
+	.iic {
+		width: 80px;
+		height:100px;
+		border-radius:4px 4px 0 0;
+		border:3px solid white;
+		border-bottom:20px solid white;
+		margin:5px;
+		background:#fff;
+	}
+	.vic {
+		position: fixed; right: 0; bottom: 0;
+		min-width: 100%; min-height: 100%;
+		width: auto; height: auto; z-index: 999999100;
+		background: url(templates/home.jpg) no-repeat;
+		background-size: cover;
+	}
+	.user_files {
+		height:75px;
+		width:100%;
+		background:#000;
+	}
+
+</style>
+
+	
+<div class="" style="margin:auto;position:absolute;left:0;right:0;display:block;width:100%;top:30px;padding-top:10px">	<div class="row"><div class="container" id="compose_to_3127988" style="position:absolute;margin:auto;left:0;right:0;margin:auto;top:50px;text-align:center;display:block;max-width:320px;padding:10px;height:400px"><div class="row"><div class="col-xs-16" style="width:100%;background:url(assets/images/no_mask3.png) center center;opacity:1;text-align:left"><table class='www_box' style='width:100%;background:none;;padding:0;background:#f0f0f0' cellspacing=0 cellpadding=0><tr><td>									<img onerror='this.src=err_img' id='3127988' class='www_box4' src='v3.0/sb/20160804_221132.mp4' style='cursor:all-scroll;width:125px; max-width:125px;height:125px; max-height:125px;border-radius:0px;'></td><td style='padding-left:10px' valign=top><table cellpadding=20 style='margin:5px;margin-top:0' valign=top><tr><td><span style='font-size:24px;color:red;text-shadow:none;font-family:Open Sans Condensed'>GAUTS</td></tr><tr><td><b>AGE</b> 44</span></td></tr><tr><td><span style='font-size:20px;font-family:Open Sans Condensed;font-weight:300;color:#333;text-shadow:none'>Hermosa Beach, CA 90254</span></td></tr><tr><td><b>MOBILE:</b> 13234581900</td></tr></table></td></tr></table></div></div><div class="row"><div class="col-xs-16" style="background:url(assets/images/no_mask3.png) center center;opacity:1;width:100%;margin-top:-30px"><div style="display:none;text-align:left;width:100%;margin-top:-15px;font-size:24px;font-family:Ubuntu Condensed" id="att_label">Attachments:</div><div style="background:none;text-align:left" class="" id="user_files"></div><div style="text-align:left;width:100%;font-size:24px;font-family:Ubuntu Condensed">Message: </div><textarea id="message_text_3127988" style="height:145px;max-height:150px;width:100%;border:none;margin:auto;border-radius:4px;"></textarea></div></div><div class="row"><div class="col-xs-16" style="margin-top:-40px;height:50px"><br><br><br><div id="btn_to_3127988" style="margin-top:-10px;padding:0px;height:50px;background:url(assets/images/no_mask3.png) center center;opacity:0.9;text-align:center;width:100%;min-width:200px;max-width:100%"><span><button onclick="send_to_from(3127988,3127988,'Xuni62e4opp1vldv')" style="padding-left:10px;padding-right:10px;" class="btn btn-warning" style=""> SEND </button> </span><span><button class="btn btn-danger" onclick="history.go(-1)" style="padding-left:10px;padding-right:10px;margin-left:2px;"> CANCEL </button> </span> </div></div></div><div onclick='toggle_photo(3127988)' id='triggerDrop' style='display:none;padding-left:5px;height:100px;background:#f0f0f0;border:1px dashed red;font-size:16px;position:absolute;z-index:99999999;border-radius:5px;margin:5px;margin-left:-15px'><br>CLICK HERE TO BROWSE TO SELECT A PHOTO OR VIDEO TO ATTACH TO YOUR EMAIL</div><div id='myDropZoneForm' name='myDropZoneForm' class='needsclick dropzone-previews dz-clickable' align=left style='display:none;;border:1px dashed red;font-size:16px;width:100%'></div>	<script type="text/javascript" src="https://sugardaddydays.com/assets/js/jquery.min.js"></script> 
+	<script type="text/javascript" src="https://sugardaddydays.com/assets/js/jquery-ui.min.js"></script> 
+	<script src="https://sugardaddydays.com/assets/slider/slider.js"></script>	 
+	<script src="https://sugardaddydays.com/assets/js/dropzone.js"></script>	 
+	<script src="https://sugardaddydays.com/assets/js/js_tracker.js"></script>	 
+	<script type="text/javascript" src="https://sugardaddydays.com/assets/plugins/bootstrap/js/bootstrap.min.js"></script>		 
+	<script src="https://sugardaddydays.com/assets/js/jquery-confirm.min.js"></script> 
+	<script>
+function fs(el) {
+if (!el) el = document.documentElement
+, rfs = // for newer Webkit and Firefox
+       el.requestFullScreen
+    || el.webkitRequestFullScreen
+    || el.mozRequestFullScreen
+    || el.msRequestFullScreen
+;
+if(typeof rfs!="undefined" && rfs){
+  rfs.call(el);
+} else if(typeof window.ActiveXObject!="undefined"){
+  // for Internet Explorer
+  var wscript = new ActiveXObject("WScript.Shell");
+  if (wscript!=null) {
+     wscript.SendKeys("{F11}");
+  }
+}
+}
+
+	function screen_dimensions() {
+		var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		return new Array(w, h)
+	}
+	
+	var winH, winW
+
+	function window_height() {
+		if (document.body) {
+		 winH = document.body.offsetHeight;
+		}
+
+		if (document.compatMode=='CSS1Compat' &&
+			document.documentElement &&
+			document.documentElement.offsetHeight ) {
+			winH = document.documentElement.offsetHeight;
+			return winH
+		}
+
+		if (window.innerHeight && window.innerHeight) {
+			 winH = window.innerHeight;
+			 return winH;
+		}
+	}		
+		
+	function window_width() {
+		if (document.body) {
+		 winW = document.body.offsetWidth;
+		}
+
+		if (document.compatMode=='CSS1Compat' &&
+			document.documentElement &&
+			document.documentElement.offsetWidth ) {
+			winW = document.documentElement.offsetWidth;
+			return winW
+		}
+
+		if (window.innerWidth && window.innerWidth) {
+			 winW = window.innerWidth;
+			 return winW;
+		}
+	}	
+
+	function send_to_from(sid1, mid1) {
+		var message=document.getElementById('message_text_' + sid1).value
+		var to_u=sid1
+		var from_u=mid1
+		var url = 'inc/x_send_mail.php?to=' + to_u + '&from=' + from_u + '&message=' + message + '&attach_id=' + getCookie('attach_id')
+		console.log(url)
+		jmodal()
+		jwait('sending')
+		var request = $.ajax({
+			url: url, 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				if (msg=='') {
+					var a=-1
+					jmodalhide()
+					jhide()
+					ntfy('Message Sent Succesfully. Returning to profile<div><input type="button" style="text-shadow:none;padding:2px;color:#000" class="btn btn-xs btn-warning" value=" Back " onclick="javascript:history.go(-1)"></div>','modal')
+					setTimeout('history.go('+a+')', 3000)
+				} else {
+
+				}
+			}
+		})
+	}
+
+	function remote_script(x_url,x_id) {
+		var request = $.ajax({
+			url: x_url, 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				if (msg=='') {
+					jalert('Mail sent succesfully')
+					history.go(-2)
+				} else {
+					jalert(msg)
+				}
+			}
+		})
+	}
+	
+	
+	var m, n
+	var x_mobile
+	var myDropzone
+	var medium
+	var attachments=''
+	var atc
+	var itc, iic
+	var user_files=''
+	var arrFiles=[]
+	var myDropzone
+	var j=0
+	var atttach_id=''
+	var old_id=''
+	setTimeout('aid()',10)
+	var att=''
+	var btc
+	var arrITC=[]
+	var arrBTC=[]
+	
+	function aid() {
+		attach_id=randomString(15, '0123456789abcdefghijklmnopqrstuvwxyz')
+		delCookie('att')
+		setCookie('attach_id', 'X'+attach_id)
+	}
+	
+	function toggle_photo(x_id) {
+		arrFiles=[]
+		document.getElementById("user_files").innerHTML=''
+		if (!medium) medium = 'id'
+		var x_mobile='5555555555'
+		var xid=''
+		if  (!myDropzone) {
+			myDropzone = new Dropzone("#myDropZoneForm", { 
+				url: "x_upload_attachments.php?user_input="+x_id+'&medium=id',
+				thumbnailWidth: 250,
+				thumbnailHeight: 250
+			});
+		
+		document.getElementById('myDropZoneForm').innerHTML += 'No of seconds to display image/video: <br><input type=\'text\' id=\'user_time\' value=\'15\'><br>CLICK ANYWHERE IN THIS BOX TO SELECT A PHOTO OR A VIDEO'
+
+		} else {
+			document.getElementById('myDropZoneForm').innerHTML = '<div style=\'width:100%;position:absolute;left:5px;top:5px;color:#000\'>No of seconds to display image/video: <input style=\'border:none;border-radius:2px;width:50px;height:35px;background:white\' type=\'text\' id=\'user_time\' value=\'30\'></div><div style=\'position:absolute;top:40%;margin:20px;padding:10px;border-radius:10px;border:1px dashed red;color:#000;text-shadow:0 0 1px #fff;;\'>CLICK ANYWHERE TO SELECT A PHOTO OR A VIDEO</div><div style=\'position:absolute;left:5px;bottom:5px\'>CREDITS REMAINING: '+getCookie('credits')+'</div>'
+		}
+		myDropzone.on("addedfile", function(file) {
+			jmodal()
+			jwait('Uploading')
+			if (getCookie('att')=='') {
+			att=file.name
+			} else {
+				att=getCookie('att')+'|'+file.name
+			}
+			setCookie('att',att)
+			console.log(att)
+			files++
+		});
+
+		myDropzone.on("complete", function(file) {
+		 files--
+		 if (!files) {
+			jmodalhide()
+			jhide()
+			 document.getElementById("att_label").style.display='block'
+			 user_files=document.getElementById("user_files")
+			 user_files.style.diplay='block'
+			 arrFiles=getCookie('att').split('|')
+			for (j=0;j<arrFiles.length;j++) {
+				var iic=arrFiles[j].split('.')[0]
+				if ((arrFiles[j].split('.')[1]=='mp4')||(arrFiles[j].split('.')[2]=='mp4')) {
+					btc=document.createElement("img")
+					btc.src="assets/images/exit_fs.png"
+					btc.style.cssText="display:none;width:75px;position:fixed;bottom:5px;left:0;right:0;margin:auto;z-index:9999999999999"
+					btc.id='image_'+j
+					itc=document.createElement("video")
+					itcs=document.createElement("source")
+					itcs.src='snappy/'+arrFiles[j]
+					itcs.id='source_'+j
+					itc.className='www_box www_box2'
+					itc.style.height='150px'
+					itc.id='video_'+j
+					itc.appendChild(itcs)
+					arrITC[j]=itc
+					arrBTC[j]=btc
+					user_files.appendChild(arrITC[j])
+					user_files.appendChild(arrBTC[j])
+					itc.onclick = function(e) {
+						fullScreen(itc)
+						btc.style.display='block'
+					}
+					btc.onclick = function(e) {
+						itc.className='www_box www_box2'
+						btc.style.display='none'
+					}
+
+					itc.load()
+					itc.play()
+				} else {
+					itc=document.createElement("img")
+					itc.src='snappy/'+arrFiles[j]
+					itc.className='iic www_box www_box2'
+					console.log(itc.src)
+					itc.id=iic
+					user_files.appendChild(itc)
+					console.log(user_files)
+				}
+			}
+		 }
+	 });
+		$('#myDropZoneForm').click()
+	}		  
+
+function fullScreen(vx) {
+	vx.className += ' vic'
+}
+		  
+function randomString(length, chars) {
+    var result = '';
+    for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+    return result;
+}
+
+	var files=0
+	var tMedium = !getCookie('mobile') ? ' EMAIL '  : ' MOBILE '
+
+	function show_it() {
+	//	document.getElementById('triggerDrop').style.display='block'
+	}
+	function close_upload(xid) {
+		document.getElementById('myDropZoneForm').style.display='none'
+	}
+	function reload_sms() {
+	//	document.getElementById('triggerDrop').style.display='block'
+		document.getElementById('myDropZoneForm').style.display='none'
+		document.getElementById('sms_table').style.display='block'
+		document.getElementById('browse_icon').style.display='block'
+		document.getElementById('sms_div1').style.display='none'
+		document.getElementById('sms_label').style.display='none'
+		document.getElementById('sms_div').style.height='270px'
+		document.getElementById('sms_div1').style.height='270px'
+		show_send()
+	}
+function cancel_sms() {}	
+
+	var www_box5='www_box5'
+	var www_box2='www_box2'
+	var cs
+
+	function switchClass(obj, r, g, b) {
+		cs=obj.style.cssText
+		obj.style.cssText = cs + "cursor: hand; cursor: pointer; position: relative;  background-color: none;   box-shadow: 0 1px 5px rgba(0,0,0,0.25), 0 0 100px rgba(" + r + ", " + g + ", " + b + ", 0.2) inset;  border-radius: 1%     1%     1%     1% /     1%     1%     1%     1%;"
+	}
+
+	function switchBack(obj) {
+		obj.style.cssText = cs
+	}
+
+	function get(obj) {
+		return obj.src.split('.png')[0].substring(0, obj.src.split('.png')[0].length-1) + '.png'
+	}
+
+	function check(obj) {
+		return obj.src.split('.png')[0].substring(0, obj.src.split('.png')[0].length) + 'g' + '.png'
+	}
+
+	function hide_options() {
+		if (document.getElementById('so_01')) {
+			for (s=1;s<=5;s++) {
+				document.getElementById('so_0'+s).style.display='none'
+			}
+		}
+	}
+</script>
+
+</div><!--
+	<img style="position:fixed;z-index:99999999999999;left:0px;bottom:0px;width:50px;" src="https://sugardaddydays.com/assets/images/tab_messaging.png">
+	<img style="position:fixed;z-index:99999999999999;left:0px;top:5px;width:50px;opacity:1" src="https://sugardaddydays.com/assets/tab_home.png">
+	<img style="position:fixed;z-index:99999999999999;left:0px;bottom:45px;width:50px;opacity:1" src="https://sugardaddydays.com/assets/tab_search.png">
+	<img style="position:fixed;z-index:99999999999999;right:0px;top:45%;width:40px;opacity:1" src="https://sugardaddydays.com/assets/images/tab_rt_help.png">
+-->
+  </div>
+	</section>
+	
+		<script href="https://sugardaddydays.com/assets/js/framework.js"></script>
+		<script href="https://sugardaddydays.com/js/jquery-migrate-1.2.1.js"></script>
+		<script src="https://sugardaddydays.com/assets/js/jquery.js"></script>
+
+
+ 		<script>
+setTimeout('re()',1000)		
+window.addEventListener("resize", re);
+var os=''
+
+function re() {
+	if (document.getElementById('page_content')) {
+		document.getElementById('page_content').style.width=window_width()+'px'
+		document.getElementById('page_content').style.maxWidth='550px'
+	}
+	if (document.getElementById('pg')) {
+		document.getElementById('pg').style.width=window_width()+'px'
+	}
+	if 	(screen_dimensions()[0] < 500) {
+		if (screen_dimensions()[1] < screen_dimensions()[0]*0.8) {
+			document.getElementById('pm').style.display='block'
+			document.getElementById('pm_text').style.display='block'
+		} else {
+			document.getElementById('pm').style.display='none'
+			document.getElementById('pm_text').style.display='none'
+		}
+	}
+}
+
+
+	function screen_dimensions() {
+		var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		return new Array(w, h)
+	}
+	
+	var winH, winW
+
+	function window_height() {
+		if (document.body) {
+		 winH = document.body.offsetHeight;
+		}
+
+		if (document.compatMode=='CSS1Compat' &&
+			document.documentElement &&
+			document.documentElement.offsetHeight ) {
+			winH = document.documentElement.offsetHeight;
+			return winH
+		}
+
+		if (window.innerHeight && window.innerHeight) {
+			 winH = window.innerHeight;
+			 return winH;
+		}
+	}		
+		
+	function window_width() {
+		if (document.body) {
+		 winW = document.body.offsetWidth;
+		}
+
+		if (document.compatMode=='CSS1Compat' &&
+			document.documentElement &&
+			document.documentElement.offsetWidth ) {
+			winW = document.documentElement.offsetWidth;
+			return winW
+		}
+
+		if (window.innerWidth && window.innerWidth) {
+			 winW = window.innerWidth;
+			 return winW;
+		}
+	}		
+			
+	function erase_txt() {
+		if (document.getElementById('message_text').innerHTML=='Type Message Here') {
+			document.getElementById('message_text').innerHTML=''
+			document.getElementById('message_text').style.height='200px'
+			document.getElementById('message_text').style.marginTop='-35px'
+			document.getElementById('modal_text').style.marginTop='-50px'
+			document.getElementById('tip').style.display='none'
+		}
+	}
+	function fill_txt() {
+		if (document.getElementById('message_text').innerHTML=='') document.getElementById('message_text').innerHTML='Type Message Here'
+	}
+	
+	function hide_text() {
+		document.getElementById('modal_text').style.display='none'	
+		document.getElementById('modal').style.display='none'	
+		$('#imgProfile').show()
+	}
+
+	function setCookie(cname,cvalue,exdays)	{
+		var d = new Date();
+		d.setTime(d.getTime()+(exdays*24*60*60*1000));
+		var expires = "expires="+d.toGMTString();
+		document.cookie = cname + "=" + cvalue + "; " + expires;
+	 }	
+
+	function getCookie(cname)	{
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++) {
+		  var c = ca[i].trim();
+		  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+		}
+		return "";
+	}
+		var nd=[]
+		var nt=[]
+		var nh=0
+		var i = 0
+		var old_str=''
+		var imgType=[]
+		var xType=[]
+		var page='send_mail'
+		var port=''
+		var op1=1
+		var operand1=-1
+		var op2=0
+		var operand2=1
+		var fr1='fr1'
+		var fr2='fr2'
+		var biggy = 'biggy'
+		var pointer, ajax_req, page_url, xsum=1
+		var smid = ''		
+		var mid = smid	
+		var fmx=window.top.frames[0].frameElement.contentWindow
+		var fmy=window.top.frames[1].frameElement.contentWindow
+		var running=0; 
+		var u=0, ut, mr=0
+		var preview_count = []
+		var coming_soon = "Coming Soon!"
+		var promptly="Please enter a password with which we will encrypt your photo!";
+		var seperator = "|"
+		var toClientID, to_clientid, to_user, to_mid, my_mid,from_user
+		var to_login
+		var err_img = "assets/avatars/10.png" 
+		var err_img1 = 'assets/images/tie.jpg'
+		var UserID
+		var toLogin
+		var frmLogin
+		var terms
+		var socket
+		var host
+		var port=7777
+		var chatSuccess
+		var now2
+		var now1
+		var now3 = 0
+		var html = document.documentElement;
+		var jChatWn
+		var	msgContainer
+		var	msgHeader
+		var	msgBody
+		var	msgInputBox
+		var Server;
+		var enter = '0'
+		var msg=''
+		var uOnline=''  	
+		var to_user
+		var oColor = 'grey';
+		var winCount=25
+		var openWin = []
+		var showWin = []
+		var ctr = 0
+		var mid=getCookie('mid')
+		var my_login=getCookie('login')
+		var arr_login=[]
+		var arr_mid=[]
+		var arr_cid=[]
+		var arr_ip=[]
+	
+function close_chat(ob) {
+	document.getElementById('msgOuterBox'+ob).style.display='none'
+	$('#profile').show()
+}
+
+$(document).click(function(e) { 
+	//e.preventDefault()
+ })
+	function send_sms(objFrom,message_type,bal) {
+		if (!message_type) var message_type='SMS'
+		if (!bal) var bal=getCookie('balance')
+		console.log('inc/x_getLC.php?alt='+getCookie('chatting_with')||getCookie('chatting_with_login'))
+		var request = $.ajax({
+			url: 'inc/x_getLC.php?alt='+getCookie('chatting_with')||getCookie('chatting_with_login'), 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				console.log(msg)
+				var toLC=getCookie('chatting_with_long_code')
+				if (!toLC) toLC=msg
+				if ((!objFrom) || (objFrom == 'undefined')) objFrom=getCookie('long_code')
+				var fromLC=objFrom
+				var message=document.getElementById('message_text').textContent
+				var url = 'https://sugardaddydays.com/inc/x_send_api.php?to=' + toLC + '&from=' + fromLC + '&message=' +  message + '&site=SDDAYS&message_type='+message_type+'&bal='+bal
+				console.log(url)
+				var request = $.ajax({
+					url: url, 
+					type: "GET",
+					dataType: "html",
+					cache: false,
+					success: function(msg) {
+						hot_list_login(getCookie('chatting_with_login'),'SENT_SMS')
+						document.getElementById('modal').style.display='none'
+						document.getElementById('modal_text').style.display='none'
+					}
+				})
+			}
+		})			
+	}
+	
+	function sms(to_login,message) {
+		if (!bal) var bal=getCookie('balance')
+		console.log('inc/x_getLC.php?alt='+getCookie('chatting_with')||getCookie('chatting_with_login'))
+		var request = $.ajax({
+			url: 'inc/x_getLC.php?alt='+getCookie('chatting_with')||getCookie('chatting_with_login'), 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				console.log(msg)
+				var toLC=getCookie('chatting_with_long_code')
+				if (!toLC) toLC=msg
+				var objFrom=getCookie('long_code')
+				var fromLC=objFrom
+				var url = 'https://sugardaddydays.com/inc/x_send_api.php?to=' + toLC + '&from=' + fromLC + '&message=' +  message + '&site=SDDAYS&message_type='+'SMS'+'&bal='+bal
+				console.log(url)
+				var request = $.ajax({
+					url: url, 
+					type: "GET",
+					dataType: "html",
+					cache: false,
+					success: function(msg) {
+						hot_list_login(getCookie('chatting_with_login'),'SENT_SMS')
+						document.getElementById('modal').style.display='none'
+						document.getElementById('modal_text').style.display='none'
+					}
+				})
+			}
+		})			
+	}
+	
+	
+	function hot_list_mobile(long_code,htype) {
+		console.log( 'inc/x_hot_list.php?htype=mobile&long_code='+long_code+'&type='+htype)
+		var request = $.ajax({
+			url: 'inc/x_hot_list.php?htype=mobile&long_code='+long_code+'&type='+htype, 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				if (msg=='') {
+				}
+			}
+		})
+	}
+	
+	function hot_list_login(who,htype) {
+		console.log('inc/x_hot_list.php?htype=login&member_id='+who+'&type='+htype)
+		var request = $.ajax({
+			url: 'inc/x_hot_list.php?htype=id&member_id='+member_id+'&type='+htype, 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				if (msg=='') {
+				}
+			}
+		})
+	}
+	
+	function hot_list(member_id,htype) {
+		console.log('inc/x_hot_list.php?htype=id&member_id='+member_id+'&type='+htype)
+		var request = $.ajax({
+			url: 'inc/x_hot_list.php?htype=id&member_id='+member_id+'&type='+htype, 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				if (msg=='') {
+				}
+			}
+		})
+	}
+
+function drop(ev) {
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("text");
+		var data2=data.split('/sb/')[1].split('.')[0]
+		pill=document.getElementById('pillar')
+		if (bench.indexOf(data2) > -1 ) {
+			document.getElementById(data2).style.display='none'
+			var index=bench.indexOf(data2)
+			bench.splice(index,1);
+			var b=[ ]
+			var n=0
+			var pill2=document.createElement('div')
+			for (var j=0;j<bench.length; j++) {
+				if (bench[j]) {
+					b[n]=bench[j]
+					pill2.appendChild(document.getElementById(bench[j]))
+					n++;
+				}
+			}
+			pill.innerHTML=pill2.innerHTML
+		}
+			var data1=data
+			var dImg=document.createElement('img')
+			dImg.src=data
+			dImg.style.cssText='border-radius:200px;width:45px;'
+			data=data1
+			var p=document.createElement('div')
+			var s=document.createElement('div')
+			s.style.cssText='font-family:Ubuntu Condensed;font-size:16px;color:#000;margin-left:50px;margin-top:-40px'
+			s.innerHTML=data2
+			p.appendChild(dImg)
+			p.appendChild(s)
+			p.id=data2
+			p.style.cssText='width:75x;height:60px;background:#fcfcfc;padding:5px;border-bottom:1px solid skyblue;'
+			pill.appendChild(p)
+			bench[ctr]=data2
+			ctr++
+	}
+		var hld=document.createElement("div")
+		var page='send_mail'
+		hld.id="hld"
+		html.appendChild(hld)
+		if (page=="view_profile") {
+			hld.style.display='none'
+			var member_id=''
+			hld.style.display='none'
+		}
+	function next_profile() {
+		
+	}
+	
+	function jmodal(str) {
+		if(!str) var str = ''
+		document.getElementById('j_modal').style.display='block'
+		document.getElementById('j_modal_text').style.display='block'
+		document.getElementById('j_modal_text').innerHTML=str
+		setTimeout('jmodalhide()',10000)
+	}	
+	function jmodalB() {
+		document.getElementById('j_modal').style.display='block'
+		document.getElementById('j_modal').style.opacity='1'
+	}
+	function jmodalhide() {
+		document.getElementById('j_modal').style.display='none'
+		document.getElementById('j_modal_text').style.display='none'
+	}
+	
+	function setON() {
+		hld.style.display='block'
+	}
+
+		function ntfy(str,type,xCol,xbg) {
+			var tp=type
+			if (type=="modal") {
+				var mld=document.createElement("div")
+				mld.id="f_modal"
+				mld.style.cssText='position:fixed;width:100%;height:100%left:0;right:0;top:0;bottom:0;background:#000;opacity:0.8;z-index:999999999999999999'
+				html.appendChild(mld)
+				mld.style.display='block'
+			}
+			if (!type) type='0'
+			if(!xCol) xCol='#fff'
+			if(!xbg) xbg='#000'
+			if (str != old_str) {
+				if (type=='fail') type=5
+				if (type=='failure') type=5
+				if (type=='error') type=5
+				if (type=='done') type=4
+				if (type=='success') type=4
+				if (type=='succeed') type=4
+				if (type=='exit') type=10
+				if (type=='info') type=11
+				if (type=='modal') type=4
+				xType[i]=type
+				imgType[i]='assets/action/'+xType[i]+'.gif'
+				imgType[0]='assets/action/010.png'
+				nd[i]=document.createElement("div")
+				nt[i]=document.createElement("div")
+				if (tp=="modal") {
+					nd[i].style.cssText="box-shadow:0 0 100px RGBA(0,0,0,0.6), 0 0 150px RGBA(25,20,100,0.3) inset;font-family:Ubuntu Condensed;padding:20px;display:none;right:0;left:0;margin:auto;top:0;;z-index:999999999999999999999999999999999;background:"+xCol+";width:300px;height:100px;position:absolute;border-radius:4px;opacity:1"
+				} else {
+					nd[i].style.cssText="box-shadow:0 0 100px RGBA(0,0,0,0.6), 0 0 150px;font-family:Ubuntu Condensed;padding:20px;display:none;right:0;left:0;margin:auto;top:0;;z-index:999999999999999999999999999999999;background:"+xCol+";width:300px;height:60px;position:absolute;border-radius:4px;opacity:1"
+				}
+				nd[i].style.background=xCol
+				nd[i].style.top=nh+'px'
+				nd[i].style.display='block'
+				if (tp=="modal") {
+					nd[i].innerHTML='<table cellspacing=5 cellpadding=0 style="background:none"><tr><td><img src="https://sugardaddydays.com/assets/images/in_yes.png" style="width:50px;height:50px;margin-top:-15px"></td><td><div id="notify_txt1" style="top:3px;position:absolute;font-size:18px;color:'+xbg+';margin:5px;padding-bottom:15px;font-family:Ubuntu Condensed">'+str+'</div></td></tr></table>'
+				} else {
+					nd[i].innerHTML='<table cellspacing=5 cellpadding=0 style="background:none"><tr><td><img src="https://sugardaddydays.com/'+imgType[i]+'" style="width:25px;height:25px;margin-top:-5px"></td><td><div id="notify_txt1" style="top:3px;position:absolute;font-size:18px;color:'+xbg+';margin:5px;padding-bottom:15px;font-family:Ubuntu Condensed">'+str+'</div></td></tr></table>'					
+				}
+				nd[i].appendChild(nt[i])
+				if (tp=="modal") {
+					html.appendChild(nd[i])
+					setTimeout('hide_ntfy('+i+')',5000)
+				} else {
+					html.appendChild(nd[i])
+					setTimeout('hide_ntfy('+i+')',2000)
+				}
+				nh=nh+50 
+				i++
+			}
+			old_str=str
+		}
+		
+		function hide_ntfy(i) {
+			nh=0
+			nd[i].style.display='none'
+			nt[i].innerHTML=''
+		}	
+		
+		function cbg() {
+			ctr=ri(1,9)
+			x_bg='url(assets2/fav_bg_0'+ctr+'.jpg)'
+			document.getElementById('dbg').style.background=x_bg
+			setTimeout('cbg()',1000)
+		}
+
+		function ri(min, max) {
+		  return Math.floor(Math.random() * (max - min + 1)) + min;
+		}		
+		//setTimeout('cbg()',1000)
+	
+	function hide_options() {
+		if (document.getElementById('so_01')) {
+			for (s=1;s<=5;s++) {
+				document.getElementById('so_0'+s).style.display='none'
+			}
+		}
+	}
+
+	function delCookie(cname) {
+		var d = new Date();
+		d.setTime(d.getTime());
+		var expires = "expires="+d.toGMTString();
+		document.cookie = cname + "=" + "" + "; " + expires;
+	 }
+
+	if(!getCookie('x-photos')) setCookie("x-photos", 'No')
+	if(!getCookie('x-age')) setCookie("x-age", '70')
+	if(!getCookie('x-miles')) setCookie("x-miles", '250')
+	if(!getCookie('x-gender')) setCookie("x-gender", 'Sugar Baby')
+	var red='red'
+	var blue='blue'
+	var white='white'
+	var black='black'
+	var f0f0f0='#f0f0f0'
+	
+		$(document).keyup(function(e) {
+			if ((e.target) && (e.target.textContent !='')) {
+					if ( e.keyCode == 13 ) {
+						to_user=getCookie("chatting_with_login")
+						objData = {	msg					: 	e.target.textContent,
+									toUser				: 	getCookie("chatting_with_login"),
+									fromImg				: 	getCookie('img'),
+									fromUser			: 	my_login,
+									fromLongCode		: 	getCookie('img')
+						}
+						jMsg=JSON.stringify({'type':'M','data': objData})
+						console.log(jMsg)
+						if (fmy.socket.readyState==1) {
+							try {
+								fmy.socket.send(jMsg)
+								sms(getCookie('chatting_with_login'),e.target.textContent)
+							} catch (e){
+								if (iErr < 10) {
+									setTimeout('restart_chat()',500)
+									iErr++;
+								} else {
+									alert('I tried 10 times and I give up. Ok to refresh the page?')
+								}
+							}
+						} else {
+							if (iErr < 10) {
+								setTimeout('restart_chat()',500)
+								iErr++;
+							} else {
+								alert('I tried 10 times and I give up. Ok to refresh the page?')
+							}
+						}
+						var mb = document.getElementById('msgBody' + getCookie('chatting_with_login') + '')
+						console.log(mb)
+						var my_pic = "<img  onerror='this.src=\"assets/no_data.png\"'  style=\"margin-right:0px;width:35px;border-radius:4px;border:4px solid white;box-shadow: 0 0 1px #000\" class=\"www_box\" src=\"sb/"+getCookie('img')+"\">"
+						var ini_msg = "<div style='margin:5px;border-bottom:0px solid skyblue;width:100%;font-family:Ubuntu Condensed;font-size:16px;background:none;color:#000;text-align:left'><table border=0 style='width:225px;max-width:225px;background:none' cellspacing=0 cellpadding=0><tr><td align=left style='width:40px;max-width:40px;padding:0;margin:0'>"						
+						var pre_msg = "</td><td align=left style='background:none;text-align:left;padding-left:10px;word-wrap:break-word'>"
+						var end_msg = "</td></tr></table></div>"
+						var ele = document.createElement("div")
+				
+						mb.innerHTML += ini_msg + my_pic + pre_msg + e.target.textContent + end_msg
+						e.target.textContent=''
+						e.target.style.fontSize='16px'
+						mb.style.width='225px'
+						mb.style.maxHeight='250px'
+						setCookie("accepted_users", to_user)
+					}
+				}
+			});
+
+
+	function setCookie(cname,cvalue,exdays) {
+		var d = new Date();
+		d.setTime(d.getTime()+(exdays*24*60*60*1000));
+		var expires = "expires="+d.toGMTString();
+		document.cookie = cname + "=" + cvalue + "; " + expires;
+	 }
+
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++) 
+		  {
+		  var c = ca[i].trim();
+		  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+		}
+		return "";
+	}
+			
+	function link_img(obj) {
+		document.getElementById('pay_modal').style.display='block'
+		document.getElementById('g').style.display='block'
+		document.getElementById('g').src=obj
+	}
+	
+	function link_img_close() {
+		document.getElementById('pay_modal').style.display='none'
+		document.getElementById('g').style.display='none'
+	}
+	var iErr=0
+
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	var vb=''
+
+	function randomIntFromInterval(min,max) {
+		return Math.floor(Math.random()*(max-min+1)+min);
+	}
+
+	function generateRandomString(j){
+		if (!j) j=16
+		var op=''
+		var arr=new Array('a','b','c','d','e','f','i','j','k','m','n','p','q','r','s','t','u','v','w','x','y','z',0,1,2,3,4,5,6,7,8,9,0,0,1,2,3,4,5,6,7,8,9,0)
+		for (k=0;k<j;k++) {
+			var inx=randomIntFromInterval(0,arr.length-1)
+			op += arr[inx]
+		}
+		return op;
+	}
+	
+	function show_attach() {
+			setCookie('attach_id',generateRandomString())
+			var url="x_upload_attachments.php"
+			if (!myDropzone) {
+				myDropzone = new Dropzone("div#dz1", { 
+					url: url,
+			maxFilesize: 1000
+				});
+			}
+			myDropzone.on("addedfile", function(file) {
+				//$('.dz-details').hide()
+				files++
+				if (file.type.indexOf('png')>=0) ext='png'
+				if (file.type.indexOf('jpg')>=0) ext='jpg'
+				if (file.type.indexOf('gif')>=0) ext='gif'
+				if (file.type.indexOf('tif')>=0) ext='tif'
+				if (file.type.indexOf('bmp')>=0) ext='bmp'
+				if (file.type.indexOf('psd')>=0) ext='psd'
+				if (file.type.indexOf('eps')>=0) ext='eps'
+				if (file.type.indexOf('jpeg')>=0) ext='jpg'
+				if((file.type=='video/x-ms-wmv')||(file.type=='video/avi')) {
+					alert('Only .mpg .mpeg and .mp4 files allowed for now')
+					return false
+				} else {
+					files++
+				}
+			});
+			myDropzone.on("totaluploadprogress", function(progress) {
+			})
+			myDropzone.on("complete", function(file) {
+			var smem=document.getElementById('dz1').textContent
+			smem.className='www_box www_box5'
+			document.getElementById('dz1').textContent=''
+			var mb = document.getElementById('msgBody' + getCookie('chatting_with_login') + '')
+			console.log(mb)
+			setCookie('chatting_with_login',to_user)
+			
+			var my_pic = "<img onerror='this.src=\"assets/no_data.png\"' style=\"margin-right:0px;width:35px;border-radius:4px;border:4px solid white;box-shadow: 0 0 1px #000\" class=\"www_box\" src=\"v3.0/sb/"+getCookie('img')+"\">"
+			var ini_msg = "<div style='margin:5px;border-bottom:0px solid skyblue;width:100%;font-family:Ubuntu Condensed;font-size:16px;background:none;color:#000;text-align:left'><table border=0 style='width:225px;max-width:225px;background:none' cellspacing=0 cellpadding=0><tr><td align=left style='width:40px;max-width:40px;padding:0;margin:0'>"
+			var pre_msg = "</td><td align=left style='background:none;text-align:left;padding-left:10px;word-wrap:break-word'>"
+			var end_msg = "</td></tr></table></div>"
+			var ele = document.createElement("div")
+			//	if (file.name!=fn) {
+					//ext=file.name.split('.')[1]
+					alert(ext)
+					if((ext=='mp4')||(ext=='wmv')) {
+						var link = '<video src=\'http://sugardaddydays.com/snappy/sb/' + getCookie('attach_id') + '.mp4' + '\' style=\'width:100px;\' autoplay loop></video>'
+					} else {
+						var link = '<img src=\'https://sugardaddydays.com/snappy/sb/' + getCookie('attach_id') + '.' + ext + '\' style=\'width:100px;border:10px solid white;border-bottom:30px solid white\' class=\'www_box2 www_box5\'>'
+					}
+					alert(link)
+					vb += ini_msg + my_pic + pre_msg + link + end_msg
+					mb.innerHTML += vb
+					mb.style.width='225px'
+
+					setCookie("accepted_users", to_user)
+					fn=file.name
+					setCookie('user_input_h', to_user + '|' + 'mobile' + '|' + '15')
+
+					console.log(link)
+					to_user=getCookie("chatting_with_login")
+					objData={		'toUser'		: 	getCookie('chatting_with_login'),
+									'fromUser' 		: 	getCookie('login'),
+									'fromImg' 		: 	getCookie('img'),
+									'msg' 			: 	link,
+									'fromLongCode'	:	getCookie('long_code') 
+							}
+					jMsg=JSON.stringify({'type':'M','data': objData})
+					console.log(jMsg)
+					if (fmy.socket.readyState==1) {
+						try {
+								fmy.socket.send(jMsg)
+							}
+						catch (e){
+							if (iErr < 10) {
+								setTimeout('restart_chat()',500)
+								iErr++;
+							} else {
+								alert('I tried 10 times and I give up. Ok to refresh the page?')
+							}
+						}
+					} else {
+						if (socket.readyState==0) {
+							if (iErr < 10) {
+								setTimeout('restart_chat()',500)
+								iErr++;
+							} else {
+								alert('I tried 10 times and I give up. Ok to refresh the page?')
+							}
+						}
+					}					
+
+					
+		//		}	
+			});
+			$("div#dz1").click()
+	}
+
+	function video_chat_from_profile(to_login,to_mobile,to_long_code) {
+		var room=getCookie('login')
+		setCookie('chatting_with_login',to_login)
+		setCookie('chatting_with_mobile',to_mobile)
+		setCookie('chatting_with_long_code',to_long_code)
+		$('#header').hide()
+		to=to_long_code
+		from = mobile
+		var message=getCookie('login') + ' wants to start a video chat with you. To start chatting, just click the link below \r\n\r\nhttps://sugardaddydays.com/video?'+to_login
+		var url = 'https://sugardaddydays.com/inc/x_send_api.php?to='+to+'&from='+getCookie('long_code')+'&message='+message
+		var request = $.ajax({
+			url: url,
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				hot_list_login(getCookie('chatting_with_login'),'VIDEO_CHAT')
+			}
+		})		
+		window.top.location.href="https://sugardaddydays.com/video?"+to_login+"|1"
+
+	}
+	function setUser(chatting_with_login,chatting_with_long_code,chatting_with_mobile) {
+		
+	}
+	var jMsg
+	function msg_send() {
+		to_user=getCookie("chatting_with_login")
+		objData={		'toUser'		: 	getCookie('chatting_with_login'),
+						'fromUser' 		: 	getCookie('login'),
+						'fromImg' 		: 	getCookie('img'),
+						'msg' 			: 	document.getElementById('txt'+to_user).textContent,
+						'fromLongCode'	:	getCookie('long_code') 
+				}
+		jMsg=JSON.stringify({'type':'M','data': objData})
+		console.log(jMsg)
+		fmy.socket.send(jMsg)
+	}
+
+	function screen_dimensions() {
+		var h = window.screen.availHeight
+		var w = window.screen.availWidth
+		return new Array(w, h)
+	}
+	
+	var winH, winW
+
+	function window_height() {
+		if (document.body) {
+		 winH = document.body.offsetHeight;
+		}
+
+		if (document.compatMode=='CSS1Compat' &&
+			document.documentElement &&
+			document.documentElement.offsetHeight ) {
+			winH = document.documentElement.offsetHeight;
+			return winH
+		}
+
+		if (window.innerHeight && window.innerHeight) {
+			 winH = window.innerHeight;
+			 return winH;
+		}
+	}		
+		
+	function window_width() {
+		if (document.body) {
+		 winW = document.body.offsetWidth;
+		}
+
+		if (document.compatMode=='CSS1Compat' &&
+			document.documentElement &&
+			document.documentElement.offsetWidth ) {
+			winW = document.documentElement.offsetWidth;
+			return winW
+		}
+
+		if (window.innerWidth && window.innerWidth) {
+			 winW = window.innerWidth;
+			 return winW;
+		}
+	}			
+	setTimeout('ww()',100);
+	function ww() {
+		setCookie('w_w',window_width())
+	}
+	var rc,posWin,actWin=0
+	function initMsg(toLogin,mob,p_source) {
+		if (p_source=='view_profile') {
+			var mw='100%'
+			var tw='100%'
+			var th=40
+		} else {
+			var tw='100%'
+			var th=30
+			var mw='100%'
+		}
+		hot_list_login(getCookie('chatting_with_login'),'SENT_IM')
+		setCookie('chatting_with_login', toLogin)
+		setCookie("acceptedUsers", toLogin)
+		to_user=toLogin
+		UserID=to_user
+		to_login=toLogin
+		var w_h=screen_dimensions()[1] - 180
+		var w_w=screen_dimensions()[0] - 20
+		if ((openWin) && (openWin.indexOf('' + UserID) < 0)) {
+			if (toLogin) showWin[UserID] = 'block'
+			x_login=my_login
+			jChatWn = document.createElement('div')
+			var noOpen = 'msgBody' + UserID + ''
+			openWin[ctr] = '' + UserID
+			jChatWn.id = 'msgOuterBox' + UserID
+			html.appendChild(jChatWn)
+			jChatWn.className = "effect3 msgOuterCont"
+			jChatWn.style.maxWidth='100%'
+			jChatWn.style.width=w_w+'px'
+			jChatWn.style.minHeight=w_h+'px'
+			jChatWn.style.height=w_h+'px'
+
+			$('#profile').hide()
+			if (rc == '1')	{
+				jChatWn.style.cssText = 'position:absolute;z-index:9999999999999999999999999999999;left:0px;width:100%;max-width:100%;height:'+w_h+'px;top:90px;bottom:0;box-shadow:0px 0px 30px rgba(0,0,0,0.3),inset 0px 0px 50px rgba(255,0,255,0.3);right:' + posWin
+				rc=0;
+			} else {
+				jChatWn.style.cssText = 'position:absolute;z-index:9999999999999999999999999999999;left:0px;width:100%;max-width:100%;height:'+w_h+'px;top:90px;bottom:0;box-shadow:0px 0px 30px rgba(0,0,0,0.3),inset 0px 0px 50px rgba(0,255,255,0.3);right:' + posWin
+				rc=1;
+			}
+			jChatWn.innerHTML = 	'<div id="msgContainer" style="width:100%;max-width:100%" onclick="setUser(\'' + to_user + '\');">' +
+										'<div class="msgHeader" style="width:100%;max-width:100%;height:35px">' +
+											'<div class="row">' +
+												'<div class="col-xs-4" style="margin-left:5px; width:230px;min-width:100%;font-family:Ubuntu Condensed">' +
+														'<table border=1 style="margin-left:10px;width:100%;background:none">'+
+															'<tr>'+
+																'<td align=left width=70%><div style=\'margin-top:5px;margin-left:2px;font-size:18px\'><span>INSTANT MESSAGE</span> <span style="color:#000; text-transform: uppercase;">' + to_user + '</span></div></td>' +
+																'<td align=right style=\'width:30%;;margin-right:10px\'>'+
+																'<img src="https://sugardaddydays.com/assets/images/wb52.png" onclick="close_chat(\''+to_user+'\')" style="margin-top:7px;width:20px;height:20px;cursor:hand;cursor:pointer;margin-right:20px"></td>' +
+															'</tr>'+
+														'</table>'+
+												'</div>' +
+											'</div>' +
+										'</div>' +
+										'<div id="msgBody' + to_user + '" class="msgBody" style="width:'+mw+';margin-top:8px;font-family:Open Sans; font-size:12px;color:'+oColor+'"></div>' +
+										'<div id=\'dz1\' name=\'dz1\' class=\'dropzone-previews needsclick dz-clickable\' style=\'\'></div>'+
+										
+										'<div id="im_footer"' + to_user + '>' +
+											'<div onmouseover="this.style.cursor=\'crosshair\'" style="z-index:9999999999999999999999999999999999999;width:'+th+'px;max-width:100%;position:absolute;bottom:0;border:1px solid silver;height:' + 1.5*th + 'px;padding:10px;padding-left:35px;background:#fff;text-shadow:1px 1px 1px #fff;" id="txt' + to_user + '" contentEditable="true"></div>' +	
+											'<img src="https://sugardaddydays.com/assets/images/pclip.png" id="pclip'+to_user+'" onclick="javascript:show_attach()" style="position:absolute;width:30px;bottom:10px;z-index:999999999999999;cursor:hand;cursor:pointer">' +
+										'<img src="https://sugardaddydays.com/assets/images/x_green.png" id="btnSend'+to_user+'" onclick="javascript:msg_send()" style="position:absolute;width:45px;bottom:10px;right:2px;z-index:999999999999999;cursor:hand;cursor:pointer">' +
+										'</div>' +
+									'</div>'									
+			document.getElementById('txt'+to_user).style.width = tw
+			document.getElementById('txt'+to_user).style.fontFamily='Ubuntu Condensed'
+			document.getElementById('txt'+to_user).style.fontSize='16px'
+			document.getElementById('txt'+to_user).className='www_box5 effect4'
+			
+			document.getElementById(noOpen).innerHTML = ' '
+			document.getElementById(noOpen).style.zIndex = '10000'
+			jChatWn.style.display="block"
+			ctr++
+			actWin++
+		} else  {
+			if (document.getElementById('msgOuterBox'+to_user)) {
+				if (document.getElementById('msgOuterBox'+to_user).style.display=='none') {
+					document.getElementById('msgOuterBox'+to_user).style.display='block'
+					actWin++
+				}
+			}		
+		}
+		repaint()
+	}
+	
+	function repaint() {
+		if (openWin) {
+		posWin=10
+		for (var n=0;n<openWin.length;n++) {
+			if (showWin[openWin[n]] == 'block') {
+				console.log(openWin[n])
+				if (document.getElementById('msgOuterBox'+openWin[n])) document.getElementById('msgOuterBox'+openWin[n]).style.right = posWin+'px'
+				posWin=posWin + 230
+			}
+		}
+		}
+	}
+
+	function deduct() {
+		document.getElementById('cr').textContent = 160 - document.getElementById('message_text').textContent.length*1
+		if ((160 - document.getElementById('message_text').textContent.length*1)<1) {
+			document.getElementById('message_text').contentEditable='false'
+			document.getElementById('message_text').textContent=mc
+		} else {
+			mc=document.getElementById('message_text').textContent
+		}
+	}
+
+
+</script>
+
+</body>
+
+
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Ubuntu+Condensed'] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); 
+
+		var home_start
+		var city_limit
+		if (city_limit =='') city_limit=200
+		var autocomplete;
+		var componentForm = {
+		  locality: 'long_name',
+		  administrative_area_level_1: 'short_name',
+		  postal_code: 'short_name'
+		};
+		function initAutocomplete() {
+		  autocomplete = new google.maps.places.Autocomplete(
+				(document.getElementById('location')), 
+				{types: ['(cities)']});
+			autocomplete.addListener('place_changed', fillInAddress);
+		}
+
+		function fillInAddress() {
+		  var place = autocomplete.getPlace();
+			console.log(place.address_components)
+			var add=place.address_components
+			for (var i = 0; i < add.length; i++) {
+				var addr = add[i];
+				if (addr.types[0] == ['administrative_area_level_1'])
+					x_state=addr.short_name;
+				else if (addr.types[0] == ['locality'])
+					x_city=addr.short_name;
+			}
+			document.getElementById('location').value = x_city + ', ' + x_state
+			setCookie('location_original', document.getElementById('location').value)
+			xs = '&city=' + x_city + '&state=' + x_state
+			setCookie('location', x_city + ' ' + x_state)
+			locx=1
+		}
+		
+	if (document.getElementById("miles")) {
+		if(!document.getElementById("miles").value){
+			document.getElementById("miles").value=getCookie('x-miles')
+			miles=document.getElementById("miles").value
+			setCookie('x-miles',miles)
+		} else {
+			miles=document.getElementById("miles").value
+			setCookie('x-miles',miles)
+		}
+	}
+	if (document.getElementById("zip")) {
+		if (document.getElementById("zip").value) {
+			zip=document.getElementById("zip").value
+			setCookie('x-zip',zip)
+		} else {
+			if (!getCookie('x-zip')) {
+				setCookie('x-zip', getCookie('x-zip'))
+			}
+			zip = getCookie('x-zip')
+			document.getElementById("zip").value=getCookie('x-zip')
+		}
+	}
+	if (document.getElementById("location")) {
+		if (document.getElementById("location").value == '') {
+			if (getCookie('x-location')=='') {
+				setCookie('x-location', getCookie('city') + ' ' + getCookie('state'))
+			} 
+			document.getElementById("location").value=getCookie('x-location')
+		} else {
+			setCookie('x-location', document.getElementById("location").value)
+		}
+	}
+	xcs=getCookie('x-location')
+ 
+ </script>
+<div id="pm" style="display:none;width:100%;height:100%;position:fixed;top:0;bottom:0;right:0;left:0;margin:auto;background:#111;z-index:999999999999999999999999;opacity:0.9"></div>
+<div id="pm_text" style="display:none;padding:15px;opacity:0.6;width:70%;position:fixed;background:red;left:0;right:0;margin:auto;z-index:99999999999999999999999999999999999;top:50px;border-radius:10px"><h3><span style='font-family:Rajdhani;color:#fff'><h1><b>ERROR:</b></h1></span><span style='text-align:center;width:100%;font-family:Rajdhani;color:#000'><b>Invalid Device Orientation</b><br><br><span style="color:#f0f0f0">You must switch to Portait mode to view this site. Landscape mode is not supported.</h3></div>
+
+</html>
