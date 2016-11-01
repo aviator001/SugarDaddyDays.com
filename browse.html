@@ -224,6 +224,21 @@
 	<script src="https://sugardaddydays.com/assets/js/jquery-confirm.min.js"></script> 
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnpEddEjwbGmcQ6U6v9aLSaiHcrIgbmVY&signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
 	<script>
+	var mb = (window.location.href.indexOf('file:///')>=0);
+	function getCookie(cname)	{ 
+		if (mb===true) {
+			var cvalue = window.localStorage.getItem(cname);
+			return cvalue
+		} else {
+			var name = cname + "="; 
+			var ca = document.cookie.split(';'); 
+			for(var i=0; i<ca.length; i++) { 
+			  var c = ca[i].trim(); 
+			  if (c.indexOf(name)==0) return c.substring(name.length,c.length); 
+			} 
+			return ""; 
+		}
+	} 
 	
 		var chosen = ''
 		var x_gender=''
@@ -646,23 +661,7 @@
 				document.getElementById('search_filter_bar').style.display='block'
 			}
 		}
-			function setCookie(cname,cvalue,exdays)	{ 
-			var d = new Date(); 
-			d.setTime(d.getTime()+(exdays*24*60*60*1000)); 
-			var expires = "expires="+d.toGMTString(); 
-			document.cookie = cname + "=" + cvalue + "; " + expires; 
-		 } 
 
-		function getCookie(cname)	{ 
-			var name = cname + "="; 
-			var ca = document.cookie.split(';'); 
-			for(var i=0; i<ca.length; i++) { 
-			  var c = ca[i].trim(); 
-			  if (c.indexOf(name)==0) return c.substring(name.length,c.length); 
-			} 
-			return ""; 
-		} 
-		
 		function hide_options() {
 			if (document.getElementById('so_01')) {
 				for (s=1;s<=5;s++) {
@@ -671,13 +670,6 @@
 			}
 		}
 
-		function delCookie(cname) {
-			var d = new Date();
-			d.setTime(d.getTime());
-			var expires = "expires="+d.toGMTString();
-			document.cookie = cname + "=" + "" + "; " + expires;
-		 }
-			
 		function show_compose(objM) {
 			document.getElementById('modal').style.display='block'
 			document.getElementById('modal_text').style.display='block'
@@ -705,7 +697,7 @@
 			})
 		}
 		function print_blocks(str, el) {
-			var url = 'inc/x_print_blocks.php?str=' + str
+			var url = 'https://sugardaddydays.com/inc/x_print_blocks.php?str=' + str
 			console.log(url)
 			var request = $.ajax({
 				url: url, 
@@ -905,7 +897,39 @@
 				setCookie('prevPage',getCookie('currPage'))
 			}
 			setCookie('currPage',currPage)
-					
+
+	var wl = window.location.href;
+	var mob = (window.location.href.indexOf('file://')>=0);
+
+	function setCookie(cname,cvalue)	{
+		if (mob===true) {
+			window.localStorage.setItem(cname, cvalue);
+		} else {
+			var d = new Date(); 
+			d.setTime(d.getTime()+(1*24*60*60*1000)); 
+			var expires = "expires="+d.toGMTString(); 
+			document.cookie = cname + "=" + cvalue + "; " + expires; 
+		}
+	} 
+
+	function delCookie(cname) {
+		if (mob===true) {
+			window.localStorage.removeItem(cname);
+		} else {
+			var d = new Date();
+			d.setTime(d.getTime());
+			var expires = "expires="+d.toGMTString();
+			document.cookie = cname + "=" + "" + "; " + expires;
+		}
+	}
+	
+	function clear_all() {
+		if (mob===true) {
+			 window.localStorage.clear();
+		} else {
+			document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+		}	
+	}					
 
 			</script>
 			<style>
@@ -913,10 +937,10 @@
 			
 
 			<header id="header" class="header" style="width:100%;opacity:1;background:#111;position:fixed">
-<a href="https://sugardaddydays.com/page.php?page=members_home&x-type=local&isMobile="><img id="m0" style="position:fixed;z-index:99;width:75px;top:105px;left:-30px" src="https://sugardaddydays.com/assets/images/tab_back.png"></a><img id="m1" style="position:fixed;z-index:99;width:50px;top:105px;right:-30px;width:75px" src="https://sugardaddydays.com/assets/images/tab_menu_drop.png" onclick="show_drop_down_menu()"><a href="page.php?page=members_home"><img id="m2" style="position:fixed;z-index:99;width:50px;top:155px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_members_home.png"></a><a href="page.php?page=mail"><img id="m3" style="position:fixed;z-index:99;width:50px;top:205px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_mailbox.png"></a><a href="page.php?page=search"><img id="m4" style="position:fixed;z-index:99;width:50px;top:255px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_search.png"></a><a href="page.php?page=match"><img id="m5" style="position:fixed;z-index:99;width:50px;top:305px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_browse.png"></a><a href="page.php?page=user_hot_lists"><img id="m6" style="position:fixed;z-index:99;width:50px;top:355px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_hotlists.png"></a><a href="page.php?page=logout"><img id="m7" style="position:fixed;z-index:99;width:50px;top:405px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_logout.png"></a>						
+<a href="https://sugardaddydays.com/home.html"><img id="m0" style="position:fixed;z-index:99;width:75px;top:105px;left:-30px" src="https://sugardaddydays.com/assets/images/tab_back.png"></a><img id="m1" style="position:fixed;z-index:99;width:50px;top:105px;right:-30px;width:75px" src="https://sugardaddydays.com/assets/images/tab_menu_drop.png" onclick="show_drop_down_menu()"><a href="page.php?page=members_home"><img id="m2" style="position:fixed;z-index:99;width:50px;top:155px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_members_home.png"></a><a href="page.php?page=mail"><img id="m3" style="position:fixed;z-index:99;width:50px;top:205px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_mailbox.png"></a><a href="page.php?page=search"><img id="m4" style="position:fixed;z-index:99;width:50px;top:255px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_search.png"></a><a href="page.php?page=match"><img id="m5" style="position:fixed;z-index:99;width:50px;top:305px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_browse.png"></a><a href="page.php?page=user_hot_lists"><img id="m6" style="position:fixed;z-index:99;width:50px;top:355px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_hotlists.png"></a><a href="page.php?page=logout"><img id="m7" style="position:fixed;z-index:99;width:50px;top:405px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_logout.png"></a>						
 						<div style="background:url(assets/images/xxx_big.png),#111;background-size:cover;position:fixed;width:100%;left:0;height:60px;top:-10px;z-index:999999999">
 							<a href="javascript:toggle_top()"><i class="fa fa-search" style="color:#0093D9;font-size:28px;position:absolute;right:10px;top:20px"></i></a>
-							<a href="page.php?page=members_home"><img src="https://sugardaddydays.com/assets/images/logo_m.png" alt="Sugar Daddy Dating" style="width:200px;top:10px;right:0px;left:0;margin:auto;opacity:1;overflow:hidden;position:fixed"></a>
+							<a href="home.html"><img src="https://sugardaddydays.com/assets/images/logo_m.png" alt="Sugar Daddy Dating" style="width:200px;top:10px;right:0px;left:0;margin:auto;opacity:1;overflow:hidden;position:fixed"></a>
 							<a onclick="toggle_top_menu()" href="#">
 								<i class="fa fa-bars" style="position:absolute;width:70px;top:17px;left:5px;opacity:1;overflow:hidden;z-index:999999999;font-size:20px;color:#fff;background:#0093d9;padding:5px;margin:2px;border-radius:2px;width:30px"></i>
 							</a>
@@ -1151,10 +1175,6 @@ jQuery("#s_miles").change(function(){
 			wx=275
 			hx=375
 		}
-		if (is_mobile) {	
-			wx=100
-			hx=125
-		}
 
 		am_cur='x PROFILES PER PAGE,MEMBERS BELOW AGE: x,MEMBERS WITHIN x MILES'
 		am_typ='ALL<br>PROFILES,DO NOT PRESS,FILTER BY DISTANCE'
@@ -1228,7 +1248,7 @@ jQuery("#s_miles").change(function(){
 				
 				xp = '&pics=' + getCookie('x-photos')
 				if (pics != '') xp = '&pics=' + pics	
-			
+				pics='No'
 
 				if (!xs) {
 						xs = '&city=' + city.replace(',','') + '&state=' + state
@@ -1240,9 +1260,12 @@ jQuery("#s_miles").change(function(){
 					document.getElementById('x_view').style.display='block'
 					document.getElementById('so_05').style.display='block'
 				}
+				x_rows=5
+				x_cols=3
 				x_rows_per_page=x_rows*x_cols
 				if (engine=='gallery') x_rows_per_page=12;
-				var pageURL='https://sugardaddydays.com/browse_engine.php?start=' + x_start + '&type=' + engine + '&type2=&rows=' + x_rows_per_page + xa + xm + xg + xp + xs + xz + '&lat=' + lat + '&lng=' + lng + '&single_view=' + single_view + '&order_by=' + order_by + '&asc_desc=' + asc_desc + '&city_limit=' + city_limit + '&x_rows='+x_rows + '&x_cols=' + x_cols + '&w_w=' + window_width() + '&view=' + xview + '&locx=' + locx + '&my_mid=' + getCookie('mid')+'&member_id='+member_id+'&member_name='+member_name+'&gender='+getCookie('x-gender')
+
+				var pageURL='https://sugardaddydays.com/browse_pgap.php?start=' + x_start + '&type=' + engine + '&type2=&rows=' + x_rows_per_page + xa + xm + xg + xp + xs + xz + '&lat=' + lat + '&lng=' + lng + '&single_view=' + single_view + '&order_by=' + order_by + '&asc_desc=' + asc_desc + '&city_limit=' + city_limit + '&x_rows='+x_rows + '&x_cols=' + x_cols + '&w_w=' + window_width() + '&view=' + xview + '&locx=' + locx + '&my_mid=' + getCookie('mid')+'&member_id='+member_id+'&member_name='+member_name+'&gender='+getCookie('x-gender')
 				console.log(pageURL);
 				var request = $.ajax({
 					url: pageURL, 
@@ -1339,23 +1362,8 @@ jQuery("#s_miles").change(function(){
 				that.style.color='silver' 
 			} 
 
-			function setCookie(cname,cvalue,exdays)	{ 
-				var d = new Date(); 
-				d.setTime(d.getTime()+(exdays*24*60*60*1000)); 
-				var expires = "expires="+d.toGMTString(); 
-				document.cookie = cname + "=" + cvalue + "; " + expires; 
-			 } 
- 
-			function getCookie(cname)	{ 
-				var name = cname + "="; 
-				var ca = document.cookie.split(';'); 
-				for(var i=0; i<ca.length; i++) { 
-				  var c = ca[i].trim(); 
-				  if (c.indexOf(name)==0) return c.substring(name.length,c.length); 
-				} 
-				return ""; 
-			} 
-		
+
+
 			function getStyle(el, style) {
 			  if(!document.getElementById) return;
 			  
@@ -1518,7 +1526,7 @@ jQuery("#s_miles").change(function(){
 		var medium='mobile'
 		setCookie('user_input_h', x_mobile + '|' + medium + '|' + '15')
 		var myDropzone = new Dropzone("div#myDropZoneForm_"+xid, { 
-			url: "upload_snapchat.php?user_input="+x_mobile+'&medium=id',
+			url: "https://sugardaddydays.com/upload_snapchat.php?user_input="+x_mobile+'&medium=id',
 			thumbnailWidth: 250,
 			thumbnailHeight: 250
 		});

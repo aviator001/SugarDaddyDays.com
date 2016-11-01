@@ -99,7 +99,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>	
 
 	</head>
-	<body style="overflow:auto!Important;background: url(../assets/images/b101.png) 0% 0% / cover no-repeat">
+	<body style="overflow:auto!Important;background:url(https://sugardaddydays.com/assets/images/b74.png);background-size:cover">
 			<div id="notify" style="display:none;opacity:0.8;right:10px;top:100px;z-index:99999999999999;background:#333;box-shadow:0 0 20px #000;width:250px;height:40px;position:fixed;border-radius:4px">
 				<span id="notify_txt"  style="padding:5px;color:#f0f0f0"></span>
 			</div>
@@ -123,9 +123,9 @@
 			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="logout.html"><i class="fa fa-sign-out" style="margin-left:5px;font-size:18px;color:grey"></i></a></td><td style="text-align:left;padding-left:5px"><a href="logout.html"><span style=";text-shadow:none"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">LOGOUT</span></a></div></td></tr>
 		</table>
 	</div>
-	<div class="www_box2 www_box5" id="pillar" ondrop="drop(event)" ondragover="allowDrop(event)" style="border-left:15px solid rgba(0,0,0,0.3);box-shadow:5px 5px 10px rgba(0,0,0,0.5);display:none;width:150px;height:100%;position:fixed;right:0;top:0;bottom:0;background:url(https://sugardaddydays.com/assets2/blue.png) no-repeat;background-size: cover;"></div>
-	<img class="www_box4" id="pay_modal" ondrop="drop(event)" style="border-left:15px solid rgba(0,0,0,0.3);box-shadow:5px 5px 10px rgba(0,0,0,0.5);display:;width:75%;height:auto;position:fixed;right:0;left:0;top:0;bottom:0;margin:auto;background:url(https://sugardaddydays.com/assets2/blue.png) no-repeat;background-size: cover;">
-	<img id="img1" style="display:;position:fixed;z-index:99999;right:5px;bottom:5px;width:150px;" href="https://sugardaddydays.com/assets2/baby_bag.png">
+	<div class="www_box2 www_box5" id="pillar" ondrop="drop(event)" ondragover="allowDrop(event)" style="border-left:15px solid rgba(0,0,0,0.3);box-shadow:5px 5px 10px rgba(0,0,0,0.5);display:none;width:150px;height:100%;position:fixed;right:0;top:0;bottom:0;background:url(https://sugardaddydays.com/https://sugardaddydays.com/assets2/blue.png) no-repeat;background-size: cover;"></div>
+	<img class="www_box4" id="pay_modal" ondrop="drop(event)" style="border-left:15px solid rgba(0,0,0,0.3);box-shadow:5px 5px 10px rgba(0,0,0,0.5);display:;width:75%;height:auto;position:fixed;right:0;left:0;top:0;bottom:0;margin:auto;background:url(https://sugardaddydays.com/https://sugardaddydays.com/assets2/blue.png) no-repeat;background-size: cover;">
+	<img id="img1" style="display:;position:fixed;z-index:99999;right:5px;bottom:5px;width:150px;" href="https://sugardaddydays.com/https://sugardaddydays.com/assets2/baby_bag.png">
 	
 
 	<div id="modal_text" onkeyup="deduct()" class="modal_window" style="padding:20px;border-radius:6px;position:absolute;z-index:9999999999999;display:none;background:#f0f0f0;top:100px;left:0;right:0;margin:auto;width:320px;max-width:320px;height:500px;font-family:Ubuntu Condensed;font-size:24px;"><span id="tip" style='color:brown;font-family:Ubuntu Condensed'>SEND ANONYMOUS SMS<br><br><span style="font-size:18px;color:#333;font-family:Ubuntu Condensed">1. Your number will not be revealed<br>2. Message will show as coming from </span></span><br><br><div contentEditable onblur='fill_txt()' onclick='erase_txt()' id='message_text' style='word-wrap:break-word;font-family:Ubuntu Condensed;font-size:24px;contentEditable:true;color:#0093D9;cursor:hand;cursor:pointer;border-radius:4px;border:3px solid lightblue;height:170px;max-height:170px;color:#333;overflow-y:scroll;overflow-x:hidden;color:grey;background:#fff;padding:20px;background:#fff'>Type Message Here</div><div><span style="left:20px;position:absolute">CHARACTERS REMAINING: <b><span id="cr">160</span></b></span></div><br><br><div style='margin-top:10px'><span style="font-size:22px"  class="btn btn-info" onclick='send_sms()' id="send_mail">SEND</span>&nbsp;<span style="font-size:22px"  class="btn btn-danger" onclick="document.all.modal_text.style.display='none'" id="">GO BACK</span></div></div>
@@ -135,7 +135,73 @@
 	<style></style>
 	<div id="usersOnline" style="position:absolute;display:none"></div>
 
+	<script>
+		function upload_photos(member_id) {
+			location.href='upload_photos.html?member_id='+getCookie('mid')
+		}
+		function view_profile(member_id) {
+			location.href='view_profile.html?member_id='+getCookie('mid')
+		}
+		function qs(name, url) {
+			if (!url) {
+			  url = window.location.href;
+			}
+			name = name.replace(/[\[\]]/g, "\\$&");
+			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+				results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
 
+	var wl = window.location.href;
+	var mob = (window.location.href.indexOf('file://')>=0);
+
+	function setCookie(cname,cvalue)	{
+		if (window.location.href.indexOf('file://')>=0) {
+			window.localStorage.setItem(cname, cvalue);
+		} else {
+			var d = new Date(); 
+			d.setTime(d.getTime()+(1*24*60*60*1000)); 
+			var expires = "expires="+d.toGMTString(); 
+			document.cookie = cname + "=" + cvalue + "; " + expires; 
+		}
+	} 
+
+	function getCookie(cname)	{ 
+		if (window.location.href.indexOf('file://')>=0) {
+			var cvalue = window.localStorage.getItem(cname);
+			return cvalue
+		} else {
+			var name = cname + "="; 
+			var ca = document.cookie.split(';'); 
+			for(var i=0; i<ca.length; i++) { 
+			  var c = ca[i].trim(); 
+			  if (c.indexOf(name)==0) return c.substring(name.length,c.length); 
+			} 
+			return ""; 
+		}
+	} 
+
+	function delCookie(cname) {
+		if (mob===true) {
+			window.localStorage.removeItem(cname);
+		} else {
+			var d = new Date();
+			d.setTime(d.getTime());
+			var expires = "expires="+d.toGMTString();
+			document.cookie = cname + "=" + "" + "; " + expires;
+		}
+	}
+	
+	function clear_all() {
+		if (mob===true) {
+			 window.localStorage.clear();
+		} else {
+			document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+		}	
+	}		
+	</script>
 	  <!--========================================================
                             HEADER
   =========================================================-->
@@ -191,6 +257,7 @@
 			
 			<link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 </header>
+
 <br>
 	<div id="bottom_barx" style="display:;width:105%;position:fixed;bottom:0px;left:-5px;height:50px;background:url(https://sugardaddydays.com/assets/x_toolbar.png);background-size:cover;z-index:999999999999999999999999999;padding-left:10px">
 		<table style="width:100%">
@@ -231,32 +298,46 @@
 			var fmz=$('#3D')
 
 		</script>
-<br>
-		<script>
-			var mt
-			var show_menu='0'
-			function show_menuf() {
-				if (show_menu=='0') {
-					document.getElementById('panel_menu').style.display='block'
-					document.getElementById('panel_menu2').style.display='block'
-					mt=setTimeout('hide_menuf()',30000)
-					show_menu='1'
-				} else {
-					hide_menuf()
-				}
-			}
-			
-			function show_more() {
-				document.getElementById('dd').style.display='block'
-			}
-			function hide_menuf() {
-				show_menu='0'
-				document.getElementById('panel_menu').style.display='none'
-				document.getElementById('panel_menu2').style.display='none'
-				
-			}
-		</script>
 		
+<div align=center style='background:;overflow:hidden'>  <!-- Modal -->
+  <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Bungee+Hairline|Bungee+Inline|Bungee+Outline|Codystar|Monoton" rel="stylesheet">
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="text" class="form-control" id="psw" placeholder="Enter password">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" checked>Remember me</label>
+            </div>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+          <p>Not a member? <a href="#">Sign Up</a></p>
+          <p>Forgot <a href="#">Password?</a></p>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+ <style>
+.m10 {margin:0px!Important}
+</style> 		
 <div align="center" style="background:#ccc;overflow:none"><div id="con" style="height:100%;overflow:hidden"></div>
 
 <style>
@@ -265,7 +346,7 @@
 		font-size: 18px;	
 	}
 </style>
-<div class="www_box2" align=center style="left:0;right:0;top:0;bottom:0;position:absolute;margin:auto;text-align:center;max-width:320px;margin-top:100px;background:url(assets2/box_08.png) center center  no-repeat;background-size:cover;height:320px">	
+<div class="www_box2" align=center style="left:0;right:0;top:0;bottom:0;position:absolute;margin:auto;text-align:center;max-width:320px;margin-top:100px;background:url(https://sugardaddydays.com/assets2/box_08.png) center center  no-repeat;background-size:cover;height:320px">	
 <div class="row">		
 <div class="col-md-4" style="margin:5px;text-align:center;opacity:1;font-weight:300;font-size:12px;height:270px;width:320px;max-width:320px">			
 <table align=center style="background:none;margin:50px;margin-top:10px;text-align:center">			
@@ -914,7 +995,7 @@ function drop(ev) {
 		
 		function cbg() {
 			ctr=ri(1,9)
-			x_bg='url(assets2/fav_bg_0'+ctr+'.jpg)'
+			x_bg='url(https://sugardaddydays.com/assets2/fav_bg_0'+ctr+'.jpg)'
 			document.getElementById('dbg').style.background=x_bg
 			setTimeout('cbg()',1000)
 		}

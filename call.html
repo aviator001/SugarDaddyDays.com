@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cloud.apizee.com/libs/jquery-1.9.0.min.js"></script>
+        <script src="js/RTCDaddy.js"></script>
+    		<meta property="og:viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+	</head>
+	<style>
+	span {
+		font-family:Poiret One;
+		font-size: 18px;
+		color:000
+	}
+	video {
+		width:100%;
+		height:100% !Important;
+		object-fit:cover !Important;
+		position:absolute !important;
+		z-index: 9999999;
+	}
+	</style>
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed|Six+Caps|Poiret+One' rel='stylesheet' type='text/css'>
+   
+   <body style="padding:0;margin:0;overflow:hidden">
+   		<div style="display:block;width:100%;top:0px;position:fixed;left:0;height:50px;background:url(../assets/images/best_bg_51.png);font-size:32px;font-family:Poiret One;text-align:center;padding:3px">
+			<span id="stats"  style="color:white"></span>
+			<span id="resolution"  style="color:white"></span>
+			<span id="bandwidth"  style="color:white"></span>
+		</div>
+
+	<div id="status" style="max-height:80%;position:fixed;bottom:0px;left:0;height:130px;width:100%;background:#f0f0f0;opacity:1;z-index:99999999999;font-size:20px"></div>
+    <div id="bar" style="display:;position:fixed;bottom:50px;left:0;height:70px;width:100%;z-index:999999999999999999999999999999;text-align:center">
+		<img id="r1"  src="https://sugardaddydays.com/assets/images/wb50.png" onclick="switch_band()" style="width:110px;margin:5px">
+		<img id="r2"  src="https://sugardaddydays.com/assets/images/wb51.png" onclick="switch_resx()" style="width:110px;margin:5px">
+		<img id="r2"  src="https://sugardaddydays.com/assets/images/wb52.png" style="width:110px;margin:5px">
+		<img id="r1"  src="https://sugardaddydays.com/assets/images/wb53.png" style="width:110px;margin:5px">
+		<img id="r2"  src="https://sugardaddydays.com/assets/images/wb54.png" style="width:110px;margin:5px">
+		<img id="r2"  src="https://sugardaddydays.com/assets/images/wb55.png" style="width:110px;margin:5px">
+		<img id="r2"  src="https://sugardaddydays.com/assets/images/wb56.png" style="width:110px;margin:5px">
+		<img id="kill"  src="https://sugardaddydays.com/video/hangup.png" style="display:none;0px;position:absolute;left:0;right:0;margin:auto;bottom:120px;width:150px">
+   	</div>
+	
+        <div id="local" style="position: absolute;display:none">
+			<video id="myLocalVideo" autoplay="autoplay" muted="true" style="display:none;width:100%; height:100%; position:absolutte; left:0; right:0; top:0; bottom: 0; object-fit: cover; display: block"></video>
+		</div>
+        <div id="remote" style="position: absolute; width:100%; height:100%; positio:absolutte; left:0; right:0; top:0; bottom: 0; object-fit: cover; display: block">
+            <div id="myRemoteVideo" style="width:100%; height:100%;width:100%; height:100%; positio:absolutte; left:0; right:0; top:0; bottom: 0; object-fit: cover; display: block"></div>
+            <div style="display:none" id="mini">
+				<video id="myMiniVideo" autoplay="autoplay" muted="true" style="width:100%; height:100%;width:100%; height:100%; positio:absolutte; left:0; right:0; top:0; bottom: 0; object-fit: cover; display: block"></video>
+			</div>
+        </div>
+	<span id="ctrl">
+		<input type="text" class="www_box2"  type="text" id="from_login" value="" placeholder="Your Login?" style="font-size:32px;height:75px;border-radius:4px;width:80%;max-width:300px;margin:auto;position:absolute;left:0;right:0;top:350px">
+		<input type="text" class="www_box2"  type="text" id="to" value="" placeholder="Calling Who?" style="font-size:32px;height:75px;border-radius:4px;width:80%;max-width:300px;margin:auto;position:absolute;left:0;right:0;top:450px">
+		<input type="button" class="btn btn-danger"  type="text" id='sconn' value="Connect" onclick="go()" style="font-size:32px;height:75px;border-radius:4px;width:80%;max-width:150px;margin:auto;position:absolute;top:350px;right:175px">
+		<input type="button" class="btn btn-danger"  type="text" id='call' value="Call" style="font-size:32px;height:75px;border-radius:4px;width:80%;max-width:300px;margin:auto;position:absolute;left:0;right:0;top:550px">
+		<input type="button" class="btn btn-danger"  type="text" id='hangup' value="Hangup" disabled onclick="hangup()" style="font-size:32px;height:75px;border-radius:4px;width:80%;max-width:300px;margin:auto;position:absolute;left:0;right:0;top:550px;disabled:true">
+	</span>
+		<div id="callx" style="display:none">
+			<div id="callee" style="text-align:center;font-family:Ubuntu Condensed;font-size:2em;margin:auto;position:absolute;left:0;right:0;width:320px;z-index:99999999999;top:0px;background:#fff;width:100%;padding-top:10px"></div>
+			<img class="www_box2" src="../assets/images/phone_calling.gif" style="border-radius:6px;width:500px;margin:auto;position:absolute;left:0;right:0;top:350px">
+			<div  style="padding:10px;text-align:center;background:#fff;font-size:2em;font-family:Ubuntu Condensed;border-radius:6px;width:90%;margin:auto;position:absolute;left:0;right:0;top:650px">RINGING, WAITING FOR USER</br>Currently attempting contact via email and SMS </div>
+		</div>
+		<div id="conx" style="display:none;z-index:999999999999999999;;margin:auto;position:absolute;left:0;right:0;">
+			<img class="" src="https://sugardaddydays.com/assets/images/phone_calling.gif" style="width:500px;margin:auto;position:absolute;left:0;right:0;top:350px">
+			<div  style="padding:10px;text-align:center;background:#fff;font-size:2em;font-family:Ubuntu Condensed;border-radius:6px;width:90%;margin:auto;position:absolute;left:0;right:0;top:650px"><blink>CONNECTING, PLEASE WAIT ...</blink></div>
+		</div>
+		<div id="primitive" style="display:none; color:white;padding:10px;text-align:center;background:red;font-size:2em;font-family:Ubuntu Condensed;border-radius:6px;width:90%;margin:auto;position:absolute;left:0;right:0;top:750px"><blink>LINK UNSTABLE. RECONNECTING...</blink></div>
+			
+			<script>
+				var wl = window.location.href;
+				var from=getCookie('login')
+				var to=getCookie('to')
+				var resolution='SD'
+				var bandwidth=300
+				 var webRTCClient
+				document.getElementById('to').value=getCookie('to')
+		
+				function reset() {
+					delCookie('login')
+					delCookie('apiCCId')
+					location.reload()
+				}
+		
+				if (!getCookie('login')) {
+					$("#from_login").show()
+					$("#sconn").show()										
+				}
+				
+				//	document.getElementById('call').style.display='block'
+				//	document.getElementById('conx').style.display='none'
+				//	document.getElementById('call').style.display='none'
+				//	document.getElementById('conx').style.display='block'
+
+
+				function go(obj) {
+					setCookie('login', document.getElementById('from_login').value)
+					location.reload()
+				}
+
+				function setCookie(cname,cvalue,path) {
+					if (!path) path='/'
+					if (mob===true) {
+						window.localStorage.setItem(cname, cvalue);
+					} else {
+						var d = new Date(); 
+						d.setTime(d.getTime()+(1*24*60*60*1000)); 
+						var expires = "expires="+d.toGMTString(); 
+						document.cookie = cname + "=" + cvalue + ";" + expires + ';path=' + path; 
+					}
+				} 
+
+				function getCookie(cname)	{ 
+					if (mob===true) {
+						var cvalue = window.localStorage.getItem(cname);
+						return cvalue
+					} else {
+						var name = cname + "="; 
+						var ca = document.cookie.split(';'); 
+						for(var i=0; i<ca.length; i++) { 
+						  var c = ca[i].trim(); 
+						  if (c.indexOf(name)==0) return c.substring(name.length,c.length); 
+						} 
+						return ""; 
+					}
+				} 
+
+				function delCookie(cname) {
+					if (mob===true) {
+						window.localStorage.removeItem(cname);
+					} else {
+						var d = new Date();
+						d.setTime(d.getTime());
+						var expires = "expires="+d.toGMTString();
+						document.cookie = cname + "=" + "" + "; " + expires;
+					}
+				}
+
+
+				function getParameterByName(name, url) {
+					if (!url) url = window.location.href;
+					name = name.replace(/[\[\]]/g, "\\$&");
+					var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+						results = regex.exec(url);
+					if (!results) return null;
+					if (!results[2]) return '';
+					return decodeURIComponent(results[2].replace(/\+/g, " "));
+				}
+
+		
+        'use strict';
+        var session = null;
+
+        function userMediaErrorHandler(e) {
+            $("#call").attr("disabled", false).val("Call");
+            $("#hangup").attr("disabled", true).val("Hangup");
+			
+        }
+
+        function remoteHangupHandler(e) {
+            if (e.detail.lastEstablishedCall === true) {
+                $("#call").attr("disabled", false).val("Call");
+                $("#hangup").attr("disabled", true).val("Hangup");
+            }
+        }
+
+        function incomingCallHandler(e) {
+            apiRTC.addEventListener("remoteHangup", remoteHangupHandler);
+            $("#call").attr("disabled", true).val("Call ongoing");
+            $("#hangup").attr("disabled", false).val("Hangup");
+            $("#ctrl").hide();
+            $("#kill").show();
+		}
+
+        function sessionReadyHandler(e) {
+			setCookie('apiCCId',apiCC.session.apiCCId)
+            console.log('sessionReadyHandler :' + apiCC.session.apiCCId);
+            $("#to").val(getCookie('to'))
+            $("#from_login").hide()
+            $("#sconn").hide()
+            $("#hangup").hide()
+            $("#stats").html('CONNECTED AS: '+apiCC.session.apiCCId)
+
+            apiRTC.addEventListener("incomingCall", incomingCallHandler);
+            apiRTC.addEventListener("userMediaError", userMediaErrorHandler);
+
+            webRTCClient = apiCC.session.createWebRTCClient({
+                localVideo : "myLocalVideo",
+                minilocalVideo : "myMiniVideo",
+                remoteVideo : "myRemoteVideo",
+                status : "status"
+            });
+
+            $("#call").click(function () {
+                apiRTC.addEventListener("remoteHangup", remoteHangupHandler);
+                webRTCClient.call($("#to").val());
+                $("#callx").show();
+                $("#kill").show();
+            });
+
+            $("#hangup").click(function () {
+                $("#ctrl").show();
+                webRTCClient.hangUp();
+            });
+        }
+
+        apiRTC.init({
+            //apiKey : "e4ec0f8a2b7207c9064a1bd58f2b1e1d",
+            apiKey : "tatti",
+            onReady : sessionReadyHandler
+        });
+		
+		function switch_band() {
+			if (bandwidth==300) {
+				bandwidth=600
+				webRTCClient.setVideoBandwidth(bandwidth);
+				$("#callee").html('600 KBps Stream');
+			} else {
+				bandwidth=300
+				webRTCClient.setVideoBandwidth(bandwidth);
+				$("#callee").html('300 KBps Stream');
+			}
+		}
+
+		function switch_resx() {
+			if (resolution=='SD') {
+				resolution='HD'
+				$("#callee").html('Hi Def 1280 x 720');
+				var constraint = {
+					'audio':{'mandatory': {}, 'optional': []},
+					'video': {'mandatory': {maxWidth: 1280, maxHeight: 768}, 'optional': []}
+				};
+				webRTCClient.setGetUserMediaConfig(constraint);
+				
+			} else {
+				resolution='SD'
+				$("#callee").html('Hi Def 320 x 240');
+				var constraint = {
+					'audio':{'mandatory': {}, 'optional': []},
+					'video': {'mandatory': {maxWidth: 320, maxHeight: 240}, 'optional': []}
+				};
+				webRTCClient.setGetUserMediaConfig(constraint);
+			}
+		}
+		</script>
+    </body>
+</html>

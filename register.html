@@ -198,14 +198,11 @@
 						<div class="row">			
 							<div class="col-md-6">				
 								<input type="submit" value="FINISH SIGNUP" STYLE="font-size:18px;width:150px;height:50px;text-shadow:none;font-family:Ubuntu Condensed" class="btn btn-danger push-bottom" data-loading-text="Loading..."  onclick="validate_form()"><br>
-								<span id="autolocation">Redondo Beach, CA 90277</span>
+								<span id="autolocation"></span>
 							</div>
 						</div>
 						<br>
 						<div class="row">			
-							<div class="col-md-6" align=center>
-								<a href="https://www.facebook.com/v2.4/dialog/oauth?client_id=340032229516154&state=79d909b1147392f5283581ac915ee749&response_type=code&sdk=php-sdk-5.1.2&redirect_uri=https%3A%2F%2Fsugardaddydays.com%2Fcallback.php&scope=public_profile%2Cemail%2Cuser_birthday"><div id="LoginButton" style="font-size:18px"  class=""><img src="http://sugardaddydays.com/assets/images/fb_blue.png" style="width:40px;cursor:pointer"><br>REGISTER USING FACEBOOK </div></a>
-							</div>
 						</div>
 							<div style="text-align:center;margin:10px;color:silver">Issues with site? Click here or email cs@sugardaddydays.com</div>
 						</div>
@@ -226,7 +223,7 @@
 		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
 		<script src="https://sugardaddydays.com/assets/js/jquery.geocomplete.js"></script>
 		<script src="https://sugardaddydays.com/assets/js/jquery-confirm.min.js"></script>
-		<script type="text/javascript" src="https://sugardaddydays.com/assets/js/framework.js"></script>
+		<script type="text/javascript" src="framework.js"></script>
 		<script src="cordova.js"></script>loader
 		
 	
@@ -242,17 +239,10 @@
 	<script>
 		  navigator.geolocation.getCurrentPosition(
 			displayPosition, error,
-			{}
+			{ enableHighAccuracy: true }
 		  );
 
-		if (!getCookie('lat')) {
-			var lat = ''
-			var lng = ''
-			setCookie('lat', '')
-			setCookie('lng', '')
-			setCookie('location', 'Palos Verdes Estates, CA 90277')
-			document.getElementById('autolocation').innetHTML=getCookie('location')
-		}
+
 		var full_address,formatted_address,street_no,street,city,state,zip
 		
 		function close_this1() {
@@ -260,7 +250,7 @@
 				document.getElementById('modal_text').style.display='block'			
 				  navigator.geolocation.getCurrentPosition(
 					displayPosition, error,
-					{}
+					{ enableHighAccuracy: true }
 				  );
 		  }
 
@@ -311,6 +301,9 @@
 			if (status == google.maps.GeocoderStatus.OK) {
 				if (results[0]) {
 					formatted_address = results[0].formatted_address
+					console.log(formatted_address)
+					setCookie('location',formatted_address)
+					
 					var address = "", city = "", state = "", zip = "", country = "";
 					for (var i = 0; i < results[0].address_components.length; i++) {
 						var addr = results[0].address_components[i];
@@ -341,6 +334,7 @@
 					setCookie('zip',zip,7)
 					setCookie('lat',position.coords.latitude,7)
 					setCookie('lng',position.coords.longitude,7)
+					document.getElementById('autolocation').inneHTML=getCookie('location')
 				}
 			}
 		});
@@ -372,7 +366,7 @@
 	}
 	
 	function register_allow() {
-		var url = 'inc/x_allow_sms.php?mobile=' + document.getElementById('mobile').value
+		var url = 'https://sugardaddydays.com/inc/x_allow_sms.php?mobile=' + document.getElementById('mobile').value
 		jwait('Please Wait...')
 		var request = $.ajax({
 			url: url,

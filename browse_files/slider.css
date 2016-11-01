@@ -1,0 +1,105 @@
+					.ui-slider-handle {
+					 border-radius:50px;
+					 padding:10px;
+					   background: url(https://sugardaddydays.com/assets/images/ri.png);
+					  height:10px;
+					 width:10px
+					}
+
+					.edit{ 
+						font-size:20px; 
+						color: #0093D9; 
+						cursor:hand; 
+						cursor:pointer 
+					} 
+				 
+					.hand{ 
+						cursor:hand; 
+						cursor:pointer 
+					} 
+	
+				.ui-slider-range {
+					background: url(https://sugardaddydays.com/assets/images/x_white.png);
+					position: absolute;
+					top: 0;
+					font-size: 30px;
+					border-radius: 25px;}
+					
+				.gr {
+					background: rgba(255,255,255,1);
+					background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(212,205,212,1) 100%);
+					background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(212,205,212,1)));
+					background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(212,205,212,1) 100%);
+					background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(212,205,212,1) 100%);
+					background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(212,205,212,1) 100%);
+					background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(212,205,212,1) 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d4cdd4', GradientType=0 );		}
+					.bg1 { 
+						  background:url(https://sugardaddydays.com/assets/images/mask1.png); 
+						  background-repeat: no-repeat; 
+						  background-position: center; 
+						  background-size: cover; 
+						  z-index:99999999 
+						} 
+					.bg2 { 
+						  background:url(https://sugardaddydays.com/assets/images/mb11.png); 
+						  background-repeat: no-repeat; 
+						  background-position: center; 
+						  background-size: cover; 
+						  z-index:99999999 
+						} 
+					.tooltipsy { 
+						padding: 10px; 
+						max-width: 200px; 
+						color: #0093D9; 
+						background: url(https://sugardaddydays.com/assets/images/xxx_big.png) center; 
+						background-size:cover; 
+						border: none; 
+						border-radiuse:4px; 
+						text-shadow:0px 0px 1px #333; 
+						opacity:1 
+						} 
+			.num1 {
+					margin:0;padding:0;width:30px;height:30px;font-size:24px;color:#000;background:silver
+				}
+
+				#slider .ui-slider-tip {
+				visibility: hidden;
+				opacity: 1;
+				background: grey;
+				background-size:cover;
+				position:absolute;
+				top:20px;
+				padding:5px;
+				border-radius:4px;
+				padding-top:10px;
+				padding-bottom:10px;
+				color:black;
+				text-shadow:0 0 1px #fff;
+				box-shadow:0 0 10px #000;
+				z-index:99999999999999999
+				cursor:hand;
+				cursor:pointer
+			}
+
+				#slider .ui-slider-pip-selected{
+				  background-color: silver;
+				  color:#000;
+				  position:absolute;
+				  top:10px
+				}
+
+				#slider .ui-slider-label{
+					display:none
+				}
+				#slider .ui-slider-handle{
+					background-color:#000
+				}
+				#slider  {
+					width:280px;
+					max-width:300px;
+					margin-top:200px;
+					margin-left:10px
+				}
+	
+

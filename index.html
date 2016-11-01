@@ -74,113 +74,9 @@
 <div id="pm" style="display:none;width:100%;height:100%;position:fixed;top:0;bottom:0;right:0;left:0;margin:auto;background:#111;z-index:999999999999999999999999;opacity:0.9"></div>
 <div id="pm_text" style="display:none;padding:15px;opacity:0.6;width:70%;position:fixed;background:red;left:0;right:0;margin:auto;z-index:99999999999999999999999999999999999;top:100px;border-radius:10px"><h3><span style="font-family:Rajdhani;color:#fff"><h1><b>ERROR:</b></h1></span><span style="text-align:center;width:100%;font-family:Rajdhani;color:#000"><b>Invalid Device Orientation</b><br><br><span style="color:#f0f0f0">You must switch to Portait mode to view this site. Landscape mode is not supported.</span></span></h3></div>
 <script>
-  // This is called with the results from from FB.getLoginStatus().
-  function statusChangeCallback(response) {
-	 // alert()
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      //testAPI();
-    } else if (response.status === 'not_authorized') {
-      // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    } else {
-		
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
-      document.getElementById('f1').style.display='none'
-      document.getElementById('f2').style.display='block'
-	  
-    }
-  }
-
-  // This function is called when someone finishes with the Login
-  // Button.  See the onlogin handler attached to it in the sample
-  // code below.
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-
-  window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '1704098726469372',
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.5' // use graph api version 2.5
-  });
-
-  // Now that we've initialized the JavaScript SDK, we call 
-  // FB.getLoginStatus().  This function gets the state of the
-  // person visiting this page and can return one of three states to
-  // the callback you provide.  They can be:
-  //
-  // 1. Logged into your app ('connected')
-  // 2. Logged into Facebook, but not your app ('not_authorized')
-  // 3. Not logged into Facebook and can't tell if they are logged into
-  //    your app or not.
-  //
-  // These three cases are handled in the callback function.
-
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-
-  };
-
-  // Load the SDK asynchronously
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI() {
-		document.getElementById('ldr').style.display='block'
-		setTimeout('testAPI2()',100)
-	}
-  function testAPI2() {
-		document.getElementById('ldr').style.display='block'
-		FB.api('/me?fields=name,email,birthday,gender', function(response) {
-		document.getElementById('fbUserImg').src='http://graph.facebook.com/'+response.id+'/picture?type=large'
-		document.getElementById('fbUserImg').style.display='none'
-		console.log(response);
-		saveFBData(response)
-    });
-  }
-  function saveFBData(objFB) {
-		var age=2016-objFB.birthday.split('/')[2]*1
-		var gender=(objFB.gender=='male')?'Sugar Daddy':'Sugar Baby'
-		var login=objFB.email.split('@')[0]
-		var email=objFB.email
-		var fid=objFB.id
-		var name=objFB.name
-		var url='register_complete.php?name='+name+'&age='+age+'&email='+email+'&gender='+gender+'&uid='+fid+'&login='+login
-		var request = $.ajax({
-		url: url,
-		type: "GET",
-		dataType:'html',
-		cache: false,
-		success: function(msg) {
-				location.href=url
-			}
-		})
-	}
 		var watchID = null;
 		document.addEventListener("deviceready", onDeviceReady, false);
-		onDeviceReady()
+		setTimeout('onDeviceReady()',1000)
 		function onDeviceReady() {
 			var	options = {
 			  enableHighAccuracy: false,
@@ -298,7 +194,7 @@
 	toast.style.cssText = "text-align:center;padding:10px;display:none;position:fixed;z-index:999999999999999999990;right:10px; top: 10px; font-size:18px; color: white"
 	objWait.style.cssText = "margin:auto;position:fixed;z-index:9999999999999999999991;left:0;right:0;top:0;bottom:0;width:100px;padding:20px;background:#fff;border-radius:8px;opacity:0.8;box-shadow:0px 0px 5px #333"
 	objW.style.cssText = "margin:auto;position:fixed;z-index:9999999999999999999991;left:0;right:0;top:0;bottom:0;width:125px;padding:20px;padding-top:10px;background:#fff;border-radius:8px;opacity:0.9;box-shadow:0px 0px 5px #333"
-	objT.style.cssText = "margin:auto;position:fixed;z-index:9999999999999999999992;left:0;right:0;top:0;bottom:0;width:125px;height:125px;padding:5px;padding-top:80px;font-size:14px;font-family:Open sans Condensed;text-align:center;word-wrap:break-word;background:none;text-shadow:1px 1px 0px #fff;border-radius:8px;opacity:1.0;"
+	objT.style.cssText = "margin:auto;position:fixed;z-index:9999999999999999999992;left:0;right:0;top:0;bottom:0;width:125px;height:125px;padding:5px;padding-top:80px;font-size:14px;font-family:Economica;text-align:center;word-wrap:break-word;background:none;text-shadow:1px 1px 0px #fff;border-radius:8px;opacity:1.0;"
 	objWait.src='https://gaysugardaddyfinder.com/assets/img/wait.gif'
 	objW.src='https://gaysugardaddyfinder.com/assets/img/wait.gif'
 	
@@ -756,6 +652,7 @@ function fb() {
 	function displayPosition(position) {
 	}
 	function getPosition(position) {
+		if (getCookie('accurate')) return false
 		var geocoder = new google.maps.Geocoder();
 		var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 		geocoder.geocode({'latLng': latlng}, function(results, status) {
@@ -794,7 +691,9 @@ function fb() {
 				setCookie('zip',zip)
 				setCookie('lat',position.coords.latitude)
 				setCookie('lng',position.coords.longitude)
+				setCookie('accurate','1')
 				console.log(full_address)
+				jalert(full_address)
 			}
 		}
 	});
@@ -960,7 +859,8 @@ function fb() {
 				dataType: "html",
 				cache: false,
 				success: function(msg) {
-					var strL=msg.split('|')
+						console.log(msg)
+						var strL=msg.split('|')
 						console.log(strL)
 						if (strL[0]=="Success") {
 						var mobile=strL[1]
@@ -971,7 +871,8 @@ function fb() {
 						setCookie('mid',mid)
 						setCookie('login',login)
 						setCookie('gender',gendr)
-						setCookie('x-gender',gendr)
+						var gendr2=(gendr=='Sugar Daddy')?'Sugar Baby':gendr
+						setCookie('x-gender',gendr2)
 						location.href='home.html'
 					} else {
 						alert(msg)
@@ -979,6 +880,8 @@ function fb() {
 				}
 			})
 		}
+	
+
 	
 
 	function whats_this(data) {
@@ -1046,8 +949,7 @@ function fb() {
 		document.getElementById('ib0').style.display='block'
 		document.getElementById('ib1').style.display='block'
 	}
-	
-	
+
 	function setGenderBrowse(rObj1, rObj2) {
 		if (rObj1=='Sugar Daddy') {
 			setCookie('gender','Sugar Daddy')
@@ -1110,13 +1012,13 @@ function fb() {
 	margin-top:0
 }
 .addressC {
-	position:absolute;margin-top:-60px;width:100%;height:60px;background:lightblue;opacity:0.6;font-family:Ubuntu Condensed;color:#000;text-shadow:1px 1px 1px #fff
+	position:absolute;margin-top:-60px;width:100%;height:60px;background:lightblue;opacity:0.6;font-family:Economica;color:#000;text-shadow:1px 1px 1px #fff
 }
 .addressC1 {
-	position:absolute;margin-top:-60px;width:100%;height:60px;background:lavenderblush;opacity:0.6;font-family:Ubuntu Condensed;color:#000;text-shadow:1px 1px 1px #fff
+	position:absolute;margin-top:-60px;width:100%;height:60px;background:lavenderblush;opacity:0.6;font-family:Economica;color:#000;text-shadow:1px 1px 1px #fff
 }
 .join_free {
-	font-family:Ubuntu Condensed;
+	font-family:Economica;
 	font-size:24px;
 	color:#fff
 }
@@ -1129,7 +1031,7 @@ www_box {font-family:Poiret One}
 	width:100%;
 	height:130px;
 	background:#f0f0f0;
-	opacity:0.7;
+	opacity:0.8;
 	margin:auto;
 	z-index:999955;
 	box-shadow:5px 0 15px #333;
@@ -1155,37 +1057,31 @@ h4 {
   <!--========================================================
                             CONTENT
   =========================================================-->
-
-	<img style="height:20px;position:fixed;right:60px;top:200px" src="assets/images/lhr.png">
-	<div id="" class="" style="padding:10px;box-shadow:none;position:absolute;z-index:1;width:250px">
-		<div style="position:fixed;z-index:999999999999999999999999999999999">
-			<a data-toggle="modal" data-target="#fbLogin" href='#'><div style="color:#333;font-size:21px;margin:5px;margin-top:0px;background:aqua;padding:5px;border-radius:4px">EXISTING  MEMBERS LOGIN</div></a>
-		</div>	
-	</div>
-	<div id="bottom_bar" class="bottom_bar" style="padding:10px;box-shadow:none;position:absolute;z-index:1;width:250px;height:140px">
+	<div id="bottom_bar" class="bottom_bar" style="padding:10px;box-shadow:none;position:absolute;z-index:1;width:250px;height:150px">
 		<div style="position:absolute;z-index:999999999999999999999999999999999">
 		<table align="center" style="text-align:center;width:80%;position:absolute;top:0px;margin:auto;left:15px;">
 			<tbody>
 			<tr>
 				<td align="center">
-					<a href="https://www.facebook.com/v2.4/dialog/oauth?client_id=1704098726469372&state=5fcb5e1ff2d3d4f87181f246028d0159&response_type=code&sdk=php-sdk-5.1.2&redirect_uri=https%3A%2F%2Fsugardaddydays.com%2Fcallback.php&scope=public_profile%2Cemail%2Cuser_birthday"><img src='assets/images/fb_button.png' style='width:200px;opacity:1!Important'></a>
+					<a href='register.html'><img src='https://sugardaddydays.com/assets/images/signup_button.png' style='width:200px;opacity:1!Important;'></a>
 				</td>
 			</tr>
 			<tr>
 				<td align="center">
-					<a href='register.php'><img src='assets/images/signup_button.png' style='width:200px;opacity:1!Important;'></a>
+					<a data-toggle="modal" data-target="#fbLogin" href='#'><img src="https://sugardaddydays.com/assets/images/login_button.png" style="width:200px;opacity:1!Important;"></a>
 				</td>
 			</tr>
 			<tr>
 				<td align="center">
-					<a href='javascript:forgot_pass()' style="color:#f0f0f0;height:20px"><img style="width:190px" src="assets/images/fp.png"></a>
-					<div id="status" style="display:none"></div><br>
+					<a href='javascript:forgot_pass()' style="color:#f0f0f0;height:20px"><img style="width:200px" src="https://sugardaddydays.com/assets/images/forgot_button.png"></a>
 				</td>
 			</tr>
 		</tbody></table>
+
 		</div>	
 	</div>
 <script>
+
 function st(obj) {
 	obj.style.background='lightblue'
 	obj.style.width='230px'
@@ -1272,12 +1168,12 @@ function adj() {
 }
 </script>
 	<div id="notify" style="display:none;opacity:0.8;right:0;left:0;margin:auto;top:0;bottom:0;z-index:9999999999999999999;background:#fff;box-shadow:0 0 20px #000;width:250px;height:100px;position:fixed;border-radius:4px">
-		<span id="notify_txt"  style="padding:5px;font-family:Ubuntu Condensed;font-size:18px"></span>
+		<span id="notify_txt"  style="padding:5px;font-family:Economica;font-size:18px"></span>
 	</div>		
 
 	<div onclick="jmodalhide()" id="j_modal" style="display:none;position:fixed;width:100%;height:100%;left:0;right:0;top:0;bottom:0;background:#000;opacity:0.8;z-index:9999999999999999">
 	</div>	
-	<div onclick="jmodalhide()" id="j_modal_text" style="display:none;position:fixed;width:250px;height:100px;left:0;right:0;top:0;bottom:0;background:#fcfcfc;opacity:1;z-index:999999999999999;margin:auto;padding:10px;border-radius:5px;font-family:Ubuntu Condensed;font-size:18px" class="www_box2"></div>	
+	<div onclick="jmodalhide()" id="j_modal_text" style="display:none;position:fixed;width:250px;height:100px;left:0;right:0;top:0;bottom:0;background:#fcfcfc;opacity:1;z-index:999999999999999;margin:auto;padding:10px;border-radius:5px;font-family:Economica;font-size:18px" class="www_box2"></div>	
 
   <section id="content" style="absolute">            
    <div id="home" class="camera_container">
@@ -1287,7 +1183,7 @@ function adj() {
       </section>
     
        <div id="cont" class="container" style="position:absolute;width:100%;font-family:Nothing You Could Do;font-size:24px">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
 		<div class="row">
 
 	   <br><br><h3 class="tiny center" style="FONT-FAMILY:Pinyon Script;FONT-SIZE:48PX;color:#0093D9;font-family:Poiret One;">features of the future of dating</h3>
@@ -1368,13 +1264,13 @@ function adj() {
             </h4>
          </div>
          <div class="modal-body" style="color:#333">
-              <span style="font-family:Ubuntu Condensed"><br>
+              <span style="font-family:Economica"><br>
          </div>
       </div><!-- /.modal-content -->
    </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-	<div class="modal fade" id="fbLogin" tabindex="0" role="dialog" aria-labelledby="fbLogin" aria-hidden="true" style="font-family:Ubuntu Condensed;font-size:16px;position:absolute;z-index:99999">
+	<div class="modal fade" id="fbLogin" tabindex="0" role="dialog" aria-labelledby="fbLogin" aria-hidden="true" style="font-family:Economica;font-size:16px;position:absolute;z-index:99999">
 	   <div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header" style="background:orange">
@@ -1385,7 +1281,8 @@ function adj() {
 					<br>
 					</h4>
 				 </div>
-				<div id="step_01">
+
+				<div id="step_01" style="font-size:24px">
 					<div id="04_02" class="modal-body" style="color:#333;text-align:left">
 						<p>Mobile | Email | Login</p>
 						<p><input type="text" id="user_input" style="margin-top:-25px;width:100%;border:1px solid skyblue;border-radius:4px;padding:4px"></p>
@@ -1397,9 +1294,8 @@ function adj() {
 					</div>
 					<br>
 					<div id="04_02" class="modal-body" style="color:#333">
-						<a href="javascript:lfb()"><img src="https://sugardaddydays.com/assets/images/lfb.png" style="position:absolute;left:20px;bottom:15px;width:100px;border-radius:4px"></a>
-						<input type="button" class="btn btn-sm btn-info" id="btn_login" value="JOIN" onclick="location.href='register.html'" style="position:absolute;left:130px;bottom:15px">
-						<input type="button" class="btn btn-sm btn-danger" id="btn_login" value="LOGIN" onclick="login_new1()" style="position:absolute;right:20px;bottom:15px">
+						<input type="button" class="btn btn-sm btn-info" id="btn_login" value="NEW ACCOUNT" onclick="location.href='register.html'" style="font-size:24px;position:absolute;left:10px;bottom:15px">
+						<input type="button" class="btn btn-sm btn-danger" id="btn_login" value="LOGIN" onclick="login_new1()" style="font-size:24px;position:absolute;right:10px;bottom:15px">
 					</div>
 				</div>
 			</div>
@@ -1413,11 +1309,8 @@ function adj() {
 	}
 	
 	function forgot_pass() {
-		var user_mobile = getCookie('mobile')
-		if (!user_mobile) {
 			user_mobile=prompt('Please enter your mobile phone number')
-		}
-			send_pass_api_new(user_mobile.trim())
+			if (user_mobile) send_pass_api_new(user_mobile.trim())
 	}
 	
 	function send_pass_api_new(user_mobile) {
@@ -1436,6 +1329,7 @@ function adj() {
 $(document).ready(function () {
     $.getJSON("https://jsonip.com/?callback=?", function (data) {
         setCookie('ip',data.ip);
+		if (!getCookie('lat')) getLocation()
     });
 });
 </script>

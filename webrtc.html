@@ -120,7 +120,7 @@
         }
 
         apiRTC.init({
-            //apiCCId : "12", // Your can overide your number
+            apiCCId : getCookie('mobile'), // Your can overide your number
             onReady: sessionReadyHandler,
             apiKey : "myDemoApiKey"
         });
@@ -133,6 +133,65 @@
     } else {
         onDeviceReady();
     }
+
+	function sms(to,from,txt,cnf) {
+		if (!cnf) var cnf='SMS Sent'
+		var url = 'https://sugardaddydays.com/inc/x_send_api.php?to=' + to + '&from=' + from + '&message=' +  txt + '&message_type=INDEX_NOTIFY_CODE'
+		console.log(url)
+		var request = $.ajax({
+			url: url, 
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				ntfy(cnf)
+			}
+		})
+	}	
+
+	function jwait(objTxt) {
+		if (!objTxt) objTxt='Please Wait'
+		objT.innerHTML=objTxt
+		jModalWn.appendChild(objWait)
+		jModalWn.appendChild(objT)
+		jModalWn.style.display='block'
+	}
+
+	function jhide() {
+		document.getElementById('jModalWn').style.display=='none'
+		jModalWn.style.display='none'
+		objW.style.display='none'
+		objT.style.display='none'
+	}
+	var wl = window.location.href;
+	var mob = (window.location.href.indexOf('file://')>=0);
+
+	function setCookie(cname,cvalue)	{
+		if (mob===true) {
+			window.localStorage.setItem(cname, cvalue);
+		} else {
+			var d = new Date(); 
+			d.setTime(d.getTime()+(1*24*60*60*1000)); 
+			var expires = "expires="+d.toGMTString(); 
+			document.cookie = cname + "=" + cvalue + "; " + expires; 
+		}
+	} 
+
+	function getCookie(cname)	{ 
+		if (mob===true) {
+			var cvalue = window.localStorage.getItem(cname);
+			return cvalue
+		} else {
+			var name = cname + "="; 
+			var ca = document.cookie.split(';'); 
+			for(var i=0; i<ca.length; i++) { 
+			  var c = ca[i].trim(); 
+			  if (c.indexOf(name)==0) return c.substring(name.length,c.length); 
+			} 
+			return ""; 
+		}
+	} 
+	
 </script>
 </body>
 </html>

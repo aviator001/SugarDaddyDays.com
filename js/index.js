@@ -16,49 +16,34 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 var app = {
-  // Application Constructor
-  initialize: function() {
-    this.bindEvents();
-  },
-  // Bind Event Listeners
-  //
-  // Bind any events that are required on startup. Common events are:
-  // 'load', 'deviceready', 'offline', and 'online'.
-  bindEvents: function() {
-    document.addEventListener('deviceready', this.onDeviceReady, false);
-  },
-  // deviceready Event Handler
-  //
-  // The scope of 'this' is the event. In order to call the 'receivedEvent'
-  // function, we must explicity call 'app.receivedEvent(...);'
-  onDeviceReady: function() {
+    // Application Constructor
+    initialize: function() {
+        this.bindEvents();
+    },
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicity call 'app.receivedEvent(...);'
+    onDeviceReady: function() {
+        app.receivedEvent('deviceready');
+    },
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
 
-      // Sign up for an OpenTok API Key at: https://tokbox.com/signup
-      // Then generate a sessionId and token at: https://dashboard.tokbox.com
-      var apiKey = ""; // INSERT YOUR API Key
-      var sessionId = ""; // INSERT YOUR SESSION ID
-      var token = ""; // INSERT YOUR TOKEN
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
 
-      // Very simple OpenTok Code for group video chat
-      var publisher = TB.initPublisher(apiKey,'myPublisherDiv');
-
-      var session = TB.initSession( apiKey, sessionId ); 
-      session.on({
-        'streamCreated': function( event ){
-            var div = document.createElement('div');
-            div.setAttribute('id', 'stream' + event.stream.streamId);
-            document.body.appendChild(div);
-            session.subscribe( event.stream, div.id, {subscribeToAudio: false} );
-        }
-      });
-      session.connect(token, function(){
-        session.publish( publisher );
-      });
-
-  },
-  // Update DOM on a Received Event
-  receivedEvent: function(id) {
-  }
+        console.log('Received Event: ' + id);
+    }
 };

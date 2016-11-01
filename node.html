@@ -1,0 +1,57 @@
+<script src="cordova.js"></script>
+
+
+<!-- anywhere else on your page -->
+<script>
+// Just for Cordova apps.
+document.addEventListener('deviceready', function () {
+  // Just for iOS devices.
+  if (window.device.platform === 'iOS') {
+    // Load rtcninja with cordova-plugin-iosrtc.
+    rtcninja({
+      plugin: cordova.plugins.iosrtc.rtcninjaPlugin
+    });
+  }
+
+  console.log('WebRTC supported?: %s', rtcninja.hasWebRTC());
+  // => WebRTC supported?: true
+
+  rtcninja.RTCPeerConnection === cordova.plugins.iosrtc.RTCPeerConnection;
+  // => true
+});
+
+var pc = new cordova.plugins.iosrtc.RTCPeerConnection({
+  iceServers: []
+});
+
+cordova.plugins.iosrtc.getUserMedia(
+  // constraints
+  { audio: true, video: true },
+  // success callback
+  function (stream) {
+    console.log('got local MediaStream: ', stream);
+
+    pc.addStream(stream);
+  },
+  // failure callback
+  function (error) {
+    console.error('getUserMedia failed: ', error);
+  }
+);
+peerconnection.addEventListener('addstream', function (event) {
+  // Create a video element in memory (not yet in the DOM).
+  var video = document.createElement('video');
+
+  // Tell the plugin to monitor it.
+  cordova.plugins.iosrtc.observeVideo(video);
+
+  // Attach the MediaStream to it.
+  video.src = URL.createObjectURL(event.stream);
+
+  // When the stream is ready to be rendered then append the video
+  // element to the DOM.
+  video.addEventListener('canplay', function () {
+    document.getElementById('videoContainer').appendChild(video);
+  });
+});
+</script>

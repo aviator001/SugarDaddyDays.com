@@ -8,8 +8,6 @@
 		<!-- mobile settings -->		 
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />		
 		<!-- Fav Icons -->		
-		<link rel="icon" href="https://sugardaddydays.com/assets/img/favicon.ico">		
-		<link rel="apple-touch-icon" href="https://sugardaddydays.com/assets/img/favicon.ico">		
 		<!-- WEB FONTS -->		
 		<style>
 			iframe { width: 100%; }
@@ -24,7 +22,6 @@
 		<link href='https://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
 		<meta charset="utf-8">
 		<meta name="format-detection" content="telephone=no"/>
-		<link rel="icon" href="https://sugardaddydays.com/images/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="https://sugardaddydays.com/css/grid.css">
 		<link rel="stylesheet" href="https://sugardaddydays.com/css/style.css">
 		<link rel="stylesheet" href="https://sugardaddydays.com/css/camera.css"/>
@@ -76,12 +73,10 @@
 		}
 		</style>
 	<script src='https://sugardaddydays.com/js/device.min.js'></script>
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href='https://sugardaddydays.com/assets/css/font-awesome.css'>
   <link rel="stylesheet" href="https://sugardaddydays.com/css/bootstrap.css">
   <link rel="stylesheet" href="https://sugardaddydays.com/css/grid.css">
   <link rel="stylesheet" href="https://sugardaddydays.com/css/style.css">
-  <link rel="stylesheet" href="https://sugardaddydays.com/css/camera.css"/>
   <link rel="stylesheet" href="https://sugardaddydays.com/dz/dropzone.min.css"/>
   <link rel="stylesheet" href='https://sugardaddydays.com/assets/css/shadows.css'/>
   <link rel="stylesheet" href='https://sugardaddydays.com/assets/css/box-shadows.css'/>
@@ -90,7 +85,6 @@
 <script type="text/javascript" src="https://sugardaddydays.com/assets/js/jquery-ui.min.js"></script> 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	<link href='https://fonts.googleapis.com/css?family=Poiret+One|Open+Sans|Economica' rel='stylesheet' type='text/css'>
@@ -154,16 +148,7 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(wf, s);
   })(); 
-  setTimeout('checkHistory()',0)
 
-  function checkHistory() {
-	  var a=window.location+''
-	  if ((a.split('?')[1].split('&')[0].split('=')[1])=='members_home') {
-			if (document.getElementById('bback')) document.getElementById('bback').style.display='none'
-	  } else {
-		if (document.getElementById('bback')) document.getElementById('bback').style.display='block'
-	  }
-  }
 </script>
 			<style>
 					li {padding:5px;color:#666;border-top:1px solid rgba(10,10,10,0.9);background:#111}
@@ -250,10 +235,8 @@
 	<link href="https://sugardaddydays.com/dz/basic.min.css" rel="stylesheet" />
 	<link href="https://sugardaddydays.com/dz/dropzone.min.css" rel="stylesheet" />
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu Condensed' rel='stylesheet' type='text/css'>
-	<script src="https://sugardaddydays.com/assets/js/dropzone.js"></script>
+	<script src="https://sugardaddydays.com/dz/dropzone.min.js"></script>
 	<script src="https://sugardaddydays.com/js/jquery.js"></script>
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script src="https://sugardaddydays.com/assets/js/easing.js"></script>
 	
 	
@@ -450,13 +433,12 @@ animation-duration: 3s;
 
 </style>
 <body style="overflow:hidden">
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-	
 <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Bungee+Hairline|Bungee+Outline|Monoton|Pinyon+Script" rel="stylesheet">	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <div id="main_content" style="display:;position:absolute;left:0;right:0;margin:auto;z-index:99999;width:320px;max-width:320px"></div>
 <input id="search_results" type="hidden">
 <script>
+	var my_mid=window.localStorage.getItem('mid');
 	var stop_it=false
 	var mid=''
 	var member_id=qs('member_id')
@@ -466,18 +448,73 @@ animation-duration: 3s;
 	var profilesViewed=[]
 	var back=false
 	
-	function qs(name, url) {
-		if (!url) {
-		  url = window.location.href;
+		function upload_photos() {
+			location.href='upload_photos.html?member_id='+getCookie('mid')
 		}
-		name = name.replace(/[\[\]]/g, "\\$&");
-		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-			results = regex.exec(url);
-		if (!results) return null;
-		if (!results[2]) return '';
-		return decodeURIComponent(results[2].replace(/\+/g, " "));
+		function view_profile() {
+ 			location.href='view_profile.html?member_id='+getCookie('mid')
+		}
+		function qs(name, url) {
+			if (!url) {
+			  url = window.location.href;
+			}
+			name = name.replace(/[\[\]]/g, "\\$&");
+			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+				results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+
+	var wl = window.location.href;
+	var mob = (window.location.href.indexOf('file://')>=0);
+
+	function setCookie(cname,cvalue)	{
+		if (window.location.href.indexOf('file://')>=0) {
+			window.localStorage.setItem(cname, cvalue);
+		} else {
+			var d = new Date(); 
+			d.setTime(d.getTime()+(1*24*60*60*1000)); 
+			var expires = "expires="+d.toGMTString(); 
+			document.cookie = cname + "=" + cvalue + "; " + expires; 
+		}
+	} 
+
+	function getCookie(cname)	{ 
+		if (window.location.href.indexOf('file://')>=0) {
+			var cvalue = window.localStorage.getItem(cname);
+			return cvalue
+		} else {
+			var name = cname + "="; 
+			var ca = document.cookie.split(';'); 
+			for(var i=0; i<ca.length; i++) { 
+			  var c = ca[i].trim(); 
+			  if (c.indexOf(name)==0) return c.substring(name.length,c.length); 
+			} 
+			return ""; 
+		}
+	} 
+
+	function delCookie(cname) {
+		if (mob===true) {
+			window.localStorage.removeItem(cname);
+		} else {
+			var d = new Date();
+			d.setTime(d.getTime());
+			var expires = "expires="+d.toGMTString();
+			document.cookie = cname + "=" + "" + "; " + expires;
+		}
 	}
-		
+	
+	function clear_all() {
+		if (mob===true) {
+			 window.localStorage.clear();
+		} else {
+			document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+		}	
+	}		
+	setCookie('curr_profile',member_id)		
+	var cp=member_id
 	function load_profile1(member_id){
 		if (p.indexOf(member_id)==-1) {
 			hot_list(member_id,'VIEWED_PROFILE')
@@ -490,6 +527,8 @@ animation-duration: 3s;
 				dataType: "html",
 				cache: false,
 				success: function(msg) {
+					setCookie('curr_profile',member_id)		
+					cp=member_id				
 					document.getElementById('main_content').innerHTML=msg
 					if (p.indexOf(member_id)>0) return false
 						else p.push(member_id)
@@ -525,21 +564,28 @@ document.body.onmouseup = function(e) {
 	var last_viewed
 	var next_profile
 	var stop_go = true
+	var lat=getCookie('lat')
+	var lng=getCookie('lng')
+	var gen = getCookie('gender')
+	var cp=member_id
+	var age=getCookie('x-age')
+	var miles=getCookie('x-miles')
+	setCookie('curr_profile',member_id)		
+	var mid=window.localStorage.getItem('mid');
+
 	function next_profiles() {
 		back=false
 			if (!getCookie('gender')) setCookie('gender',getCookie('x-gender'))
-			var lat=getCookie('lat')
-			var lng=getCookie('lng')
-			console.log('https://sugardaddydays.com/inc/x_get_next.php?mid='+getCookie('mid')+'&lat='+lat+'&lng='+lng+'&last_viewed='+last_viewed+'&gender='+getCookie('gender')+'&age='+getCookie('x-age')+'&miles='+getCookie('x-miles') + '&last_viewed='+getCookie("curr_profile"))
+			console.log('https://sugardaddydays.com/inc/x_get_next.php?mid='+my_mid+'&lat='+lat+'&lng='+lng+'&last_viewed='+cp+'&gender='+gen+'&age='+age+'&miles='+miles)
 			var request = $.ajax({
-				url: 'https://sugardaddydays.com/inc/x_get_next.php?mid='+getCookie('mid')+'&lat='+lat+'&lng='+lng+'&last_viewed='+last_viewed+'&gender='+getCookie('gender')+'&age='+getCookie('x-age')+'&miles='+getCookie('x-miles') + '&last_viewed='+getCookie("curr_profile"), 
+				url: 'https://sugardaddydays.com/inc/x_get_next.php?mid='+my_mid+'&lat='+lat+'&lng='+lng+'&last_viewed='+cp+'&gender='+gen+'&age='+age+'&miles='+miles, 
 				type: "GET",
 				dataType: "html",
 				cache: false,
 				success: function(msg) {
 					member_id=msg
-					load_profile1(member_id)
 					setCookie('next_profile', msg)
+					load_profile1(member_id)
 				}
 			})
 	}	
@@ -568,7 +614,7 @@ document.body.onmouseup = function(e) {
 
 	
 	function load_profile_swipe(){
-		console.log(stop_it)
+		alert(stop_it)
 		if (stop_it === false) {
 		var request = $.ajax({
 			url: 'https://sugardaddydays.com/inc/x_view_profile_pg.php?mid='+mid+'&member_id='+getCookie('last_viewed'), 
@@ -578,9 +624,8 @@ document.body.onmouseup = function(e) {
 			success: function(msg) {
 				document.getElementById('main_content').style.display='block'
 				setTimeout(function(){
-				   $('#main_content').addClass('magictime perspectiveRight');
+				   $('#img_profile').addClass('magictime perspectiveRight');
 				}, 1);
-				
 				document.getElementById('main_content').className='www_box'
 				document.getElementById('main_content').innerHTML=msg
 				
@@ -747,9 +792,9 @@ function close_chat(ob) {
 	document.getElementById('msgOuterBox'+ob).style.display='none'
 }
 
-function send_email(to){
+function send_email(t,l,a,f,g,z){
 	hot_list_login(getCookie('chatting_with'),'SENT_EMAIL')
-	location.href='page.php?page=send_mail&memberid='+to
+	location.href='send_mail.html?member_id='+t+'&to_login='+l+'&to_age='+a+'&to_img='+f+'&to_gender='+g+'&to_location='+z
 }
 
 function pop(x) {
@@ -916,7 +961,7 @@ function s_h() {
 	function drop(ev) {
 		ev.preventDefault();
 		var data = ev.dataTransfer.getData("text");
-		location.href='page.php?page=view_profile&member_id='
+		location.href='view_profile.html?member_id='+getCookie('mid')
 	}
 	function fix_ht(){}
 	
@@ -952,12 +997,32 @@ function s_h() {
 	function yes() {
 		if (stop_it===false) {
 		hot_list(member_id,'CLICKED_YES')
-	   $('#img_profile').addClass('magictime perspectiveRight');
+	   $('#img_profile').addClass('magictime fade');
 		show_liked_conf()
+		document.getElementById('shutter').style.display='block'
+		document.getElementById('shutter').style.opacity='0'
 		setTimeout('next_profiles()',500)
+		shutter_click()
+		//document.getElementById('shutter').style.display='none'
 		}
 	}
-
+	var di=0;
+	var dv=100;
+	var opc=0
+	var xtr=0
+	var rev=1
+	var imm='img_profile'
+	function shutter_click() {
+	if (imm=='img_profile1') imm='img_profile'
+		else imm='img_profile1'
+		if (dv > 0) {
+			dv=dv-20
+			rev=rev-0.1
+			document.getElementById('shutter').style.opacity=rev
+			var tpc=setTimeout('shutter_click()',1)			
+		} 
+	}
+	
 	function no() {
 		show_disliked_conf()
 		next_profiles()
@@ -1245,7 +1310,7 @@ function sendIM(to_user, msg) {
 
 	
 function link_img(obj) {
-	location.href='page.php?page=view_album&member_id='+obj
+	location.href='view_album.html?member_id='+obj
 }
 	
 function link_img_close() {
@@ -1370,10 +1435,8 @@ detectswipe('main_content', myfunction);
 		<script href="https://sugardaddydays.com/assets/js/framework.js"></script>
 		<script href="https://sugardaddydays.com/js/jquery-migrate-1.2.1.js"></script>
 		<script src="https://sugardaddydays.com/assets/js/jquery.js"></script>
-
-
  		<script>
-			var currPage='https://sugardaddydays.com/page.php?page=view_profile&member_id=1560739&x-type=local&isMobile='
+			var currPage='view_profile.html?member_id='+getCookie('mid')
 			if (getCookie('currPage')) {
 				setCookie('prevPage',getCookie('currPage'))
 			}
@@ -1501,22 +1564,7 @@ detectswipe('main_content', myfunction);
 				$('#imgProfile').show()
 			}
 
-			function setCookie(cname,cvalue,exdays)	{
-				var d = new Date();
-				d.setTime(d.getTime()+(exdays*24*60*60*1000));
-				var expires = "expires="+d.toGMTString();
-				document.cookie = cname + "=" + cvalue + "; " + expires;
-			 }	
 
-			function getCookie(cname)	{
-				var name = cname + "=";
-				var ca = document.cookie.split(';');
-				for(var i=0; i<ca.length; i++) {
-				  var c = ca[i].trim();
-				  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
-				}
-				return "";
-			}
 				var nd=[]
 				var nt=[]
 				var nh=0
@@ -1976,24 +2024,7 @@ detectswipe('main_content', myfunction);
 					});
 
 
-			function setCookie(cname,cvalue,exdays) {
-				var d = new Date();
-				d.setTime(d.getTime()+(exdays*24*60*60*1000));
-				var expires = "expires="+d.toGMTString();
-				document.cookie = cname + "=" + cvalue + "; " + expires;
-			 }
 
-			function getCookie(cname) {
-				var name = cname + "=";
-				var ca = document.cookie.split(';');
-				for(var i=0; i<ca.length; i++) 
-				  {
-				  var c = ca[i].trim();
-				  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
-				}
-				return "";
-			}
-					
 			function link_img(obj) {
 				document.getElementById('pay_modal').style.display='block'
 				document.getElementById('g').style.display='block'
