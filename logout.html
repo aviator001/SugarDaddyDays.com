@@ -194,6 +194,11 @@
 			document.cookie = cname + "=" + "" + "; " + expires;
 		}
 	}
+	var xc=setTimeout('clear_all()',100)
+	var ty=setTimeout('all()',3000)
+	function all() {
+		document.getElementById('i1').style.display='block'
+	}
 	
 	function clear_all() {
 		if (mob===true) {
@@ -342,13 +347,12 @@
   <!--========================================================
                             CONTENT
   =========================================================-->
-<div class="container" style="width:320px;padding:0">
 <div class="container" style="width:320px;padding:0"></div>
 <img src="https://sugardaddydays.com/assets/images/bp.jpg" style="position:absolute;top:0;left:0;right:0;width:100%;height:100%">
-<img src="https://sugardaddydays.com/assets/images/bboardc.png" style="position:absolute;top:200px;left:0;right:0;width:200px;margin:auto">
+<img src="https://sugardaddydays.com/assets/images/bboard.png" style="position:absolute;top:200px;left:0;right:0;width:200px;margin:auto">
+<img id="i1" src="https://sugardaddydays.com/assets/images/00.gif" style="opacity:0.3;display:none;position:absolute;top:235px;left:0;right:0;width:200px;margin:auto;">
 
 <div class="row" style="text-align:center;width:320px">
-<iframe src="https://sugardaddydays.com/3d.php" id="3D" style="background:url(https://sugardaddydays.com/bg1.jpg);right:0;border:none;margin:0;width:100%;height:100px;bottom:-0;left:0;background-size:cover;position:fixed;z-index:9999999999"></iframe>"
 <div class = "modal fade" id = "uiErr" tabindex = "0" role = "dialog" aria-labelledby = "uiErr" aria-hidden = "true" style="font-family:Ubuntu Condensed;font-size:16px">
 	   <div class = "modal-dialog">
 			<div class = "modal-content">
