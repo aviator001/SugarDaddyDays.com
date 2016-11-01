@@ -224,9 +224,7 @@
 		<script src="https://sugardaddydays.com/assets/js/jquery.geocomplete.js"></script>
 		<script src="https://sugardaddydays.com/assets/js/jquery-confirm.min.js"></script>
 		<script type="text/javascript" src="framework.js"></script>
-		<script src="cordova.js"></script>loader
-		
-	
+		<script src="cordova.js"></script>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -341,6 +339,7 @@
 	}
 	
 	function sms_set(sObj) {
+		 $('#SD').click()
 		document.getElementById('smsp').style.display='none'
 		if (sObj=='yes') document.getElementById('sms_allow1').checked=true
 				else document.getElementById('sms_allow2').checked=true
@@ -394,10 +393,7 @@
 			}
 		})		
 	}
-
-	
-	
-	 setTimeout("sms_set('yes')",100)
+	 setTimeout("sms_set('yes')",1000)
 </script>
 	</body>
 </html>
