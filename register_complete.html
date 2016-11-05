@@ -1,0 +1,415 @@
+<!DOCTYPE html> 
+<html lang="en">
+	<head>				
+		<title>SugarDaddyDays.com :: Sugar Daddy Dating Site</title>		
+		<meta name="keywords" content="sugar daddy,sugar baby,sugardaddy,wealthy  men, dating,Sugar Daddy dating site, daddy dating, find daddy, find golddigger, SugarDaddyDays" />		
+		<meta name="description" content="A place that connects handsome wealthy and caring  men to hot young  males" />		
+		<meta name="Author" content="Gautam Sharma" />		
+		<!-- mobile settings -->		 
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />		
+		<!-- Fav Icons -->		
+		<link rel="icon" href="https://sugardaddydays.com/assets/img/favicon.ico">		
+		<link rel="apple-touch-icon" href="https://sugardaddydays.com/assets/img/favicon.ico">		
+		<!-- WEB FONTS -->		
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet" type="text/css" />
+		<link href='https://fonts.googleapis.com/css?family=Codystar|Wire+One|Open+Sans+Condensed:300|Six+Caps|Raleway' rel='stylesheet' type='text/css'>
+		<link href="https://sugardaddydays.com/assets/css/bootstrap.min.css" rel="stylesheet">		
+		<link href="https://sugardaddydays.com/assets/css/essentials.css" rel="stylesheet" type="text/css" />		
+		<link href="https://sugardaddydays.com/assets/css/layout.css" rel="stylesheet" type="text/css" />		
+		<link href="https://sugardaddydays.com/assets/css/layout-responsive.css" rel="stylesheet" type="text/css" />		
+		<link href="https://sugardaddydays.com/assets/css/color_scheme/orange.css" rel="stylesheet" type="text/css" />
+		<link href="https://sugardaddydays.com/assets/css/stream.css" rel="stylesheet" type="text/css" />
+		<link href="https://sugardaddydays.com/assets/css/buttonstyle.css" rel="stylesheet" type="text/css">		
+		<link href="https://sugardaddydays.com/assets/css/style-20.css" rel="stylesheet">	
+		<link href="https://sugardaddydays.com/assets2/css/style.min.css" rel="stylesheet"> 
+		<link href="https://sugardaddydays.com/assets2/css/retina.min.css" rel="stylesheet">
+		<style>
+			.tooltipsy {
+				color: #0093D9;
+				background-size:cover;
+				border: none;
+				border-radiuse:4px;
+				text-shadow:0px 0px 1px #333;
+				opacity: 
+			}
+			.eee, .content{
+				width:400px;
+			}
+			.biggy {
+				margin-left:-100px;margin-top:-200px;width:200px;height:200px;border:5px solid white;
+				opacity:1;
+				box-shadow:0 0 25px #333
+			}
+			input {
+				disbled:true
+			}
+			text {
+				disbled:true
+			}
+		</style>
+		<script>
+			var wl = window.location.href;
+			var mob = (window.location.href.indexOf('file://')>=0);
+
+			function qs(name, url) {
+				if (!url) {
+				  url = window.location.href;
+				}
+				name = name.replace(/[\[\]]/g, "\\$&");
+				var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+					results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, " "));
+			}
+
+			function setCookie(cname,cvalue)	{
+				if (window.location.href.indexOf('file://')>=0) {
+					window.localStorage.setItem(cname, cvalue);
+				} else {
+					var d = new Date(); 
+					d.setTime(d.getTime()+(1*24*60*60*1000)); 
+					var expires = "expires="+d.toGMTString(); 
+					document.cookie = cname + "=" + cvalue + "; " + expires; 
+				}
+			} 
+
+			function getCookie(cname)	{ 
+				if (window.location.href.indexOf('file://')>=0) {
+					var cvalue = window.localStorage.getItem(cname);
+					return cvalue
+				} else {
+					var name = cname + "="; 
+					var ca = document.cookie.split(';'); 
+					for(var i=0; i<ca.length; i++) { 
+					  var c = ca[i].trim(); 
+					  if (c.indexOf(name)==0) return c.substring(name.length,c.length); 
+					} 
+					return ""; 
+				}
+			} 
+
+			function delCookie(cname) {
+				if (mob===true) {
+					window.localStorage.removeItem(cname);
+				} else {
+					var d = new Date();
+					d.setTime(d.getTime());
+					var expires = "expires="+d.toGMTString();
+					document.cookie = cname + "=" + "" + "; " + expires;
+				}
+			}
+			
+			function clear_all() {
+				if (mob===true) {
+					 window.localStorage.clear();
+				} else {
+					document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+				}	
+			}
+		function zinit() {
+			document.getElementById('uname').value=qs('name')
+			document.getElementById('email').value=qs('email')
+			document.getElementById('login').value=qs('login')
+			document.getElementById('gender').value=qs('gender')
+			document.getElementById('looking_for').value=qs('looking_for')
+			document.getElementById('age').value=qs('age')
+			var uid = qs('uid')
+			var gender = qs('gender')
+			var filename_1 = "https://graph.facebook.com/"+uid+"/picture?type=large";
+			document.getElementById('photo').value=filename_1      
+			var looking_for = (gender=="Sugar Daddy" ? "Sugar Baby" : "Sugar Baby")
+			document.getElementById('looking_for').value=looking_for
+			var pw=Math.round(Math.random()*100)
+			var pswd=pw+'' + pw + ''
+			document.getElementById('pswd').value=pswd
+			setCookie('gender',gender)
+			setCookie('looking_for',looking_for)
+			}
+		</script>
+	</head> 
+		<body onload="zinit()">
+
+				<div style="padding:10px;margin:auto;position:absolute;top:0px;left:0px;right:0px;bottom:0px;cursor:hand;cursor:pointer;text-align:left;padding-left:5px;font-family:Open Sans Condensed;font-size:20px;display:none;position:absolute;z-index:9999999999999; background:#f0f0f0; border-radius:6px; width: 300px; height:220px" id="bo">		<font style='font-family:Open Sans Condensed;font-size:20px;color:#f0f0f0'>PHONE VERIFICATION<font style='font-family:Open Sans Condensed;font-size:18px;color:#333'>To verify your account, please enter below the 4 digit pin we sent as a text to your phone
+					<table style="background:#f0f0f0" align=center style='margin-top:10px;height:50px;width:150px' cellspacing=10>
+						<tr>
+							<td>
+								<input autofocus maxlength='1' type='text' id='v1' maxlength=1 onkeyup="document.all.v2.focus()" style='margin:5px;border:2px solid skyblue;height:40px;width:30px;text-align:center;color:#333;background:#f0f0f0;font-family:Open Sans Condensed;font-size:18px'>
+							</td>
+							<td>
+								<input type='text' onkeyup="document.all.v3.focus()" maxlength="1" onfocus='this.value=' id='v2' style='margin:5px;border:2px solid skyblue;height:40px;width:30px;text-align:center;color:#333;background:#f0f0f0;font-family:Open Sans Condensed;font-size:18px'>
+							</td>
+							<td>
+								<input type='text' id='v3' onkeyup="document.all.v4.focus()" style='margin:5px;border:2px solid skyblue;height:40px;width:30px;text-align:center;color:#333;background:#f0f0f0;font-family:Open Sans Condensed;font-size:18px'>
+							</td>
+							<td>
+								<input type='text' id='v4' style='margin:5px;border:2px solid skyblue;height:40px;width:30px;text-align:center;color:#333;background:#f0f0f0;font-family:Open Sans Condensed;font-size:18px'>
+							</td>
+						</tr>
+						<tr>
+							<td colspan=4>
+								<input type=button value="verify" onclick="validate_code()" class="btn btn-primary btn-active">
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="loader" style="display:none;z-index:99999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.3;margin:auto;background:#ccc;font-family:Open Sans Condensed;"><img style="z-index:999999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1;margin:auto" src="assets/img/loader.gif"></div>			
+				<div class="col-md-6" style="position:absolute;margin:auto;left:0;right:0;margin-bottom:5px">
+					<div class="white-row"  style="box-shadow:0 0 20px #333;background:#f0f0f0">		
+						<span style='font-family:Open Sans Condensed;color:#0093D9;font-size:22px'>Found your Facebook Profile;</span><br><span style='font-family:Open Sans Condensed;color:black;font-size:18px'>Just enter your <b>mobile number</b> and thats it!</span>
+						<div id="form_errors" class="alert alert-info" style="display:none"></div>
+						<div class="row">			
+							<div class="form-group">
+								<div class="col-md-6" style="text-align:left;font-weight:300;width:150px">					
+									<label style="color:orange">Mobile Number</label>					
+									<table style="width:270px;background:none">
+										<tr>
+											<td>
+												<input type="text" name="mobile" id="mobile" value="" placeholder="Enter your mobile #" class="form-control input-box" onclick="clear_error(this)" onblur="document.all.phone.value=this.value;validate_field_register(this)" style="border:2px solid orange;color:grey;font-size:18px;width:150px;border:4px solid orange;background:#ffffbf">					
+											</td>
+											<td>
+												<button STYLE="padding:5px;font-size:18px;width:75px;height:45px;text-shadow:none;font-family:Open Sans Condensed;border-radius:4px;" class="btn btn-danger pull-left push-bottom" id="go_fb" onclick="go_fb_user()">FINISH!<button>
+											</td>
+										</tr>
+									</table>
+									<input type="hidden" name="source" id="phonegap">
+									<input type="hidden" name="photo" id="phone">
+									<input type="hidden" name="photo" id="photo">
+									<input type="hidden" name="location" id="location">
+									<input type="hidden" name="street" id="street">
+									<input type="hidden" name="cc_city" id="cc_city">
+									<input type="hidden" name="cc_state" id="cc_state">
+									<input type="hidden" name="zip" id="zip">
+									<input type="hidden" name="filename_1" id="filename_1">
+									<div id="mobile_err_txt" style="color:skyblue;text-align:left"></div>
+								</div>
+							</div>
+						</div>
+						<div class="row">			
+							<div class="form-group"> 
+								<div class="col-md-6" style="text-align:left;font-weight:300;font-style:normal;color:#333;text-shadow:none">					
+									<label class="block">NAME</label>					
+									<input disabled type="text" id="uname">
+								</div>								
+								<div class="col-md-6" style="text-align:left;font-weight:300;font-style:normal;color:#333;text-shadow:none">					
+									<label class="block">LOGIN</label>					
+									<input disabled type="text" id="login">
+								</div>								
+								<div class="col-md-6" style="text-align:left;font-weight:300;font-style:normal;color:#333;text-shadow:none">					
+									<label class="block">EMAIL</label>						
+									<input disabled type="text" id="email">
+								</div>
+								<div class="col-md-6" style="text-align:left;font-weight:300;font-style:normal;color:#333;text-shadow:none">					
+									<label class="block">GENDER</label>					
+									<input type="text" id="gender">
+								</div>								
+								<div class="col-md-6" style="text-align:left;font-weight:300;font-style:normal;color:#333;text-shadow:none">					
+									<label class="block">SEEKING</label>						
+									<input type="text" id="looking_for">
+								</div>
+								<div class="col-md-6" style="text-align:left;font-weight:300;font-style:normal;color:#333;text-shadow:none">					
+									<label class="block">GENERATED PASSWORD</label>				
+									<input type="text" id="pswd">								
+								</div>				
+								<div class="col-md-6" style="text-align:left;font-weight:300;font-style:normal;color:#333;text-shadow:none">					
+									<label class="block">AGE</label>
+									<input type="text" id="age">						
+								</div>
+								<div class="col-md-6" style="text-align:left;font-weight:300;font-style:normal;color:#333;text-shadow:none">					
+									<label class="block">YOUR LOCATION</label>
+									<input type="text" id="address">						
+								</div>								
+							</div>		
+						</div>		
+						<div class="row">			
+							<div class="form-group">				
+								<div class="col-md-6" style="text-align:left;font-weight:300;font-style:normal;color:#333;text-shadow:none">					
+									<label class="block">PHOTO</label>									
+									<img src="https://graph.facebook.com/10153922160805365/picture?type=large" style="border:10px solid white;box-shadow:0 0 25px rgba(0,0,0,0.4);width:150px;border-radius:5px">
+								</div>
+
+								<div  class="col-md-6" style="text-align:left;font-size:16px;color:brown;padding:15px;margin-left:0px">
+									You can <b>edit</b> all these values and <b>add/delete</b> photos in the next step by accessing "<b>My Account</b>" from the members home page
+								</div>
+							</div>
+						</div>
+						<div class="row">			
+							<div class="col-md-12" style="text-align:center">				
+								<button STYLE="font-size:18px;width:150px;height:50px;text-shadow:none;font-family:Open Sans Condensed;width:100%" class="btn btn-danger pull-left push-bottom" id="go_fb" onclick="go_fb_user()">FINISH SIGNUP<button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /REGISTER -->	
+		<script>
+			var start_magic=false
+			var magic_w='65px'
+			var magic_h='65px'
+		</script>	
+		<script type="text/javascript" src="https://sugardaddydays.com/assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="https://sugardaddydays.com/assets/js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="https://sugardaddydays.com/assets/plugins/bootstrap/js/bootstrap.min.js"></script>		
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+		<script src="https://sugardaddydays.com/assets/js/jquery.geocomplete.js"></script>
+		<script src="js/jquery-confirm.min.js"></script>
+		<link href="css/jquery-confirm.min.css" rel="stylesheet">
+		<script type="text/javascript" src="https://sugardaddydays.com/assets/js/framework.js"></script>	
+		<script type="text/javascript">
+		function go_fb_user() {
+			document.getElementById('phone').value=document.getElementById('mobile').value
+			var f = document.getElementById('phone').value
+			if ((f.substring(0,1)=='1') && (f.length==10) || (!f)) {
+				document.getElementById('mobile_err_txt').innerHTML="<font color='red'><i>ERROR: Please enter your mobile number!</i></font>"
+				return false;
+			} else {
+				create_fb_user()
+			}
+		}
+
+
+		  navigator.geolocation.watchPosition(
+			displayPosition, error,
+			{ enableHighAccuracy: true, timeout: 3000, maximumAge: 0 }
+		  );
+		  var formatted_address,street_no,street,city,state,zip
+		
+		function error() {}
+		
+		var full_address
+		
+		function displayPosition(position) {
+			var geocoder = new google.maps.Geocoder();
+			var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+			geocoder.geocode({'latLng': latlng}, function(results, status) {
+			if (status == google.maps.GeocoderStatus.OK) {
+				if (results[0]) {
+					formatted_address = results[0].formatted_address
+					var address = "", city = "", state = "", zip = "", country = "";
+					for (var i = 0; i < results[0].address_components.length; i++) {
+						var addr = results[0].address_components[i];
+						if (addr.types[0] == 'country')
+							country = addr.long_name;
+						else if (addr.types[0] == 'street_address') // address 1
+							address = address + addr.long_name;
+						else if (addr.types[0] == 'establishment')
+							address = address + addr.long_name;
+						else if (addr.types[0] == 'route')  // address 2
+							address = address + addr.long_name;
+						else if (addr.types[0] == 'postal_code')       // Zip
+							zip = addr.short_name;
+						else if (addr.types[0] == ['administrative_area_level_1'])       // State
+							state = addr.short_name;
+						else if (addr.types[0] == ['locality'])       // City
+							city = addr.long_name;
+					}
+						street_no=results[0].address_components[0].short_name
+						street=results[0].address_components[1].short_name
+						full_address = formatted_address
+						full_address=street_no + ', ' + street + ' ' + city + ' ' + state + ' ' + zip + ' '  + country
+						console.log('STREET NO: ' + street_no)
+						console.log('STREET: '+street)
+						console.log('CITY: '+city)
+						console.log('STATE: '+state)
+						console.log('ZIP: '+zip)
+						console.log('COUNTRY: '+country)
+						console.log('LOCATION: ' + city + ', ' + state + ' ' + zip)
+						console.log('FULL ADDRESS: ' + formatted_address)
+						setCookie('location', city + ', ' + state + ' ' + zip)
+						setCookie('street_no',street_no)
+						setCookie('street',street)
+						setCookie('city',city)
+						setCookie('state',state)
+						setCookie('zip',zip)
+						setCookie('lat',position.coords.latitude)
+						setCookie('lng',position.coords.longitude)
+						document.getElementById('location').value=city + ', ' + state + ' ' + zip
+						document.getElementById('address').value=city + ', ' + state
+						document.getElementById('street').value=street
+						document.getElementById('cc_city').value=city
+						document.getElementById('cc_state').value=state
+						document.getElementById('zip').value=full_address
+              }
+
+          }
+
+      });
+}
+
+	function create_fb_user() {
+		if (!getCookie('location')) {
+			var url='https://sugardaddydays.com/inc/x_get_city_state_zip.php?lat='+getCookie('lat')+'&lng='+getCookie('lng')
+			var request = $.ajax({
+				url: url,
+				type: "GET",
+				dataType: "html",
+				cache: false,
+				success: function(msg) {
+					var lxc=msg.trim()
+					lx=lxc.split(',')
+					var cc_city = lx[0]
+					var cc_state=lx[1]
+					var cc_location = cc_city + ', ' + cc_state + ' ' + getCookie('zip')
+				}
+			})
+		} else {
+			var cc_city=getCookie('city')
+			var cc_state=getCookie('state')
+			var cc_location=getCookie('location')
+		}
+		var x=''
+		var filename_1 = document.getElementById('filename_1').value
+		var location = document.getElementById('location').value
+		var address = document.getElementById('address').value
+		var age = document.getElementById('age').value
+		var gender = getCookie('gender')
+		var looking_for = getCookie('looking_for')
+		if (gender=='') {
+			gender = 'Sugar Baby'
+			looking_for = 'Sugar Daddy'
+		}		
+		x += 'mob=' + document.getElementById('mobile').value 
+		x += '&password=' + document.getElementById('pswd').value 
+		x += '&email=' + document.getElementById('email').value 
+		x += '&login=' + document.getElementById('login').value 
+		x += '&gender=' + gender
+		x += '&looking_for=' + looking_for
+		x += '&age=' + age 
+		x += '&cc_city=' + cc_city
+		x += '&cc_state=' + cc_state
+		x += '&cc_street=' + getCookie('street_no') + ' ' + getCookie('street')
+		x += '&lat=' + getCookie('lat')
+		x += '&lng=' + getCookie('lng')
+		x += '&zip=' + getCookie('zip')
+		x += '&location=' + cc_city + ' ' + cc_state
+		x += '&aff=' + getCookie('aff')
+		x += '&pic=' + filename_1 
+		x += '&pro=' + Math.random() * 100000000 + '' + Math.random() * 100000000 + '' + Math.random() * 100000000 + '' + Math.random() * 100000000 + '' + Math.random() * 100000000
+
+		jwait('Creating Account')
+		var url = 'https://sugardaddydays.com/create.php?' + x
+		console.log(url)
+		var request = $.ajax({
+		url: url,
+		type: "GET",
+		dataType: "html",
+		cache: false,
+		success: function(msg) {
+				jhide()
+				msg=msg.split('|')
+				var res=msg[0]
+				console.log(msg)
+				if (res=='OK') {
+					window.location.href='home.html?page=my_account&first=true'
+				} else {
+					$.alert({theme: 'black', content: 'Registration Failed!',title:false})
+				}
+			
+			}
+		})		
+	}
+
+ </script>
+	</body>
+</html>

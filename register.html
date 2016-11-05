@@ -67,148 +67,151 @@
 		}
 	</style>		
 	</head> 
-		<body class="boxed pattern4" style="overflow-y:auto">
+	<body class="boxed pattern4" style="overflow-y:auto">
 		<div class="modal" id="modal" style="position:absolute;z-index:999;background:#000;opacity:0.8;height:100%;width:100%;top:0;left:0;display:none;cursor:hand;cursor:pointer"></div>
 		<div id="modal_text" class="modal_window" onclick="javascript:history.go(0)" id="modal_window" style="padding:20px;border-radius:6px;position:absolute;z-index:9999;box-shadow:0 0 150px #000;display:none;background:#f0f0f0;top:0;bottom:0;left:0;right:0;margin:auto;width:300px;height:420px;font-family:Ubuntu Condensed;font-size:18px;"><b>Error - Location Required</b><br>In order to use this site, you must agree to share your current location. We will never disclose this information to anyone, but we need this to provide you with the best experience. If you need help on how to enable your location, <a href="https://support.google.com/chrome/answer/142065?hl=en"><span style='color:brown'><b>Click Here</b></span></a><br><br><span style='color:#0093D9;cursor:hand;cursor:pointer'>Clear location settings and then click HERE to try again!</span></div>
 		<div class="usersOnline pull-right" id="search_results" style="display:none;position:absolute;top:0;bottom:0px;right:10px;z-index:99999999999;overflow-y:auto;overflow-x:hidden;width:420px;height:100%" onscroll="scrolled(this)"><table border=0></table></div>
 		<div id="dark1" class="dark_a" style="opacity:0;display:none"></div> 
-								
-		<div id="wrapper" class="www_wrapper" style="background:;background-size:cover;box-shadow:0px 0px 50px rgba(0,0,0,1);border-radius:5px;margin-top:-50px;margin-bottom:40px;overflow-x:hidden;b70.png;overflow-y:hidden;height:1000px">
+		<div id="wrapper" class="www_wrapper" style="background:url(https://sugardaddydays.com/assets/images/b70.png);background-size:cover;box-shadow:0px 0px 50px rgba(0,0,0,1);border-radius:5px;margin-top:-50px;margin-bottom:40px;overflow-x:hidden;;overflow-y:hidden;height:1000px">
 			<section id="section" style="text-align:center;margin:0;padding:0;overflow-y:auto;overflow-x:hidden;height:100%" align=center>
 				<div id="main_content">
-				<div style="position:absolute;width:100%;height:100%;top:0px;left:0px;right:0px;bottom:0px;background:#000;opacity:0.9;z-index:9999100000;display:none" id="pay_modal"></div>	
-				<div style="position:absolute;top:0;left:0;right:0;bottom:0;opacity:1.0;z-index:9999100001;display:none;margin:auto;FONT-FAMILY:Ubuntu Condensed;FONT-SIZE:14PX;color:#fff" id="wait">		
-				<div style="background:red;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1.0;z-index:9999100001;margin:auto;width:300px;height:200px">			
-				<div  style="top:0;left:0;right:0;bottom:0;opacity:1.0;margin:auto"><img src="https://sugardaddydays.com/assets/img/loader.gif"></div>			
-				<div style="padding-top:75px;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1.0;z-index:9999100001;margin-left:40%:auto;" id="spl_text"></div>		</div>	</div>	
-				<div style="padding:10px;margin:auto;position:absolute;top:0px;left:0px;right:0px;bottom:0px;cursor:hand;cursor:pointer;text-align:left;padding-left:5px;font-family:Ubuntu Condensed;font-size:20px;display:none;position:absolute;z-index:9999999999999; background:#f0f0f0; border-radius:6px; width: 300px; height:220px" id="bo">		<font style='font-family:Ubuntu Condensed;font-size:20px;color:#f0f0f0'>PHONE VERIFICATION<br><font style='font-family:Ubuntu Condensed;font-size:18px;color:#333'>To verify your account, please enter below the 4 digit pin we sent as a text to your phone<br>
-					<table style="background:#f0f0f0" align=center style='margin-top:10px;height:50px;width:150px' cellspacing=10>
-						<tr>
-							<td>
-								<input autofocus maxlength='1' type='text' id='v1' maxlength=1 onkeyup="document.all.v2.focus()" style='margin:5px;border:2px solid skyblue;height:40px;width:30px;text-align:center;color:#333;background:#f0f0f0;font-family:Ubuntu Condensed;font-size:18px'>
-							</td>
-							<td>
-								<input type='text' onkeyup="document.all.v3.focus()" maxlength="1" onfocus='this.value=' id='v2' style='margin:5px;border:2px solid skyblue;height:40px;width:30px;text-align:center;color:#333;background:#f0f0f0;font-family:Ubuntu Condensed;font-size:18px'>
-							</td>
-							<td>
-								<input type='text' id='v3' onkeyup="document.all.v4.focus()" style='margin:5px;border:2px solid skyblue;height:40px;width:30px;text-align:center;color:#333;background:#f0f0f0;font-family:Ubuntu Condensed;font-size:18px'>
-							</td>
-							<td>
-								<input type='text' id='v4' style='margin:5px;border:2px solid skyblue;height:40px;width:30px;text-align:center;color:#333;background:#f0f0f0;font-family:Ubuntu Condensed;font-size:18px'>
-							</td>
-						</tr>
-						<tr>
-							<td colspan=4>
-								<br><input type=button value="verify" onclick="validate_code()" class="btn btn-primary btn-active">
-							</td>
-						</tr>
-					</table>
-				</div>
-				<div class="col-md-6" style="position:absolute;margin:auto;left:0;right:0;margin-bottom:5px;overflow:auto;font-family:Ubuntu Condensed;position:absolute;z-index:99999999999999999999999999999999">
-					<div class="white-row"  style="box-shadow:0 0 20px #333;height:100%;font-family:Ubuntu Condensed">		
-						<div id="form_errors" class="alert alert-info" style="display:none"></div>
-						<div class="row">			
-							<div class="form-group">				
-								<div class="col-md-12" style="text-align:left;font-weight:300;font-family:Ubuntu Condensed">					
-									<label>Mobile Number</label>					
-									<input type="text" name="mobile" id="mobile" value="" placeholder="Your Mobile #" class="form-control input-box" onclick="clear_error(this)" onblur="register_allow();validate_field_register(this);check_mobile(this)" style="color:grey;font-size:18px;font-family:Ubuntu Condensed">					
-									<input type="hidden" name="mobile_original" id="mobile_original" value="">
-									<input type="hidden" name="email_original" id="email_original" value="">
-									<input type="hidden" name="login_original" id="login_original" value="">
-									<input type="hidden" name="pswd_original" id="pswd_original" value="">
-									<input type="hidden" name="age_original" id="age_original" value="">
-									<input type="hidden" name="gender" id="gender" value="">
-									<input type="hidden" name="looking_for" id="looking_for" value="">
-									<div id="mobile_err_txt" style="color:skyblue;text-align:left"></div>
-								</div>
-							</div>
+					<?/***
+					START HTML CONTENT FOR PAGE
+					***/?>
+					<div style="position:absolute;width:100%;height:100%;top:0px;left:0px;right:0px;bottom:0px;background:#000;opacity:0.9;z-index:9999100000;display:none" id="pay_modal"></div>	
+					<div style="position:absolute;top:0;left:0;right:0;bottom:0;opacity:1.0;z-index:9999100001;display:none;margin:auto;FONT-FAMILY:Ubuntu Condensed;FONT-SIZE:14PX;color:#fff" id="wait">		
+						<div style="background:red;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1.0;z-index:9999100001;margin:auto;width:300px;height:200px">			
+							<div  style="top:0;left:0;right:0;bottom:0;opacity:1.0;margin:auto"><img src="https://sugardaddydays.com/assets/img/loader.gif"></div>			
+							<div style="padding-top:75px;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1.0;z-index:9999100001;margin-left:40%:auto;" id="spl_text"></div>
 						</div>
-						<div id="smsp" class="row">			
-							<div class="form-group">				
-								<div class="col-md-12" style="text-align:left;font-weight:300">					
-									<label class="block">Notifications</label>										
-									<input type="radio" name="sms_allow" id="sms_allow1" value="yes" class="form-control" checked="checked" onclick="sms_set('yes')">
-									<div style="margin-left:10px;font-size:32px" class="fa fa-mobile">
-										<span style="margin-left:14px;font-size:18px;font-family:Ubuntu Condensed;cursor:hand;cursor:pointer" onclick="sms_set('yes')">
-											SMS alert on member contact
-										</span>
-									</div>
-									<br>
-									<input type="radio" name="sms_allow" id="sms_allow2" value="no" class="form-control" onclick="sms_set('no')">
-									<div style="margin-left:10px;font-size:32px;color:red" class="fa fa-mobile">
-										<span style="margin-left:10px;font-size:18px;font-family:Ubuntu Condensed;cursor:hand;cursor:pointer" onclick="sms_set('no')">
-											No SMS Notifications
-										</span>
+					</div>	
+					<div style="padding:10px;margin:auto;position:absolute;top:0px;left:0px;right:0px;bottom:0px;cursor:hand;cursor:pointer;text-align:left;padding-left:5px;font-family:Ubuntu Condensed;font-size:20px;display:none;position:absolute;z-index:9999999999999; background:#f0f0f0; border-radius:6px; width: 300px; height:220px" id="bo">		<font style='font-family:Ubuntu Condensed;font-size:20px;color:#f0f0f0'>PHONE VERIFICATION<br><font style='font-family:Ubuntu Condensed;font-size:18px;color:#333'>To verify your account, please enter below the 4 digit pin we sent as a text to your phone<br>
+						<table style="background:#f0f0f0" align=center style='margin-top:10px;height:50px;width:150px' cellspacing=10>
+							<tr>
+								<td>
+									<input autofocus maxlength='1' type='text' id='v1' maxlength=1 onkeyup="document.all.v2.focus()" style='margin:5px;border:2px solid skyblue;height:40px;width:30px;text-align:center;color:#333;background:#f0f0f0;font-family:Ubuntu Condensed;font-size:18px'>
+								</td>
+								<td>
+									<input type='text' onkeyup="document.all.v3.focus()" maxlength="1" onfocus='this.value=' id='v2' style='margin:5px;border:2px solid skyblue;height:40px;width:30px;text-align:center;color:#333;background:#f0f0f0;font-family:Ubuntu Condensed;font-size:18px'>
+								</td>
+								<td>
+									<input type='text' id='v3' onkeyup="document.all.v4.focus()" style='margin:5px;border:2px solid skyblue;height:40px;width:30px;text-align:center;color:#333;background:#f0f0f0;font-family:Ubuntu Condensed;font-size:18px'>
+								</td>
+								<td>
+									<input type='text' id='v4' style='margin:5px;border:2px solid skyblue;height:40px;width:30px;text-align:center;color:#333;background:#f0f0f0;font-family:Ubuntu Condensed;font-size:18px'>
+								</td>
+							</tr>
+							<tr>
+								<td colspan=4>
+									<br><input type=button value="verify" onclick="validate_code()" class="btn btn-primary btn-active">
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-md-6" style="position:absolute;margin:auto;left:0;right:0;margin-bottom:5px;overflow:auto;font-family:Ubuntu Condensed;position:absolute;z-index:99999999999999999999999999999999">
+						<div class="white-row"  style="box-shadow:0 0 20px #333;height:100%;font-family:Ubuntu Condensed">		
+							<div id="form_errors" class="alert alert-info" style="display:none"></div>
+							<div class="row">			
+								<div class="form-group">				
+									<div class="col-md-12" style="text-align:left;font-weight:300;font-family:Ubuntu Condensed">					
+										<label>Mobile Number</label>					
+										<input type="text" name="mobile" id="mobile" value="" placeholder="Your Mobile #" class="form-control input-box" onclick="clear_error(this)" onblur="register_allow();validate_field_register(this);check_mobile(this)" style="color:grey;font-size:18px;font-family:Ubuntu Condensed">					
+										<input type="hidden" name="mobile_original" id="mobile_original" value="">
+										<input type="hidden" name="email_original" id="email_original" value="">
+										<input type="hidden" name="login_original" id="login_original" value="">
+										<input type="hidden" name="pswd_original" id="pswd_original" value="">
+										<input type="hidden" name="age_original" id="age_original" value="">
+										<input type="hidden" name="gender" id="gender" value="">
+										<input type="hidden" name="looking_for" id="looking_for" value="">
+										<div id="mobile_err_txt" style="color:skyblue;text-align:left"></div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="row">			
-							<div class="form-group">
-								<div class="col-md-12" style="text-align:left;font-weight:300;font-style:normal">					
-									<label class="block">E-mail Address</label>						
-									<input type="text" name="email" id="email" value="" placeholder="Your Email Address" class="form-control input-box" onclick="clear_error(this)" onblur="validate_field_register(this)" style="color:grey;font-size:18px">						
-									<div id="email_err_txt" style="color:skyblue;text-align:left"></div>				
-								</div>
-							</div>
-						</div>		
-						<div class="row">			
-							<div class="form-group">				
-								<div class="col-md-12" style="text-align:left;font-weight:300">					
-									<label class="block">Create a Login Name</label>						
-									<input style="font-size:18px" type="text" name="login" id="login" value="" placeholder="Your Login Name" class="form-control input-box" onclick="clear_error(this)" onblur="validate_field_register(this)" style="color:grey;font-size:18px">						
-									<div id="login_err_txt" style="color:skyblue;text-align:left"></div>
-								</div>
-							</div>
-						</div>	
-						<div class="row">			
-							<div class="form-group">				
-								<div class="col-md-12" style="text-align:left;font-weight:300">					
-									<label class="block">Create a Password</label>						
-									<input type="password" name="pswd" id="pswd" onblur="validate_field_register(this)" placeholder="Create Password" class="form-control input-box" onclick="clear_error(this)" style="color:grey;font-size:18px">						
-									<div id="pswd_err_txt" style="color:skyblue;text-align:left"></div>
-								</div>
-							</div>
-						</div>
-						<div class="row">			
-							<div class="form-group">				
-								<div class="col-md-12" style="text-align:left;font-weight:300">					
-									<label class="block">Enter your Age</label>						
-									<input style="font-size:18px" type="text" name="age" id="age" value="" placeholder="Your Age" class="form-control input-box" onclick="clear_error(this)" onblur="validate_field_register(this)" style="color:grey;font-size:18px">						
-									<div id="age_err_txt" style="color:skyblue;text-align:left"></div>
-								</div>
-							</div>
-						</div>		
-						<div class="row">			
-							<div class="form-group">				
-								<div class="col-md-6" style="text-align:left;font-weight:300">										
-									<label class="block">Gender</label>										
-									<input type="radio" name="gender" id="SD" value="SD" class="form-control" checked="checked" onclick="setGender('Sugar Daddy','Sugar Baby')">
-									<div style="margin-left:10px;font-size:32px;color:red" class="fa fa-male">
-										<span style="margin-left:10px;font-size:18px;font-family:Ubuntu Condensed;" onclick="setGender('Sugar Daddy','Sugar Baby')">Sugar Daddy</span>
-									</div>
-									<br>
-									<input type="radio" name="gender" id="SB" value="SB" class="form-control" onclick="setGender('Sugar Baby','Sugar Daddy')">
-									<div style="margin-left:10px;font-size:32px" class="fa fa-male">
-										<span style="margin-left:10px;font-size:18px;font-family:Ubuntu Condensed;" onclick="setGender('Sugar Baby','Sugar Daddy')">Sugar Baby</span>
+							<div id="smsp" class="row">			
+								<div class="form-group">				
+									<div class="col-md-12" style="text-align:left;font-weight:300">					
+										<label class="block">Notifications</label>										
+										<input type="radio" name="sms_allow" id="sms_allow1" value="yes" class="form-control" checked="checked" onclick="sms_set('yes')">
+										<div style="margin-left:10px;font-size:32px" class="fa fa-mobile">
+											<span style="margin-left:14px;font-size:18px;font-family:Ubuntu Condensed;cursor:hand;cursor:pointer" onclick="sms_set('yes')">
+												SMS alert on member contact
+											</span>
+										</div>
+										<br>
+										<input type="radio" name="sms_allow" id="sms_allow2" value="no" class="form-control" onclick="sms_set('no')">
+										<div style="margin-left:10px;font-size:32px;color:red" class="fa fa-mobile">
+											<span style="margin-left:10px;font-size:18px;font-family:Ubuntu Condensed;cursor:hand;cursor:pointer" onclick="sms_set('no')">
+												No SMS Notifications
+											</span>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="row">			
-							<div class="col-md-6">				
-								<input type="submit" value="FINISH SIGNUP" STYLE="font-size:18px;width:150px;height:50px;text-shadow:none;font-family:Ubuntu Condensed" class="btn btn-danger push-bottom" data-loading-text="Loading..."  onclick="validate_form()"><br>
-								<span id="autolocation"></span>
+							<div class="row">			
+								<div class="form-group">
+									<div class="col-md-12" style="text-align:left;font-weight:300;font-style:normal">					
+										<label class="block">E-mail Address</label>						
+										<input type="text" name="email" id="email" value="" placeholder="Your Email Address" class="form-control input-box" onclick="clear_error(this)" onblur="validate_field_register(this)" style="color:grey;font-size:18px">						
+										<div id="email_err_txt" style="color:skyblue;text-align:left"></div>				
+									</div>
+								</div>
+							</div>		
+							<div class="row">			
+								<div class="form-group">				
+									<div class="col-md-12" style="text-align:left;font-weight:300">					
+										<label class="block">Create a Login Name</label>						
+										<input style="font-size:18px" type="text" name="login" id="login" value="" placeholder="Your Login Name" class="form-control input-box" onclick="clear_error(this)" onblur="validate_field_register(this)" style="color:grey;font-size:18px">						
+										<div id="login_err_txt" style="color:skyblue;text-align:left"></div>
+									</div>
+								</div>
+							</div>	
+							<div class="row">			
+								<div class="form-group">				
+									<div class="col-md-12" style="text-align:left;font-weight:300">					
+										<label class="block">Create a Password</label>						
+										<input type="password" name="pswd" id="pswd" onblur="validate_field_register(this)" placeholder="Create Password" class="form-control input-box" onclick="clear_error(this)" style="color:grey;font-size:18px">						
+										<div id="pswd_err_txt" style="color:skyblue;text-align:left"></div>
+									</div>
+								</div>
 							</div>
-						</div>
-						<br>
-						<div class="row">			
-						</div>
+							<div class="row">			
+								<div class="form-group">				
+									<div class="col-md-12" style="text-align:left;font-weight:300">					
+										<label class="block">Enter your Age</label>						
+										<input style="font-size:18px" type="text" name="age" id="age" value="" placeholder="Your Age" class="form-control input-box" onclick="clear_error(this)" onblur="validate_field_register(this)" style="color:grey;font-size:18px">						
+										<div id="age_err_txt" style="color:skyblue;text-align:left"></div>
+									</div>
+								</div>
+							</div>		
+							<div class="row">			
+								<div class="form-group">				
+									<div class="col-md-6" style="text-align:left;font-weight:300">										
+										<label class="block">Gender</label>										
+										<input type="radio" name="gender" id="SD" value="SD" class="form-control" checked="checked" onclick="setGender('Sugar Daddy','Sugar Baby')">
+										<div style="margin-left:10px;font-size:32px;color:red" class="fa fa-male">
+											<span style="margin-left:10px;font-size:18px;font-family:Ubuntu Condensed;" onclick="setGender('Sugar Daddy','Sugar Baby')">Sugar Daddy</span>
+										</div>
+										<br>
+										<input type="radio" name="gender" id="SB" value="SB" class="form-control" onclick="setGender('Sugar Baby','Sugar Daddy')">
+										<div style="margin-left:10px;font-size:32px" class="fa fa-male">
+											<span style="margin-left:10px;font-size:18px;font-family:Ubuntu Condensed;" onclick="setGender('Sugar Baby','Sugar Daddy')">Sugar Baby</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">			
+								<div class="col-md-6">				
+									<input type="submit" value="FINISH SIGNUP" STYLE="font-size:18px;width:150px;height:50px;text-shadow:none;font-family:Ubuntu Condensed" class="btn btn-danger push-bottom" data-loading-text="Loading..."  onclick="validate_form()"><br>
+									<span id="autolocation"></span>
+								</div>
+							</div>
+							<br>
+							<div class="row">			
+							</div>
 							<div style="text-align:center;margin:10px;color:silver">Issues with site? Click here or email cs@sugardaddydays.com</div>
 						</div>
+					</div>
 				</div>
-
-			</div>
 			</section>
 		</div>
 		<!-- /REGISTER -->	

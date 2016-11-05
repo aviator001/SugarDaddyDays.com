@@ -260,7 +260,7 @@
 </header>
 
 <br>
-	<div id="bottom_barx" style="display:none;width:105%;position:fixed;bottom:0px;left:-5px;height:50px;background:url(https://sugardaddydays.com/assets/x_toolbar.png);background-size:cover;z-index:999999999999999999999999999;padding-left:10px">
+	<div id="bottom_barx" style="display:;width:105%;position:fixed;bottom:0px;left:-5px;height:50px;background:url(https://sugardaddydays.com/assets/x_toolbar.png);background-size:cover;z-index:999999999999999999999999999;padding-left:10px">
 		<table style="width:100%">
 			<tr>
 				<td><a id="az1" href="home.html"><img src="https://sugardaddydays.com/assets/images/ax0.png" style="width:25px;margin-top:15px"></a></td>
@@ -344,7 +344,6 @@
   =========================================================-->
 <div class="container" style="width:320px;padding:0">
 <div class="row" style="text-align:center;width:320px">
-<iframe src="https://sugardaddydays.com/3d.php" id="3D" style="background:url(https://sugardaddydays.com/bg1.jpg);right:0;border:none;margin:0;width:100%;height:100px;bottom:-0;left:0;background-size:cover;position:fixed;z-index:9999999999"></iframe>"
 <div class = "modal fade" id = "uiErr" tabindex = "0" role = "dialog" aria-labelledby = "uiErr" aria-hidden = "true" style="font-family:Ubuntu Condensed;font-size:16px">
 	   <div class = "modal-dialog">
 			<div class = "modal-content">
@@ -364,11 +363,8 @@
 			</div>
 		</div>
 	</div>
-	<img onclick="slower()" src="https://sugardaddydays.com/assets/images/lt.png" style="width:35px;position:fixed;z-index:9999999999999999;left:5px;bottom:40px">
-	<img onclick="faster()" src="https://sugardaddydays.com/assets/images/rt.png" style="width:35px;position:fixed;z-index:9999999999999999;right:5px;bottom:40px">
 <script>
 
-	var pa=setTimeout('iReload()',6000000)
 	function iReload() {
 		document.getElementById('3D').contentWindow.location.reload();
 	}
@@ -452,7 +448,7 @@
 			$('#triggerErr').click()
 		} else {
 			user_input=document.getElementById('user_input').value
-			url="../upload_snapchat.php?user_input="+user_input+'&medium='+medium
+			url="https://sugardaddydays.com/upload_snapchat.php?user_input="+user_input+'&medium='+medium
 			document.getElementById('myDropZoneForm').style.display='block'
 			document.getElementById('triggerDrop').style.display='none'
 			document.getElementById('myDropZoneForm').style.marginLeft='0px'
@@ -526,7 +522,7 @@
 		setCookie('user_input_h', x_mobile + '|' + medium + '|' + '15')
 		if  (!myDropzone) {
 			myDropzone = new Dropzone("#myDropZoneForm", { 
-				url: "upload_snapchat.php?user_input="+x_mobile+'&medium=id',
+				url: "https://sugardaddydays.com/upload_snapchat.php?user_input="+x_mobile+'&medium=id',
 				thumbnailWidth: 250,
 				thumbnailHeight: 250
 			});
@@ -586,9 +582,7 @@
 function cancel_sms() {}
 
 </script>
-
-
-<div style="position:fixed;z-index:1;left:0;right:0;top:0;bottom:0;margin:auto;text-align:center;margin:auto;width:350px;width:100%;height:5;background:url(https://sugardaddydays.com/assets/images/fav_bg_01.jpg); background-size:cover;object-fit:cover;margin:0;padding:0;font-size:18px" id="sr1" class="">
+<div style="position:fixed;z-index:1;left:0;right:0;top:0;bottom:0;margin:auto;text-align:center;margin:auto;width:350px;width:100%;height:5;background:url(https://sugardaddydays.com/assets/images/nn.png); background-size:cover;object-fit:cover;margin:0;padding:0;font-size:18px" id="sr1" class="">
 <br><br>
 <div class=""  style="width: 100%"  style="">
 	<div class="row" style="margin:auto;left:0;right:0;text-align:center;width:320px;position:absolute">
@@ -694,7 +688,7 @@ function cancel_sms() {}
 										<a href="browse.html?type=local"><img src="https://sugardaddydays.com/assets/images/gl11_sb.png" style="width:100px;height:100px;margin:5px"></a>
 									</td>
 									<td style="text-align:left">
-										<a href="hot_lists.html"><img src="https://sugardaddydays.com/assets/images/gl10.png" style="width:100px;height:100px;margin:5px"></a>
+										<a href="user_hot_lists.html"><img src="https://sugardaddydays.com/assets/images/gl10.png" style="width:100px;height:100px;margin:5px"></a>
 									</td>
 								</tr>
 								<tr>
@@ -724,7 +718,6 @@ function cancel_sms() {}
 										</td>
 								</tr>
 							</table>
-							<div style="height:25px;background:#000;width:100%;position:fixed;bottom:100px"><span><img onclick="tgg(this)" src="https://sugardaddydays.com/assets/images/on_small.png" style="position:fixed;right:5px;width:50px;height:25px"></span><span style="position:fixed;left:5px;font-size:18px">RECENT JOINS. CLICK TO VIEW PROFILE</span></div>
 					</td>
 				</tr>
 			</table>

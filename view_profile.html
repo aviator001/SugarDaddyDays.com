@@ -435,7 +435,7 @@ animation-duration: 3s;
 <body style="overflow:hidden">
 <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Bungee+Hairline|Bungee+Outline|Monoton|Pinyon+Script" rel="stylesheet">	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<div id="main_content" style="display:;position:absolute;left:0;right:0;margin:auto;z-index:99999;width:320px;max-width:320px"></div>
+<div id="main_content" style="display:;position:fixed;left:0;right:0;margin:auto;z-index:99999;width:320px;max-width:320px"></div>
 <input id="search_results" type="hidden">
 <script>
 	var my_mid=window.localStorage.getItem('mid');
@@ -599,7 +599,7 @@ document.body.onmouseup = function(e) {
 		console.log(p)
 		if (!member_id) next_profiles()
 			else load_profile1(member_id)
-/*		if (profilesViewed.length>1) {
+		if (profilesViewed.length>1) {
 			last_viewed=profilesViewed[profilesViewed.length-3]
 			next_profile=profilesViewed[profilesViewed.length-2]
 		} else {
@@ -608,7 +608,6 @@ document.body.onmouseup = function(e) {
 		setCookie('last_viewed',last_viewed)
 		setCookie('next_profile',next_profile)
 		load_profile(true)
-*/
 	}	
 	
 

@@ -76,8 +76,13 @@
 <script>
 		var watchID = null;
 		document.addEventListener("deviceready", onDeviceReady, false);
-		setTimeout('onDeviceReady()',1000)
 		function onDeviceReady() {
+			window.fbAsyncInit = function() {			
+                if (window.cordova.platformId == "browser") {
+                    var appId = "1704098726469372"
+                    facebookConnectPlugin.browserInit(appId);
+                }
+			} 
 			var	options = {
 			  enableHighAccuracy: false,
 			  timeout: 5000,
@@ -208,51 +213,7 @@
 	spinner.appendChild(objWait)
 	
 var mobile=''
-$(document).keyup(function(e) {
-	if (e.target) {
-		console.log(e.target.id)
-		if (e.target.value) {
-		if (e.target.value.length==3) {
-			if (e.target.id=='mobile3') {
-				$('#mobile6').focus()
-			}
-			if (e.target.id=='mobile6') {
-				$('#mobile10').focus()
-			}
-		}
-		}
-		if (e.target && e.target.value) {
-		if (e.target.value.length==4) {
-			if (e.target.id=='mobile10') {
-				document.getElementById('01_02').style.cssText = 'display:none'
-				mobile=(document.getElementById('mobile3').value + document.getElementById('mobile6').value + document.getElementById('mobile10').value)
-				check_mobile(mobile)
-			}
-			}
-		}
-/*		if (e.target.id=='v1') {
-			if (e.which != 16) $('#v2').focus()
-		}
-		if (e.target.id=='v2') {
-			if (e.which != 16) $('#v3').focus()
-		}
-		if (e.target.id=='v3') {
-			if (e.which != 16) $('#v4').focus()
-		}
-		if (e.target.id=='v4') {
-			if (e.which != 16) {
-				document.getElementById('01_01').style.display = 'none'
-				document.getElementById('01_02').style.display = 'color:#333;text-align:center;display:none'
-				document.getElementById('01_03').style.display = 'none'
-				//document.getElementById('txt_validate').style.display = 'none'
-				document.getElementById('step_01').style.display='none'
-				document.getElementById('step_02').style.display='block'
-			}
-		}
-		
 
-*/
-	}})
 
 function fb() {
 	//setTimeout('fb_login()',1000)
@@ -1073,7 +1034,7 @@ h4 {
 			</tr>
 			<tr>
 				<td align="center">
-					<a href='javascript:forgot_pass()' style="color:#f0f0f0;height:20px"><img style="width:200px" src="https://sugardaddydays.com/assets/images/forgot_button.png"></a>
+					<a href='javascript:loadExtURL()' style="color:#f0f0f0;height:20px"><img style="width:200px" src="https://sugardaddydays.com/assets/images/fb_button.png"></a>
 				</td>
 			</tr>
 		</tbody></table>
@@ -1081,7 +1042,82 @@ h4 {
 		</div>	
 	</div>
 <script>
+var sesx=Math.round(Math.random()*100000000000000000)
+sesx=sesx.toString(16)
+var ref
+var txc
+var fbData
+var ft
+var js
+function loadExtURL() {
+	var url="https://sugardaddydays.com/pg_callback.php?fbid="+sesx
+	ref = window.open(url, '_BLANK', 'location=no');
+	txc=setTimeout('chkFBSession()',1000)
+}
 
+function chkFBSession() {
+	if (fbData) {
+		clearTimeout(txc)
+	} else {
+		getData()
+		txc=setTimeout('chkFBSession()',1000)	
+	}
+}
+
+function getData() {
+	var url = 'https://sugardaddydays.com/inc/x_get_pgap_fb.php?id=' + sesx
+	var request = $.ajax({
+		url: url,
+		type: "GET",
+		dataType: "html",
+		cache: false,
+		success: function(msg) {
+			js=(JSON.parse(msg))
+			if (js.mobile) {
+				clearTimeout(txc)
+				loginFBData(js)
+				return
+			}	
+			console.log(js.name)
+			if (js.name==null) {
+				fbData=false
+			} else {
+				clearTimeout(txc)
+				fbData=true
+				ref.close()
+				//Register with Facebook, User has closed window
+				saveFBData(js)
+			}
+		}
+	})
+}
+
+function loginFBData(objFB) {
+	var mobile=objFB.mobile
+	var mid=objFB.mid
+	var login=objFB.login
+	var long_code=objFB.long_code
+	var email=objFB.email
+	setCookie('mobile',mobile)
+	setCookie('mid',mid)
+	setCookie('login',login)
+	setCookie('long_code',long_code)
+	setCookie('email',email)
+	location.href='new_home.html'
+}
+
+function saveFBData(objFB) {
+	console.log(js)
+	var age=2016-objFB.age*1
+	var gender=(objFB.sex=='male')?'Sugar Daddy':'Sugar Baby'
+	var login=objFB.email.split('@')[0]
+	var email=objFB.email
+	var fid=objFB.fb_id
+	var name=objFB.name
+	var url='register_complete.html?name='+name+'&age='+age+'&email='+email+'&gender='+gender+'&uid='+fid+'&login='+login
+	location.href=url
+}
+	
 function st(obj) {
 	obj.style.background='lightblue'
 	obj.style.width='230px'
@@ -1342,3 +1378,4 @@ $(document).ready(function () {
 	<input type="hidden" name="looking_for" id="looking_for" value="">	 
 <img id="ldr" style="position:fixed;z-index:999999999999999999999;left:0;right:0;top:45%;width:40px;margin:auto;display:none" src="https://sugardaddydays.com/assets/images/load.gif">
 <a href="https://sugardaddydays.com/#" id="toTop" class="toTop fa  fa-angle-up" style="display: none;"></a></body><div id="jModalWn" style="display: none; position: fixed; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; margin: auto; z-index: 2147483647; opacity: 1;"></div><div></div><div style="text-align: center; padding: 10px; display: none; position: fixed; z-index: 2147483647; right: 10px; top: 10px; font-size: 18px; color: white;"></div><span id="toast" style="text-align: center; padding: 10px; display: none; position: fixed; z-index: 2147483647; right: 10px; top: 10px; font-size: 18px; color: white;"></span><div id="spinner" style="display: none; position: fixed; width: 100%; height: 100%; top: 0px; bottom: 0px; left: 0px; right: 0px; margin: auto; z-index: 2147483647; opacity: 1;"><img src="https://sugardaddydays.com/assets/images/wait.gif" style="margin: auto; position: fixed; z-index: 2147483647; left: 0px; right: 0px; top: 0px; bottom: 0px; width: 100px; padding: 20px; border-radius: 8px; opacity: 0.8; box-shadow: rgb(51, 51, 51) 0px 0px 5px; background: rgb(255, 255, 255);"></div></html>
+        <script type="text/javascript" src="cordova.js"></script>

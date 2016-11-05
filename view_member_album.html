@@ -297,6 +297,8 @@ function get_photos(member_id) {
 			msg=msg.split('|')
 			pid=msg[1]
 			src=msg[0]
+			pid=pid.substring(0,pid.length-1)
+			src=src.substring(0,src.length-1)			
 			pid=pid.split(',')
 			src=src.split(',')
 			console.log(src)
