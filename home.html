@@ -90,9 +90,24 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>	
+<script>
 
+</script>
+	<script>
+		load()
+		function load() {
+			$('#loader').show()
+			$('#img_loader').show()
+		}
+		
+		function unload() {
+			$('#loader').hide()
+			$('#img_loader').hide()
+		}
+	</script>
+	
 	</head>
-	<body style="overflow:auto!Important;">
+	<body onload="unload()" style="overflow:auto!Important;">
 			<div id="notify" style="display:none;opacity:0.8;right:10px;top:100px;z-index:99999999999999;background:#333;box-shadow:0 0 20px #000;width:250px;height:40px;position:fixed;border-radius:4px">
 				<span id="notify_txt"  style="padding:5px;color:#f0f0f0"></span>
 			</div>
@@ -101,7 +116,7 @@
 	
 	<div id="panel_menu" style="display:none;position:fixed;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background:#000;z-index:999999999999999999999999999999999999;opacity:0.8"></div>
 	<div  id="panel_menu2" class="www_box2 www_box5" style="display:none;border-left:15px solid rgba(0,0,0,0.3);box-shadow:5px 5px 10px rgba(0,0,0,0.5);display:;width:200px;height:100%;z-index:9999999999999999999999999999999999999;position:fixed;right:-0px;top:40px;bottom:0;background:#f0f0f0;opacity:1">
-		<table cellpadding=10 STYLE="BACKGROUND:NONE;font-family:Open Sans Condensed!Important;font-size:24px!Important;">	
+		<table onclick="load()" cellpadding=10 STYLE="BACKGROUND:NONE;font-family:Open Sans Condensed!Important;font-size:24px!Important;">	
 			<tr style="border-top:1px solid silver"><td colspan=2><br></td></tr>
 			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="home.html"><span><i class="fa fa-home" style="margin-left:5px;font-size:18px;color:grey"></i></span></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="home.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">MEMBERS HOME</span></a></div></td></tr>
 			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="view_album.html"><i class="fa fa-camera" style="margin-left:5px;color:grey;font-size:18px"></i></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="view_album.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">MY ALBUM</span></a></div></td></tr>
@@ -367,7 +382,7 @@
 								</td>
 							</tr>
 						</table>
-								<table style="position:absolute;width:100%;margin:0;padding:0;bottom:50px;z-index:999">
+								<table onclick="load()" style="position:absolute;width:100%;margin:0;padding:0;bottom:50px;z-index:999">
 								<tr>
 									<td style="text-align:right">
 										<a href="reports.html"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r20.png" style="width:100px;margin:0px"></a>
@@ -403,7 +418,7 @@
 									</td>
 								</tr>
 							</table>							
-	<div id="bottom_barx1" style="display:;width:105%;position:fixed;bottom:0px;left:-5px;height:50px;background:url(https://sugardaddydays.com/assets/x_toolbar.png);background-size:cover;z-index:999999999999999999999999999;padding-left:10px">
+	<div onclick="load()" id="bottom_barx1" style="display:;width:105%;position:fixed;bottom:0px;left:-5px;height:50px;background:url(https://sugardaddydays.com/assets/x_toolbar.png);background-size:cover;z-index:999999999999999999999999999;padding-left:10px">
 		<table style="width:100%">
 			<tr>
 				<td><a id="az1" href="home.html"><img src="https://sugardaddydays.com/assets/images/ax0.png" style="width:25px;margin-top:15px"></a></td>
@@ -596,7 +611,9 @@
 </div>
 
 	</section>
-	
+	<div id="loader" style="display:;z-index:99999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.3;margin:auto;background:#000;font-family:Open Sans Condensed;"></div>
+	<img id="img_loader" style="display:;z-index:999999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1;margin:auto;width:50px" src="https://sugardaddydays.com/assets/images/load.gif">
+
 	
 		<script href="https://sugardaddydays.com/assets/js/framework.js"></script>
 		<script href="https://sugardaddydays.com/js/jquery-migrate-1.2.1.js"></script>

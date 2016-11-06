@@ -930,14 +930,25 @@
 			document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
 		}	
 	}					
-
+		function load() {
+			$('#loader').show()
+			$('#img_loader').show()
+		}
+		
+		function unload() {
+			$('#loader').hide()
+			$('#img_loader').hide()
+		}
 			</script>
 			<style>
 			</style>
+	<body  onload="unload()">
+	<div id="loader" style="display:;z-index:99999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.3;margin:auto;background:#000;font-family:Open Sans Condensed;"></div>
+	<img id="img_loader" style="display:;z-index:999999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1;margin:auto;width:50px" src="https://sugardaddydays.com/assets/images/load.gif">
 			
 
 			<header id="header" class="header" style="width:100%;opacity:1;background:#111;position:fixed">
-<a href="https://sugardaddydays.com/home.html"><img id="m0" style="position:fixed;z-index:99;width:75px;top:105px;left:-30px" src="https://sugardaddydays.com/assets/images/tab_back.png"></a><img id="m1" style="position:fixed;z-index:99;width:50px;top:105px;right:-30px;width:75px" src="https://sugardaddydays.com/assets/images/tab_menu_drop.png" onclick="show_drop_down_menu()"><a href="page.php?page=members_home"><img id="m2" style="position:fixed;z-index:99;width:50px;top:155px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_members_home.png"></a><a href="page.php?page=mail"><img id="m3" style="position:fixed;z-index:99;width:50px;top:205px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_mailbox.png"></a><a href="page.php?page=search"><img id="m4" style="position:fixed;z-index:99;width:50px;top:255px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_search.png"></a><a href="page.php?page=match"><img id="m5" style="position:fixed;z-index:99;width:50px;top:305px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_browse.png"></a><a href="page.php?page=user_hot_lists"><img id="m6" style="position:fixed;z-index:99;width:50px;top:355px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_hotlists.png"></a><a href="page.php?page=logout"><img id="m7" style="position:fixed;z-index:99;width:50px;top:405px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_logout.png"></a>						
+				<a href="https://sugardaddydays.com/home.html"><img id="m0" style="position:fixed;z-index:99;width:75px;top:105px;left:-30px" src="https://sugardaddydays.com/assets/images/tab_back.png"></a><img id="m1" style="position:fixed;z-index:99;width:50px;top:105px;right:-30px;width:75px" src="https://sugardaddydays.com/assets/images/tab_menu_drop.png" onclick="show_drop_down_menu()"><a href="page.php?page=members_home"><img id="m2" style="position:fixed;z-index:99;width:50px;top:155px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_members_home.png"></a><a href="page.php?page=mail"><img id="m3" style="position:fixed;z-index:99;width:50px;top:205px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_mailbox.png"></a><a href="page.php?page=search"><img id="m4" style="position:fixed;z-index:99;width:50px;top:255px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_search.png"></a><a href="page.php?page=match"><img id="m5" style="position:fixed;z-index:99;width:50px;top:305px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_browse.png"></a><a href="page.php?page=user_hot_lists"><img id="m6" style="position:fixed;z-index:99;width:50px;top:355px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_hotlists.png"></a><a href="page.php?page=logout"><img id="m7" style="position:fixed;z-index:99;width:50px;top:405px;right:0px;display:none" src="https://sugardaddydays.com/assets/images/tab_logout.png"></a>						
 						<div style="background:url(assets/images/xxx_big.png),#111;background-size:cover;position:fixed;width:100%;left:0;height:60px;top:-10px;z-index:999999999">
 							<a href="javascript:toggle_top()"><i class="fa fa-search" style="color:#0093D9;font-size:28px;position:absolute;right:10px;top:20px"></i></a>
 							<a href="home.html"><img src="https://sugardaddydays.com/assets/images/logo_m.png" alt="Sugar Daddy Dating" style="width:200px;top:10px;right:0px;left:0;margin:auto;opacity:1;overflow:hidden;position:fixed"></a>
@@ -1059,7 +1070,7 @@
 			<div id="auto_slider_content" style="position:absolute;left:0;right:0;top:90px;bottom:0;margin:auto;z-index:-9"></div>
 			<div class="btn btn-success" id="btnSlideShow" onclick="start_show()" style="display:none;width:140px;position:fixed;bottom:100px;left:0;right:0;margin-left:auto;margin-right:auto;z-index:999999999999999999999;">Start Slideshow</div>
 			<div class="container" style="background:url(assets/images/xxx_white.png) center;background-size:cover;right:0;">
-				<div id="slide01" class="row" style="left:0;position:fixed;bottom:47px;height:65px;background:url(assets/images/xxx_big.png) center;background-size:cover;color:#f0f0f0;text-shadow:none;font-size:18px;;width:100%;text-align:center;margin-left:;width:105%;">
+				<div id="slide01" class="row" style="left:0;position:fixed;bottom:47px;height:65px;background:url(https://sugardaddydays.com/assets/images/xxx_big.png) center;background-size:cover;color:#f0f0f0;text-shadow:none;font-size:18px;;width:100%;text-align:center;margin-left:;width:105%;">
 					<table width=100%>
 						<tr>
 							<td width=20%></td>
@@ -1101,7 +1112,7 @@
 
 				</div>
 			</div>
-		<div  id="slide02" style=";width:100%;height:50px;left:-5px;position:fixed;bottom:0;background:#000;z-index:99999">
+		<div  id="slide02" style="width:100%;height:50px;left:-5px;position:fixed;bottom:0;background:#000;z-index:99999">
 			<div style='border-top:5px solid orange;font-family:Open Sans Condensed;text-align:center;position:fixed;z-index:999999999;bottom:0px;width:100%;padding-top:15px;padding-bottom:15px;background:#ccc;position:fixed;margin-left:5px;margin-right:5px;text-align:center'>
 				<div class='gr slider sliderRangeMax sliderNone ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all' id='slider-range-max' aria-disabled='false' style="margin-left:2%;margin-right:2%;max-width:96%;background:url(assets/images/rainbow.png); padding-top:-3px;border:none;background-size:100% 50px"><div class='ui-slider-range-max ui-widget-header ui-corner-all'></div>
 					<a class='ui-slider-handle ui-state-default ui-corner-all' style='background:url(https://sugardaddydays.com/assets/images/bb1.png)' href='#'>
@@ -1125,6 +1136,7 @@
 		border:5px solid #333;font-family:Six Caps;font-size:36px;background:#f0f0f0;width:55px;height:55px;border-radius:200px;color:#333;margin-top:5px
 	}
 </style>
+</body>
 	<script>
 $('#s_age').jRange({
     from: 18,

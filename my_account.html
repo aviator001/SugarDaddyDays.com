@@ -151,8 +151,8 @@
 					document.getElementById('general_info').value=msg.general_info
 					var pswd=msg.pswd
 					document.getElementById('pswd').value=pswd
-					setCookie('gender',gender)
-					setCookie('looking_for',looking_for)
+					setCookie('gender',gender.value)
+					setCookie('looking_for',looking_for.value)
 				}
 			})			
 	}
@@ -185,7 +185,9 @@
 						</tr>
 					</table>
 				</div>
-				<div id="loader" style="display:none;z-index:99999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.3;margin:auto;background:#ccc;font-family:Open Sans Condensed;"><img style="z-index:999999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1;margin:auto" src="assets/img/loader.gif"></div>			
+				<div id="loader" style="display:;z-index:99999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.3;margin:auto;background:#000;font-family:Open Sans Condensed;"></div>
+				<img style="z-index:999999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1;margin:auto;width:50px" src="https://sugardaddydays.com/assets/images/load.gif">
+				
 				<div class="col-md-6" style="position:absolute;margin:auto;left:0;right:0;margin-bottom:5px">
 					<div class="white-row"  style="box-shadow:0 0 20px #333;background:#f0f0f0">		
 						<span style='font-family:Open Sans Condensed;color:#0093D9;font-size:22px'>Found your Facebook Profile;</span><br><span style='font-family:Open Sans Condensed;color:black;font-size:18px'>Just enter your <b>mobile number</b> and thats it!</span>
@@ -233,15 +235,15 @@
 								<div class="col-md-6" style="text-align:left;font-weight:300;font-style:normal;color:#333;text-shadow:none">					
 									<label class="block">I AM A</label>					
 									<select type="select" id="gender" onchange="update(this)">
-										<option id="Sugar Daddy">Sugar Daddy</option>
-										<option id="Sugar Baby">Sugar Baby</option>
+										<option name="Sugar Daddy">Sugar Daddy</option>
+										<option name="Sugar Baby">Sugar Baby</option>
 									</select>
 								</div>								
 								<div class="col-md-6" style="text-align:left;font-weight:300;font-style:normal;color:#333;text-shadow:none">					
 									<label class="block">SEEKING</label>						
 									<select type="select" id="looking_for" onchange="update(this)">
-										<option id="Sugar Daddy">Sugar Daddy</option>
-										<option id="Sugar Baby">Sugar Baby</option>
+										<option name="Sugar Daddy">Sugar Daddy</option>
+										<option name="Sugar Baby">Sugar Baby</option>
 									</select>								</div>
 								<div class="col-md-6" style="text-align:left;font-weight:300;font-style:normal;color:#333;text-shadow:none">					
 									<label class="block">GENERATED PASSWORD</label>				

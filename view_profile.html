@@ -101,7 +101,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>	
 
 	</head>
-	<body style="overflow:auto!Important;">
+	<body onload="unload()" style="overflow:auto!Important;">
 			<div id="notify" style="display:none;opacity:0.8;right:10px;top:100px;z-index:99999999999999;background:#333;box-shadow:0 0 20px #000;width:250px;height:40px;position:fixed;border-radius:4px">
 				<span id="notify_txt"  style="padding:5px;color:#f0f0f0"></span>
 			</div>
@@ -155,7 +155,23 @@
 				.dropdown-menu {padding:5px;opacity:1;border-radius:2px}
 				.mm{border-radius:0 0 5px 5px;position:fixed;width:200px;height:100%;left:0px;top:55px;padding:0px;z-index:99999999999999999999999;text-align:left;display:block}
 			</style>
-			<header id="header" class="header" style="width:100%;opacity:1;background:#111;position:fixed;z-index:999999999999">
+	<script>
+		load()
+		function load() {
+			$('#loader').show()
+			$('#img_loader').show()
+		}
+		
+		function unload() {
+			$('#loader').hide()
+			$('#img_loader').hide()
+		}
+	</script>
+	</head>
+
+	<div id="loader" style="display:;z-index:99999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.3;margin:auto;background:#000;font-family:Open Sans Condensed;"></div>
+	<img id="img_loader" style="display:;z-index:999999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1;margin:auto;width:50px" src="https://sugardaddydays.com/assets/images/load.gif">
+				<header id="header" class="header" style="width:100%;opacity:1;background:#111;position:fixed;z-index:999999999999">
 						<div style="background:url(https://sugardaddydays.com/assets/images/xxx_big.png),#111;background-size:cover;position:fixed;width:100%;left:0;height:60px;top:-10px;z-index:999999999">
 						<a href="search.html"><i class="fa fa-search" style="color:#0093D9;font-size:28px;position:absolute;right:10px;top:18px"></i></a>
 						<a href="home.html"><img src="https://sugardaddydays.com/assets/images/logo_m.png" alt="Sugar Daddy Dating" style="width:200px;top:10px;right:0px;left:0;margin:auto;opacity:1;overflow:hidden;z-index:999999999;position:fixed"></a>
@@ -202,6 +218,7 @@
 			var mt
 			var show_menu='0'
 			function show_menuf() {
+				unload()
 				if (show_menu=='0') {
 					document.getElementById('panel_menu').style.display='block'
 					document.getElementById('panel_menu2').style.display='block'
@@ -432,7 +449,7 @@ animation-duration: 3s;
 }
 
 </style>
-<body style="overflow:hidden">
+<body onload="unload()" style="overflow:hidden">
 <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Bungee+Hairline|Bungee+Outline|Monoton|Pinyon+Script" rel="stylesheet">	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <div id="main_content" style="display:;position:fixed;left:0;right:0;margin:auto;z-index:99999;width:320px;max-width:320px"></div>
@@ -569,7 +586,6 @@ animation-duration: 3s;
 	}	
 
 	function prev_profiles() {
-	alert()
 		member_id=((p[p.length-2]))
 		console.log(member_id)
 		p.splice(p.indexOf(member_id),2)
@@ -721,9 +737,9 @@ function add_wish(id,wish) {
 
 
 	function hot_list_mobile(long_code,htype) {
-		console.log( 'https://sugardaddydays.com/inc/x_hot_list.php?htype=mobile&long_code='+long_code+'&type='+htype)
+		console.log( 'https://sugardaddydays.com/inc/x_hot_list.php?htype=mobile&long_code='+long_code+'&type='+htype+'&mid='+getCookie('mid'))
 		var request = $.ajax({
-			url: 'https://sugardaddydays.com/inc/x_hot_list.php?htype=mobile&long_code='+long_code+'&type='+htype, 
+			url: 'https://sugardaddydays.com/inc/x_hot_list.php?htype=mobile&long_code='+long_code+'&type='+htype+'&mid='+getCookie('mid'), 
 			type: "GET",
 			dataType: "html",
 			cache: false,
@@ -737,7 +753,7 @@ function add_wish(id,wish) {
 	function hot_list_login(who,htype) {
 		console.log('https://sugardaddydays.com/inc/x_hot_list.php?htype=login&member_id='+who+'&type='+htype)
 		var request = $.ajax({
-			url: 'https://sugardaddydays.com/inc/x_hot_list.php?htype=id&member_id='+member_id+'&type='+htype, 
+			url: 'https://sugardaddydays.com/inc/x_hot_list.php?htype=id&member_id='+member_id+'&type='+htype+'&mid='+getCookie('mid'), 
 			type: "GET",
 			dataType: "html",
 			cache: false,
@@ -750,7 +766,7 @@ function add_wish(id,wish) {
 	
 	function hot_list(member_id,htype) {
 		var request = $.ajax({
-			url: 'https://sugardaddydays.com/inc/x_hot_list.php?htype=id&member_id='+member_id+'&type='+htype, 
+			url: 'https://sugardaddydays.com/inc/x_hot_list.php?htype=id&member_id='+member_id+'&type='+htype+'&mid='+getCookie('mid'), 
 			type: "GET",
 			dataType: "html",
 			cache: false,
@@ -1739,7 +1755,7 @@ detectswipe('main_content', myfunction);
 			function hot_list_mobile(long_code,htype) {
 				console.log( 'https://sugardaddydays.com/inc/x_hot_list.php?htype=mobile&long_code='+long_code+'&type='+htype)
 				var request = $.ajax({
-					url: 'https://sugardaddydays.com/inc/x_hot_list.php?htype=mobile&long_code='+long_code+'&type='+htype, 
+					url: 'https://sugardaddydays.com/inc/x_hot_list.php?htype=mobile&long_code='+long_code+'&type='+htype+'&mid='+getCookie('mid'), 
 					type: "GET",
 					dataType: "html",
 					cache: false,
@@ -1753,7 +1769,7 @@ detectswipe('main_content', myfunction);
 			function hot_list_login(who,htype) {
 				console.log('https://sugardaddydays.com/inc/x_hot_list.php?htype=login&member_id='+who+'&type='+htype)
 				var request = $.ajax({
-					url: 'https://sugardaddydays.com/inc/x_hot_list.php?htype=id&member_id='+member_id+'&type='+htype, 
+					url: 'https://sugardaddydays.com/inc/x_hot_list.php?htype=id&member_id='+member_id+'&type='+htype+'&mid='+getCookie('mid'), 
 					type: "GET",
 					dataType: "html",
 					cache: false,
@@ -1767,7 +1783,7 @@ detectswipe('main_content', myfunction);
 			function hot_list(member_id,htype) {
 				console.log('https://sugardaddydays.com/inc/x_hot_list.php?htype=id&member_id='+member_id+'&type='+htype)
 				var request = $.ajax({
-					url: 'https://sugardaddydays.com/inc/x_hot_list.php?htype=id&member_id='+member_id+'&type='+htype, 
+					url: 'https://sugardaddydays.com/inc/x_hot_list.php?htype=id&member_id='+member_id+'&type='+htype+'&mid='+getCookie('mid'), 
 					type: "GET",
 					dataType: "html",
 					cache: false,
@@ -2483,6 +2499,7 @@ detectswipe('main_content', myfunction);
 		}
 		
 		function show_drop_down_menu() {
+			unload()
 			var k
 			for (k=2;k<=7;k++) {
 				setTimeout('sddm('+k+')',100*k)

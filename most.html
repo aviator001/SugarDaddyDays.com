@@ -92,10 +92,23 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>	
-
+	<script>
+		load()
+		function load() {
+			$('#loader').show()
+			$('#img_loader').show()
+		}
+		
+		function unload() {
+			$('#loader').hide()
+			$('#img_loader').hide()
+		}
+	</script>
 	</head>
 
-	<body>
+	<body onload="unload()" onclick="load()">
+	<div id="loader" style="display:;z-index:99999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.3;margin:auto;background:#000;font-family:Open Sans Condensed;"></div>
+	<img id="img_loader" style="display:;z-index:999999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1;margin:auto;width:50px" src="https://sugardaddydays.com/assets/images/load.gif">
 			<div id="notify" style="display:none;opacity:0.8;right:10px;top:100px;z-index:99999999999999;background:#333;box-shadow:0 0 20px #000;width:250px;height:40px;position:fixed;border-radius:4px">
 				<span id="notify_txt"  style="padding:5px;color:#f0f0f0"></span>
 			</div>

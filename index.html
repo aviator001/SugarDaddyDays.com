@@ -398,7 +398,7 @@ h4 {
 			</tr>
 			<tr>
 				<td align="center">
-					<a href='javascript:loadExtURL()' style="color:#f0f0f0;height:20px"><img style="width:200px" src="https://sugardaddydays.com/assets/images/fb_button.png"></a>
+					<a href='javascript:loadExtURL();load();' style="color:#f0f0f0;height:20px"><img style="width:200px" src="https://sugardaddydays.com/assets/images/fb_button.png"></a>
 				</td>
 			</tr>
 		</tbody></table>
@@ -563,7 +563,16 @@ function std(obj) {
 				if (!getCookie('lat')) getLocation()
 			}
 		}
-
+		
+	function load() {
+		$('#loader').show()
+		$('#img_loader').show()
+	}
+	
+	function unload() {
+		$('#loader').hide()
+		$('#img_loader').hide()
+	}
 
 </script>
 
@@ -605,7 +614,19 @@ function std(obj) {
 			</div>
 		</div>
 	</div>
-	
+	<div id="loader" style="display:none;z-index:99999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.3;margin:auto;background:#000;font-family:Open Sans Condensed;"></div>
+	<img id="img_loader" style="display:none;z-index:999999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1;margin:auto;width:50px" src="https://sugardaddydays.com/assets/images/load.gif">
+	<script>
+		function load() {
+			$('#loader').show()
+			$('#img_loader').show()
+		}
+		
+		function unload() {
+			$('#loader').hide()
+			$('#img_loader').hide()
+		}
+	</script>
 	<!-- /.modal -->
 <script>
 
