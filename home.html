@@ -496,11 +496,13 @@
 						</table>
 					</td>
 					<td colspan=2 style="text-align:center;font-size:24px;color:#333">
+							<br>
 							<span id="greet"></span>
+							
 							<table style="width:100%">
 								<tr>
-									<td style="text-align:center;font-size:24px;color:#f0f0f0" colspan=2>
-										<span>Your secure + anonymous mobile no. is:</span>
+									<td style="text-align:center;font-size:24px;color:#000;margin-top:10px" colspan=2>
+										<br><span>Your secure + anonymous mobile no. is:</span>
 									</td>
 								</tr>
 								<tr>
@@ -518,10 +520,9 @@
 										<img src="https://sugardaddydays.com/assets/images/gl22.png" style="width:100px;height:100px;margin:5px">
 										<div style="position:absolute;font-size:44px;margin-top:-65px;margin-left:45px;color:#333">0</div>
 									</td>
-								</tr>
+								</tr> 
 								</table>
-								<br>Welcome. To get started, please click on one of the links below to begin your search. All SMS messages sent thru here will show as coming from the number displayed above.<br>Here is the <a href="https://sugardaddydays.com/help"><label1>HELP and FAQs</label1></a> collection, should you get stuck.<br>You are safe here. Enjoy!
-
+							Welcome. To get started, please click on one of the links below to begin your search. All SMS messages sent by you will show as coming from the number displayed above.<br>Here is the <a href="https://sugardaddydays.com/help"><label1>HELP and FAQs</label1></a> collection, should you get stuck.<br>You are safe here. Enjoy!
 							<table style="display:none">
 								<tr>
 									<td style="text-align:right">
@@ -601,12 +602,8 @@
 			</div>
 		</div>
 
-</div><!--
-	<img style="position:fixed;z-index:99999999999999;left:0px;bottom:0px;width:50px;" src="https://sugardaddydays.com/assets/images/tab_messaging.png">
-	<img style="position:fixed;z-index:99999999999999;left:0px;top:5px;width:50px;opacity:1" src="https://sugardaddydays.com/assets/tab_home.png">
-	<img style="position:fixed;z-index:99999999999999;left:0px;bottom:45px;width:50px;opacity:1" src="https://sugardaddydays.com/assets/tab_search.png">
-	<img style="position:fixed;z-index:99999999999999;right:0px;top:45%;width:40px;opacity:1" src="https://sugardaddydays.com/assets/images/tab_rt_help.png">
--->
+</div>
+
   
 </div>
 
@@ -722,7 +719,44 @@
 			}
 
 			xcs=getCookie('x-location')
-
+	function invoke_help() {
+		
+	}
 	
 	</script>
+<script>
+function send_note() {
+
+}
+function cancel_note() {
+	$('#hp').hide()
+	$('#img_hp').show()
+	
+}
+</script>
+<img id="img_hp" style="position:absolute;z-index:9999999999999999999999999999;right:0px;top:100px;width:50px;opacity:1" src="https://sugardaddydays.com/assets/images/tab_rt_help.png" onclick="this.style.display='none';document.all.hp.style.display='block'">
+<div style="top:95px;position:fixed;z-index:99999999;width:100%;height:150px;background:#fff;border:5px solid rgba(0,0,0,0.4);display:none" class="www_box5" id="hp">
+<table>
+<tr>
+	<td>
+		<img class="www_box5" style="width:100%%" src="https://sugardaddydays.com/assets/images/hp1.png">
+	</td>
+	<td>
+		<img class="www_box5" style="width:100%"  src="https://sugardaddydays.com/assets/images/hp2.png">
+	</td>
+	<td>
+		<img class="www_box5" style="width:100%"  src="https://sugardaddydays.com/assets/images/hp3.png">
+	</td>
+</tr>
+</table>
+<table style="width:100%">
+<tr>
+<td colspan=3>
+<textarea placeholder="We are in BETA test - We would love to get your feedback and suggestions. Or, you could open a support ticket. FAQs are above. Or, write us at  cs@sugardaddydays.com" class="www_box2" id="taa" style="width:100%;height:88px;border:2px solid grey"></textarea>
+</td>
+</tr>
+</table>
+<input type="button" class="btn btn-sm btn-danger" value="CANCEL" onclick="cancel_note()" style="top:250px;position:fixed;z-index:99999999;right:5px;margin-right:50px">
+<input type="button" class="btn btn-sm btn-info" value="SEND" onclick="send_note()" style="top:250px;position:fixed;z-index:99999999;right:5px">
+</div>
 </html>

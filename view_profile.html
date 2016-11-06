@@ -1692,18 +1692,17 @@ detectswipe('main_content', myfunction);
 				if (!bal) var bal=getCookie('balance')
 				console.log('https://sugardaddydays.com/inc/x_getLC.php?alt='+getCookie('chatting_with')||getCookie('chatting_with_login'))
 				var request = $.ajax({
-					url: 'https://sugardaddydays.com/inc/x_getLC.php?alt='+getCookie('chatting_with')||getCookie('chatting_with_login'), 
+					url: 'https://sugardaddydays.com/inc/x_get_user_info.php?'+getCookie('chatting_with')||getCookie('chatting_with_login'), 
 					type: "GET",
 					dataType: "html",
 					cache: false,
 					success: function(msg) {
 						console.log(msg)
-						var toLC=getCookie('chatting_with_long_code')
-						if (!toLC) toLC=msg
+						var toMobile=JSON.parse(msg).mobile
 						if ((!objFrom) || (objFrom == 'undefined')) objFrom=getCookie('long_code')
 						var fromLC=objFrom
 						var message=document.getElementById('message_text').textContent
-						var url = 'https://sugardaddydays.com/inc/x_send_api.php?to=' + toLC + '&from=' + fromLC + '&message=' +  message + '&site=SDDAYS&message_type='+message_type+'&bal='+bal
+						var url = 'https://sugardaddydays.com/inc/x_send_api.php?to=' + toMobile + '&from=' + fromLC + '&message=' +  message + '&site=SDDAYS&message_type='+message_type+'&bal='+bal
 						console.log(url)
 						var request = $.ajax({
 							url: url, 
@@ -1714,6 +1713,7 @@ detectswipe('main_content', myfunction);
 								hot_list_login(getCookie('chatting_with_login'),'SENT_SMS')
 								document.getElementById('modal').style.display='none'
 								document.getElementById('modal_text').style.display='none'
+								unload()
 							}
 						})
 					}
