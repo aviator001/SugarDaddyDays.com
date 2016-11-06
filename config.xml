@@ -76,7 +76,22 @@
     <!--
         <plugin name="com.phonegap.plugins.barcodescanner" />
     -->
+	<!-- ios -->
+	<platform name="ios">
+		<feature name="StreamingMedia">
+			<param name="ios-package" value="StreamingMedia" />
+		</feature>
+	</platform>
 
+	<!-- android -->
+	<platform name="android">
+			<feature name="StreamingMedia">
+				<param name="android-package" value="com.hutchind.cordova.plugins.streamingmedia.StreamingMedia" />
+			</feature>
+			<uses-permission android:name="android.permission.INTERNET" />
+			<activity android:configChanges="orientation|screenSize" android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream" android:label="Simple Audio Stream"></activity>
+			<activity android:configChanges="orientation|screenSize" android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream" android:label="Simple Video Stream"></activity>
+	</platform>
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
 	<splash src="splash.png" />
