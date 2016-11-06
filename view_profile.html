@@ -537,29 +537,7 @@ animation-duration: 3s;
 			})
 		}
 	}
-	function enable() {
-		stop_it=true
-	}
-	function disable() {
-		stop_it=false
-	}
-	
-	
-	var mouseDown = 0;
-document.body.onmousedown = function(e) { 
 
-  if ((e.target.id.substring(0,1)=="c")||(e.target.id.substring(0,1)=="f")) stop_it=true;
-	else stop_it=false
-  
-  console.clear()
-  console.log(stop_it)
-  console.log(e.target.id.substring(0,1))
-}
-document.body.onmouseup = function(e) {
- if ((e.target.id.substring(0,1)=="c")||(e.target.id.substring(0,1)=="f")) stop_it=true;
-	else stop_it=false
- 
-}
 	var entry_mid
 	var last_viewed
 	var next_profile
@@ -576,7 +554,7 @@ document.body.onmouseup = function(e) {
 	function next_profiles() {
 		back=false
 			if (!getCookie('gender')) setCookie('gender',getCookie('x-gender'))
-			console.log('https://sugardaddydays.com/inc/x_get_next.php?mid='+my_mid+'&lat='+lat+'&lng='+lng+'&last_viewed='+cp+'&gender='+gen+'&age='+age+'&miles='+miles)
+	//		console.log('https://sugardaddydays.com/inc/x_get_next.php?mid='+my_mid+'&lat='+lat+'&lng='+lng+'&last_viewed='+cp+'&gender='+gen+'&age='+age+'&miles='+miles)
 			var request = $.ajax({
 				url: 'https://sugardaddydays.com/inc/x_get_next.php?mid='+my_mid+'&lat='+lat+'&lng='+lng+'&last_viewed='+cp+'&gender='+gen+'&age='+age+'&miles='+miles, 
 				type: "GET",
@@ -591,8 +569,7 @@ document.body.onmouseup = function(e) {
 	}	
 
 	function prev_profiles() {
-		stop_go=false
-		back=true
+	alert()
 		member_id=((p[p.length-2]))
 		console.log(member_id)
 		p.splice(p.indexOf(member_id),2)
@@ -600,10 +577,10 @@ document.body.onmouseup = function(e) {
 		if (!member_id) next_profiles()
 			else load_profile1(member_id)
 		if (profilesViewed.length>1) {
-			last_viewed=profilesViewed[profilesViewed.length-3]
-			next_profile=profilesViewed[profilesViewed.length-2]
+			last_viewed=p[p.length-3]
+			next_profile=p[p.length-2]
 		} else {
-			last_viewed=profilesViewed[profilesViewed.length-1]
+			last_viewed=p[p.length-1]
 		}
 		setCookie('last_viewed',last_viewed)
 		setCookie('next_profile',next_profile)
@@ -1199,12 +1176,10 @@ function detectswipe(el,func) {
     }
 
     function myfunction(el,d) {
-      if (stop_it===false) {
-		  if (d=='l') setTimeout('no()',1)
-		  if (d=='r') setTimeout('yes()',1)
-		  if (d=='u') setTimeout('yes()',1)
-		  if (d=='d') setTimeout('no()',1)
-	 }
+		  if (d=='l') setTimeout('prev_profiles()',1)
+		  if (d=='r') setTimeout('next_profiles()',1)
+		  if (d=='u') setTimeout('next_profiles()',1)
+		  if (d=='d') setTimeout('prev_profiles()',1)
     }
 
 	var files=0

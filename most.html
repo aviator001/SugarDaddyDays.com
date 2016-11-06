@@ -148,8 +148,9 @@
 		function upload_photos() {
 			location.href='upload_photos.html?member_id='+getCookie('mid')
 		}
-		function view_profile() {
-			location.href='view_profile.html?member_id='+getCookie('mid')
+		function view_profile(id) {
+			if (!id) id = getCookie('mid')
+			location.href='view_profile.html?member_id='+ id
 		}
 		function qs(name, url) {
 			if (!url) {
