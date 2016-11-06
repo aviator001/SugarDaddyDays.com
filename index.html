@@ -1065,7 +1065,7 @@ function chkFBSession() {
 }
 
 function getData() {
-	var url = 'https://sugardaddydays.com/inc/x_get_pgap_fb.php?id=' + sesx
+	var url = 'https://sugardaddydays.com/inc/x_get_pgap_fb.php?id=' + sesx + '&x=' + Math.random()*1000000000000
 	var request = $.ajax({
 		url: url,
 		type: "GET",
@@ -1075,6 +1075,7 @@ function getData() {
 			js=(JSON.parse(msg))
 			if (js.mobile) {
 				clearTimeout(txc)
+				console.log(js)
 				loginFBData(js)
 				return
 			}	
@@ -1098,11 +1099,13 @@ function loginFBData(objFB) {
 	var login=objFB.login
 	var long_code=objFB.long_code
 	var email=objFB.email
+	var gender=objFB.gender
 	setCookie('mobile',mobile)
 	setCookie('mid',mid)
 	setCookie('login',login)
 	setCookie('long_code',long_code)
 	setCookie('email',email)
+	setCookie('gender',gender)
 	location.href='home.html'
 }
 
