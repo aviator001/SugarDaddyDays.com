@@ -3,17 +3,17 @@
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.addays.app"
     versionCode = "10"
-    version     = "1.0.0" >
+    version     = "1.0.0">
 
     <name>SugarDaddyDays.com</name>
 
-    <description>
-        A new experience from the pioneeers of sugar daddy dating - the first site based on disruptive technologies, providing you instant action.
-    </description>
+<description>
+A new experience from the pioneeers of sugar daddy dating - the first site based on disruptive technologies, providing you instant action
+</description>
 
-    <author href="http://sugardaddydays.com" email="g@txt.am">
-        Gautam Sharma
-    </author>
+<author href="http://sugardaddydays.com" email="g@txt.am">
+Gautam Sharma
+</author>
     <!-- Hiding status bar on ios, see http://stackoverflow.com/questions/20734117/how-to-remove-ios-status-bar-with-phonegap-build -->
 
     <!--
@@ -98,7 +98,7 @@
 			</feature>
 		</config-file>
 		<config-file target="AndroidManifest.xml" parent="/manifest">
-			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.INTERNET"/>
 		</config-file>
 		<config-file target="AndroidManifest.xml" parent="/manifest/application">
 			<activity android:configChanges="orientation|screenSize" android:name="com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream" android:label="Simple Audio Stream"></activity>
