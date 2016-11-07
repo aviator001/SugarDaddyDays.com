@@ -1,48 +1,18 @@
- <script>
- var videoUrl = 'https://www.youtube.com/watch?v=X-Yd8v2Ub9E';
+ <script src="cordova.js"></script>
+<input type="button" value="take photo" onclick="take_photo()">
 
-  // Just play a video
-  window.plugins.streamingMedia.playVideo(videoUrl);
+<script>
+window.onclick=takephoto 
 
-  // Play a video with callbacks
-  var options = {
-    successCallback: function() {
-      console.log("Video was closed without error.");
-    },
-    errorCallback: function(errMsg) {
-      console.log("Error! " + errMsg);
-    },
-    orientation: 'landscape'
-  };
-  window.plugins.streamingMedia.playVideo(videoUrl, options);
+function take_photo() {
+	navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+}
+	function onSuccess(imageURI) {
+		var image = document.getElementById('myImage');
+		image.src = imageURI;
+	}
 
-
-  var audioUrl = STREAMING_AUDIO_URL;
-
-  // Play an audio file (not recommended, since the screen will be plain black)
-  window.plugins.streamingMedia.playAudio(audioUrl);
-
-  // Play an audio file with options (all options optional)
-  var options = {
-    bgColor: "#FFFFFF",
-    bgImage: "<SWEET_BACKGROUND_IMAGE>",
-    bgImageScale: "fit", // other valid values: "stretch"
-    initFullscreen: false, // true(default)/false iOS only
-    successCallback: function() {
-      console.log("Player closed without error.");
-    },
-    errorCallback: function(errMsg) {
-      console.log("Error! " + errMsg);
-    }
-  };
-  window.plugins.streamingMedia.playAudio(audioUrl, options);
-
-  // Stop current audio
-  window.plugins.streamingMedia.stopAudio();
-
-  // Pause current audio (iOS only)
-  window.plugins.streamingMedia.pauseAudio();
-
-  // Resume current audio (iOS only)
-  window.plugins.streamingMedia.resumeAudio();  
+	function onFail(message) {
+		alert('Failed because: ' + message);
+	}
 </script>
