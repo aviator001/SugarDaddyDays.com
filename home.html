@@ -330,7 +330,7 @@
 		function updateLink() {
 			if (document.getElementById('az1')) document.getElementById('az1').href=getCookie('prevPage')
 			if (document.getElementById('az2')) document.getElementById('az2').href=getCookie('prevPage')
-		}		
+		}	
 </script>
 			<style>
 					li {padding:5px;color:#666;border-top:1px solid rgba(10,10,10,0.9);background:#111}
@@ -405,7 +405,7 @@
 										<a href="browse.html?type=gallery"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r21.png" style="width:100px;margin:0px"></a>
 									</td>
 									<td style="text-align:left">
-										<a href="browse.html?type=new"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r22.png" style="width:100px;margin:0px"></a>
+										<a href="javascript:getImage()"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r22.png" style="width:100px;margin:0px"></a>
 									</td>
 									<td style="text-align:right">
 										<a href="most.html"><img class="www_box5" src="https://sugardaddydays.com/assets/images/r23.png" style="width:100px;margin:0px"></a>
@@ -722,7 +722,47 @@
 	function invoke_help() {
 		
 	}
-	
+        function getImage() {
+            // Retrieve image file location from specified source
+            navigator.camera.getPicture(uploadPhoto, function(message) {
+			alert('get picture failed');
+		},{
+			quality: 50, 
+			destinationType: navigator.camera.DestinationType.FILE_URI,
+			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+		}
+            );
+ 
+        }
+ 
+        function uploadPhoto(imageURI) {
+            var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+ 
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, "https://sugardaddydays.com/x_upload.php", win, fail, options);
+        }
+ 
+        function win(r) {
+            console.log("Code = " + r.responseCode);
+            console.log("Response = " + r.response);
+            console.log("Sent = " + r.bytesSent);
+            alert(r.response);
+        }
+ 
+        function fail(error) {
+            alert("An error has occurred: Code")
+        }
+ 
 	</script>
 <script>
 function send_note() {
