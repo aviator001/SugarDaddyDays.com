@@ -93,15 +93,20 @@ Gautam Sharma
 		 <feature name="Camera">
 			<param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
 		</feature> 
-		<uses-permission android:name="android.permission.CAMERA" />
-		<uses-permission android:name="android.permission.RECORD_AUDIO" />
-		<uses-feature android:name="android.hardware.camera" />
-		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-		<uses-permission android:name="android.permission.RECORD_AUDIO" />
-		<uses-permission android:name="android.permission.RECORD_VIDEO" />
-		<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-		<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-		<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+		<manifest android:hardwareAccelerated="true" android:versionCode="201" android:versionName="0.2.1" package="com.apizee.hellortc" xmlns:android="http://schemas.android.com/apk/res/android">
+			<supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true" />
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="24" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.RECORD_AUDIO" />
+			<uses-permission android:name="android.permission.RECORD_VIDEO" />
+			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+			<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+			<uses-permission android:name="android.permission.CAMERA" />
+			<uses-permission android:name="android.permission.RECORD_VIDEO" />
+			<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+		</manifest>
 	</platform>
 
     <!-- Define app icon for each platform. -->
