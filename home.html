@@ -104,8 +104,11 @@
 			$('#loader').hide()
 			$('#img_loader').hide()
 		}
+		function onDeviceReady() {
+			document.getElementById('cct').style.opacity='1'
+		}
 	</script>
-	
+ 
 	</head>
 	<body onload="unload()" style="overflow:auto!Important;">
 			<div id="notify" style="display:none;opacity:0.8;right:10px;top:100px;z-index:99999999999999;background:#333;box-shadow:0 0 20px #000;width:250px;height:40px;position:fixed;border-radius:4px">
@@ -404,7 +407,7 @@
 									<td style="text-align:right">
 										<a href="browse.html?type=gallery"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r21.png" style="width:100px;margin:0px"></a>
 									</td>
-									<td style="text-align:left">
+									<td style="text-align:left;opacity:0.1" id="cct">
 										<a href="javascript:getImage()"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r22.png" style="width:100px;margin:0px"></a>
 									</td>
 									<td style="text-align:right">
@@ -498,7 +501,7 @@
 					<td colspan=2 style="text-align:center;font-size:24px;color:#333;text-shadow:1px 1px 1px #fff">
 							<br>
 							<span id="greet"></span>
-							
+							<img id="myImage" style="position:absolute;width:100px;display:none" class="www_box2">
 							<table style="width:100%">
 								<tr>
 									<td style="text-align:center;font-size:24px;color:#000;margin-top:10px" colspan=2>
@@ -723,16 +726,18 @@
 		
 	}
         function getImage() {
-            // Retrieve image file location from specified source
-            navigator.camera.getPicture(uploadPhoto, function(message) {
-			alert('get picture failed');
-		},{
-			quality: 50, 
-			destinationType: navigator.camera.DestinationType.FILE_URI,
-			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
-		}
-            );
- 
+			navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+				destinationType: Camera.DestinationType.FILE_URI });
+
+			function onSuccess(imageURI) {
+				var image = document.getElementById('myImage');
+				image.src = imageURI;
+				image.style.display='block'
+			}
+
+			function onFail(message) {
+				alert('Failed because: ' + message);
+			}	
         }
  
         function uploadPhoto(imageURI) {
