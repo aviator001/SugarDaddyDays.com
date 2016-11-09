@@ -80,26 +80,19 @@ Gautam Sharma
     -->
 	<!-- ios -->
 	<platform name="ios">
-		<config-file target="config.xml" parent="/*">
-			<feature name="StreamingMedia">
-				<param name="ios-package" value="StreamingMedia" />
-			</feature>
-		</config-file>
-		<header-file src="src/ios/StreamingMedia.h" />
-		<source-file src="src/ios/StreamingMedia.m" />
-		<framework src="MediaPlayer.framework" />
+		<feature name="StreamingMedia">
+			<param name="ios-package" value="StreamingMedia" />
+		</feature>
 	</platform>
 
 	<!-- android -->
 	<platform name="android">
-			<feature name="StreamingMedia">
-				<param name="android-package" value="com.hutchind.cordova.plugins.streamingmedia.StreamingMedia" />
-			</feature>
+		<feature name="StreamingMedia">
+			<param name="android-package" value="com.hutchind.cordova.plugins.streamingmedia.StreamingMedia" />
+		</feature>
 		 <feature name="Camera">
 			<param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
 		</feature> 
-		<allow-intent href="market:*" />
-        <preference name="android-minSdkVersion" value="21" />
 		<uses-permission android:name="android.permission.CAMERA" />
 		<uses-permission android:name="android.permission.RECORD_AUDIO" />
 		<uses-feature android:name="android.hardware.camera" />
