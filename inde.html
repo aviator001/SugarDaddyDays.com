@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0027)https://sugardaddydays.com/ -->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>SugarDaddyDays.com</title>
+<meta name="description" content="A place that connects handsome wealthy and caring men to hot young women. Worlds first site to use disruptive SMS messaging. Find a sugar daddy today!">		
+<link rel="canonical" href="https://sugardaddydays.com/">
+<meta name="google-site-verification" content="1Tf0in60yFkXs3vroWHXP4BYFepCgMlGiZYX0_FBZJg">
+<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">	
+<meta name="format-detection" content="telephone=no">
+<meta name="Author" content="Gautam Sharma">		
+<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/grid.css">
+<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/style.css">
+<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/shadows.css">
+<link href="https://sugardaddydays.com/assets/css/stream.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Economica|Poiret+One' rel='stylesheet' type='text/css'>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script src="https://sugardaddydays.com/assets/js/jquery.js"></script>
+  <!--[if lt IE 9]>
+  <html class="lt-ie9">
+  <div style=' clear: both; text-align:center; position: relative;'>
+    <a href="https://windows.microsoft.com/en-US/internet-explorer/..">
+      <img alt="find a sugar daddy or sugar baby"  src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+    </a>
+  </div>
+  <script src="js/html5shiv.js"></script>
+  <![endif]-->
+<script src="https://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" charset="UTF-8" src="https://sugardaddydays.com/assets/js/gmaps.js"></script>
+<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/jquery-confirm.min.css">
+<script src="https://sugardaddydays.com/assets/js/jquery-confirm.min.js"></script> 
+</head>
+<body style="background: rgb(17, 17, 17);">
+<div id="pm" style="display:none;width:100%;height:100%;position:fixed;top:0;bottom:0;right:0;left:0;margin:auto;background:#111;z-index:999999999999999999999999;opacity:0.9"></div>
+<div id="pm_text" style="display:none;padding:15px;opacity:0.6;width:70%;position:fixed;background:red;left:0;right:0;margin:auto;z-index:99999999999999999999999999999999999;top:100px;border-radius:10px"><h3><span style="font-family:Rajdhani;color:#fff"><h1><b>ERROR:</b></h1></span><span style="text-align:center;width:100%;font-family:Rajdhani;color:#000"><b>Invalid Device Orientation</b><br><br><span style="color:#f0f0f0">You must switch to Portait mode to view this site. Landscape mode is not supported.</span></span></h3></div>
+<script>
+	var watchID = null;
+	document.addEventListener("deviceready", onDeviceReady, false);
+	function onDeviceReady() {
+		var	options = {
+		  enableHighAccuracy: false,
+		  timeout: 5000,
+		  maximumAge: 0
+		};
+		var	id = navigator.geolocation.getCurrentPosition(a, b, options);
+	}
+		
+	function b(err) {
+		console.log (err.message)
+		if (err.message=='User denied Geolocation') {
+			getLocation()
+		}
+	}
+		
+	function a(p) {
+		getPosition(p)
+	}
+	function error() {
+		//getLocation()
+	}
+	function screen_dimensions() {
+		var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		return new Array(w, h)
+	}
+	
+	var winH, winW
+
+	function window_height() {
+		if (document.body) {
+		 winH = document.body.offsetHeight;
+		}
+
+		if (document.compatMode=='CSS1Compat' &&
+			document.documentElement &&
+			document.documentElement.offsetHeight ) {
+			winH = document.documentElement.offsetHeight;
+			return winH
+		}
+
+		if (window.innerHeight && window.innerHeight) {
+			 winH = window.innerHeight;
+			 return winH;
+		}
+	}		
+		
+	function window_width() {
+		if (document.body) {
+		 winW = document.body.offsetWidth;
+		}
+
+		if (document.compatMode=='CSS1Compat' &&
+			document.documentElement &&
+			document.documentElement.offsetWidth ) {
+			winW = document.documentElement.offsetWidth;
+			return winW
+		}
+
+		if (window.innerWidth && window.innerWidth) {
+			 winW = window.innerWidth;
+			 return winW;
+		}
+	}		
+
+	function jwait(objTxt) {
+		if (!objTxt) objTxt='Please Wait'
+		objT.innerHTML=objTxt
+		jModalWn.appendChild(objWait)
+		jModalWn.appendChild(objT)
+		jModalWn.style.display='block'
+	}
+
+	function jhide() {
+		document.getElementById('jModalWn').style.display=='none'
+		jModalWn.style.display='none'
+		objW.style.display='none'
+		objT.style.display='none'
+	}
+	var wl = window.location.href;
+	var mob = (window.location.href.indexOf('file://')>=0);
+
+	function setCookie(cname,cvalue)	{
+		if (mob===true) {
+			window.localStorage.setItem(cname, cvalue);
+		} else {
+			var d = new Date(); 
+			d.setTime(d.getTime()+(1*24*60*60*1000)); 
+			var expires = "expires="+d.toGMTString(); 
+			document.cookie = cname + "=" + cvalue + "; " + expires; 
+		}
+	} 
+
+	function getCookie(cname)	{ 
+		if (mob===true) {
+			var cvalue = window.localStorage.getItem(cname);
+			return cvalue
+		} else {
+			var name = cname + "="; 
+			var ca = document.cookie.split(';'); 
+			for(var i=0; i<ca.length; i++) { 
+			  var c = ca[i].trim(); 
+			  if (c.indexOf(name)==0) return c.substring(name.length,c.length); 
+			} 
+			return ""; 
+		}
+	} 
+
+	function delCookie(cname) {
+		if (mob===true) {
+			window.localStorage.removeItem(cname);
+		} else {
+			var d = new Date();
+			d.setTime(d.getTime());
+			var expires = "expires="+d.toGMTString();
+			document.cookie = cname + "=" + "" + "; " + expires;
+		}
+	}
+	
+	function clear_all() {
+		if (mob===true) {
+			 window.localStorage.clear();
+		} else {
+			document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+		}	
+	}
+	var formatted_address
+	function onError() {}
+	
+	function getLocation()	{
+		var url = 'https://sugardaddydays.com/inc/xGetLocation.php'
+		var request = $.ajax({
+		url: url,
+		type: "GET",
+		dataType: "html",
+		cache: false,
+		success: function(msg) {
+				msg=msg.trim()
+				var json=JSON.parse(msg)
+				console.log(json)
+				setCookie('city',json['city'])
+				setCookie('state',json['region_code'])
+				setCookie('lat',json['latitude'])
+				setCookie('lng',json['longitude'])
+				setCookie('zip',json['zip_code'])
+				setCookie('location', json['city'] + ', ' + json['region_code'] + ' ' + json['zip_code'])
+				setCookie('x-location', json['city'] + ', ' + json['region_code'] + ' ' + json['zip_code'])
+				jalert('Your current location is reported as '+getCookie('location')+'. Would you like to improve its accuracy?\t\tWithout an accurate location, you will not experience the best we have to offer.')
+
+				
+			}
+		})		
+	}
+	
+	function getPosition(position) {
+		if (getCookie('accurate')) return false
+		var geocoder = new google.maps.Geocoder();
+		var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+		geocoder.geocode({'latLng': latlng}, function(results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			if (results[0]) {
+				formatted_address = results[0].formatted_address
+				var address = "", city = "", state = "", zip = "", country = "";
+				for (var i = 0; i < results[0].address_components.length; i++) {
+					var addr = results[0].address_components[i];
+					if (addr.types[0] == 'country')
+						country = addr.long_name;
+					else if (addr.types[0] == 'street_address')
+						address = address + addr.long_name;
+					else if (addr.types[0] == 'establishment')
+						address = address + addr.long_name;
+					else if (addr.types[0] == 'route')
+						address = address + addr.long_name;
+					else if (addr.types[0] == 'postal_code')
+						zip = addr.short_name;
+					else if (addr.types[0] == ['administrative_area_level_1'])
+						state = addr.short_name;
+					else if (addr.types[0] == ['locality'])
+						city = addr.long_name;
+				}
+				street_no=results[0].address_components[0].short_name
+				street=results[0].address_components[1].short_name
+				full_address = formatted_address
+				full_address=street_no + ', ' + street + ' ' + city + ' ' + state + ' ' + zip + ' '  + country
+				console.log(full_address)
+				setCookie('location',city + ', ' + state + ' ' + zip)
+				setCookie('x-location',city + ', ' + state + ' ' + zip)
+				setCookie('street_no',street_no)
+				setCookie('street',street)
+				setCookie('city',city)
+				setCookie('state',state)
+				setCookie('zip',zip)
+				setCookie('lat',position.coords.latitude)
+				setCookie('lng',position.coords.longitude)
+				setCookie('accurate','1')
+				console.log(full_address)
+				jalert(full_address)
+			}
+		}
+	});
+}
+
+	function jwait(objTxt) {
+		objT.innerHTML=objTxt
+		jModalWn.appendChild(objWait)
+		jModalWn.appendChild(objT)
+		jModalWn.style.display='block'
+	} 
+
+	function jhide() {
+		document.getElementById('jModalWn').style.display=='none'
+		jModalWn.style.display='none'
+		objW.style.display='none'
+		objT.style.display='none'
+	}
+
+	function login_new1() {
+		lat=getCookie('lat')
+		lng=getCookie('lng')
+			var url = 'https://sugardaddydays.com/inc/x_login.php?user_input=' + document.getElementById('user_input').value + '&pswd=' + document.getElementById('pswd').value + '&type=' + whats_this(document.getElementById('user_input').value) + '&lat=' +lat + '&lng=' + lng
+			url = url + '&seed=' + Math.random() * 1000000000000 + '&salt=' + Math.random() * 10000000000
+			console.log(url)
+			var request = $.ajax({
+				url: url,
+				type: "GET",
+				dataType: "html",
+				cache: false,
+				success: function(msg) {
+						console.log(msg)
+						var strL=msg.split('|')
+						console.log(strL)
+						if (strL[0]=="Success") {
+						var mobile=strL[1]
+						var mid=strL[2]
+						var login=strL[3]
+						var gendr=strL[4]
+						setCookie('mobile',mobile)
+						setCookie('mid',mid)
+						setCookie('login',login)
+						setCookie('gender',gendr)
+						var gendr2=(gendr=='Sugar Daddy')?'Sugar Baby':gendr
+						setCookie('x-gender',gendr2)
+						location.href='home.html'
+					} else {
+						alert(msg)
+					}
+				}
+			})
+		}
+	
+
+var sesx=Math.round(Math.random()*100000000000000000)
+sesx=sesx.toString(16)
+var ref
+var txc
+var fbData
+var ft
+var js
+function loadExtURL() {
+	var url="https://sugardaddydays.com/pg_callback.php?fbid="+sesx
+	ref = window.open(url, '_BLANK', 'location=no');
+	txc=setTimeout('chkFBSession()',1000)
+}
+
+function chkFBSession() {
+	if (fbData) {
+		clearTimeout(txc)
+	} else {
+		getData()
+		txc=setTimeout('chkFBSession()',1000)	
+	}
+}
+
+function getData() {
+	var url = 'https://sugardaddydays.com/inc/x_get_pgap_fb.php?id=' + sesx + '&x=' + Math.random()*1000000000000
+	var request = $.ajax({
+		url: url,
+		type: "GET",
+		dataType: "html",
+		cache: false,
+		success: function(msg) {
+			js=(JSON.parse(msg))
+			if (js.mobile) {
+				clearTimeout(txc)
+				console.log(js)
+				loginFBData(js)
+				return
+			}	
+			console.log(js.name)
+			if (js.name==null) {
+				fbData=false
+			} else {
+				clearTimeout(txc)
+				fbData=true
+				ref.close()
+				//Register with Facebook, User has closed window
+				saveFBData(js)
+			}
+		}
+	})
+}
+
+function loginFBData(objFB) {
+	var mobile=objFB.mobile
+	var mid=objFB.mid
+	var login=objFB.login
+	var long_code=objFB.long_code
+	var email=objFB.email
+	var gender=objFB.gender
+	setCookie('mobile',mobile)
+	setCookie('mid',mid)
+	setCookie('login',login)
+	setCookie('long_code',long_code)
+	setCookie('email',email)
+	setCookie('gender',gender)
+	location.href='home.html'
+}
+
+function saveFBData(objFB) {
+	console.log(js)
+	var age=2016-objFB.age*1
+	var gender=(objFB.sex=='male')?'Sugar Daddy':'Sugar Baby'
+	var login=objFB.email.split('@')[0]
+	var email=objFB.email
+	var fid=objFB.fb_id
+	var name=objFB.name
+	var url='register_complete.html?name='+name+'&age='+age+'&email='+email+'&gender='+gender+'&uid='+fid+'&login='+login
+	location.href=url
+}
+	
+function st(obj) {
+	obj.style.background='lightblue'
+	obj.style.width='230px'
+	obj.style.height='230px'
+}
+
+function std(obj) {
+	obj.style.background='none'
+	obj.style.width='200px'
+	obj.style.height='200px'
+}
+
+		function ntfy(str,xCol) {
+			if(!xCol) xCol='#fff'
+			document.getElementById('notify').style.bottom='10px'
+			document.getElementById('notify').style.right='10px'
+			document.getElementById('notify').style.background=xCol
+			document.getElementById('notify').style.display='block'
+			document.getElementById('notify').style.opacity='1'
+			document.getElementById('notify').style.padding='10px'
+			document.getElementById('notify_txt').innerHTML=str
+			setTimeout('hide_ntfy()',5000)
+		}
+
+		function hide_ntfy() {
+			document.getElementById('notify').style.display='none'
+			document.getElementById('notify_txt').innerHTML=''
+		}
+		
+		function jalert(txt,type,modal) {
+			if (!type) type='dark'
+			if (!modal) modal=0
+			if (modal && !type) type='dark'
+			var obj3=$.confirm({
+				title: false, // hides the title.
+				closeIcon: false,
+				theme: type,
+				columnClass: 'col-md-6 col-md-offset-3',
+				confirmButtonClass: 'btn-info',
+				cancelButtonClass: 'btn-danger',
+				confirm: function(){
+						var	options = {
+						  enableHighAccuracy: false,
+						  timeout: 5000,
+						  maximumAge: 0
+						};
+						var	id1 = navigator.geolocation.getCurrentPosition(a1, b1, options);
+				},
+				cancel: function(){
+					var insult=[]
+					insult[0]='Really....<br>Whatever. Hows that paranoia worked out for you in the past?'
+					insult[1]='Decline Me? ME?? Why dont you just get the fuck off my site. Freakin retard.'
+					insult[2]='Nobody gives a rats ass about your pathetic life or location.'
+					insult[3]='You dont have many friends, I can tell. And no, mom doesnt count. What a moron.'
+					insult[4]='I need your location. Im not asking again, you wannabe diva'
+					insult[5]='Really....<br>Whatever. Hows that paranoia worked out for you in the past?'
+					insult[6]='Decline Me? ME?? You must be stupid, stupid, stupid.'
+					insult[7]='Nobody gives a rats ass about your pathetic life or location.'
+					insult[8]='You dont have many friends, I can tell. And no, mom doesnt count. Retard.'
+					insult[9]='I need your location. Im not asking again, you wannabe diva'
+					ntfy(insult[Math.floor(Math.random()*10)])
+				},				
+				});
+				obj3.setContent(txt)
+				obj3.setDialogCenter()
+		}
+
+		function a1(p) {
+			getPosition(p)
+		}
+		
+		function b1(err) {
+			console.log (err.message)
+			if (err.message=='User denied Geolocation') {
+				ntfy('Declined!? We reccommend using location information for the best possible experience.')
+				if (!getCookie('lat')) getLocation()
+			}
+		}
+		
+	function load() {
+		$('#loader').show()
+		$('#img_loader').show()
+	}
+	
+	function unload() {
+		$('#loader').hide()
+		$('#img_loader').hide()
+	}
+
+</script>
+<img src="https://sugardaddydays.com/assets/logo_m.png" style="width:250px;position:absolute;z-index:999999999999999999999999999;right:0;left:0;margin:auto;top:20px">
+<div class="page">
+  <!--========================================================
+                            HEADER
+  =========================================================-->
+	<div style="width:100%;height:70px"></div>
+
+ <header id="header" class="header" style="background:none">
+
+<style>
+	.magic_box {
+	background:#f0f0f0;
+	opacity:0.3;
+	border-radius:6px;
+	color:#000;
+	-ms-filter:blur(+10);
+	filter:blur(+10);
+	-webkit-filter:blur(+10);
+	padding:20px
+ }
+
+.round_label {
+	position:absolute;text-align:center;left:0;right:0;margin:auto;font-size:0.8em
+}
+.round_image {
+	width:100%;height:270px;margin:0;padding:0;border:0px solid white;
+}
+.b5 {
+	background:#f0f0f0;
+}
+.container {
+	width:55%;
+	text-align:center;
+}
+.htx {
+	height:1000px;border-radius:8px
+}
+.hty {
+	width:280px;height:300px;margin:0;margin-top:0
+}
+.hidme {
+	display:none
+}
+.person {
+	margin-top:0
+}
+.addressC {
+	position:absolute;margin-top:-60px;width:100%;height:60px;background:lightblue;opacity:0.6;font-family:Economica;color:#000;text-shadow:1px 1px 1px #fff
+}
+.addressC1 {
+	position:absolute;margin-top:-60px;width:100%;height:60px;background:lavenderblush;opacity:0.6;font-family:Economica;color:#000;text-shadow:1px 1px 1px #fff
+}
+.join_free {
+	font-family:Economica;
+	font-size:24px;
+	color:#fff
+}
+www_box {font-family:Poiret One}
+.row{margin:0}
+.bottom_bar {
+	position:absolute;
+	left:0;
+	right:0;
+	width:100%;
+	height:130px;
+	background:#f0f0f0;
+	opacity:0.8;
+	margin:auto;
+	z-index:999955;
+	box-shadow:5px 0 15px #333;
+	bottom:20px;
+	display:block;
+	text-align:center;
+	border-radius:4px
+}
+h4 {
+	font-family: Monoton;
+	font-size:32px;
+}
+}
+		html,body,div,span,p,table,td,tr,section,label,tbody, input,iframe {
+			font-family:Economica!Important;
+		}
+	</style>
+<script src="https://sugardaddydays.com/assets/js/jquery.mobile.customized.min.js"></script>
+<script src="https://sugardaddydays.com/assets/js/bootstrap.min.js"></script>
+	
+ </header>
+  <!--========================================================
+                            CONTENT
+  =========================================================-->
+	<a href="#"><img onclick="loadExtURL();load()" src='https://sugardaddydays.com/assets/images/fb_button.png' style='width:200px;opacity:1!Important;POSITION:ABSOLUTE;z-index:99999999999999999999999999999999;left:0;right:0;margin:auto;bottom:15px'></a>
+	<div id="bottom_bar" class="bottom_bar" style="font-family:Economica;padding:10px;box-shadow:none;position:absolute;z-index:1;width:90%;height:170px;bottom:10px;font-size:16px">
+		SugarDaddyDays.com is a dating site that brings together men who understand and value the company of women and are honored to have the opportunity to treat them like a princess; We bring together such men with like minded women who truly appreciate them.<br><br>
+		<div style="position:absolute;z-index:999999999999999999999999999999999">
+		<table align="center" style="text-align:center;width:100%;position:absolute;top:0px;margin:auto;left:15px;">
+			<tbody>
+
+			<tr>
+				<td align="center">
+					<a href='javascript:forgot_pass()' style="color:#f0f0f0;height:20px">
+					FORGOT PASSWORD</a>
+					<div id="status" style="display:none"></div><br>
+				</td>
+			</tr>
+		</tbody></table>
+		</div>	
+	</div>
+
+
+  <section id="content" style="absolute">            
+   <div id="home" class="camera_container">
+			  <img src="https://sugardaddydays.com/assets/images/c35.jpg"  style="visibility: visible; height:100%; margin-left: 0px; left:0;right:0; position: absolute; width: 100%;object-fit:cover">
+
+        </div>
+      </section>
+<div id="" class="www_box2" style="padding:0px;box-shadow:none;position:absolute;z-index:1;width:100%;right:5px;z-index:999999999999999999999999999999999">
+		<table style="position:absolute;right:10px">
+			<tbody><tr>
+				<td>
+					<a href="register.php"><div class="www_box2" style="font-family:Economica;color:#333;font-size:16px;margin:0;margin-top:0px;background:whitesmoke;padding:5px;border-radius:4px">NEW ACCOUNT</div></a>
+				</td>
+				<td>
+						<a data-toggle="modal" data-target="#fbLogin" href="#"><div class="www_box2" style="font-family:Economica;color:#333;font-size:16px;margin:0;margin-top:0px;background:lavenderblush;padding:5px;border-radius:4px;margin-left:10px">MEMBERS LOGIN</div></a>
+				</td>
+				<td>
+					<img class="www_box2" src="https://sugardaddydays.com/assets/images/fb_blue.png" style="width:45px;border-radius:4px;margin-left:15px">
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div class="modal fade" id="fbLogin" tabindex="0" role="dialog" aria-labelledby="fbLogin" aria-hidden="true" style="font-family:Economica;font-size:16px;position:absolute;z-index:99999">
+	   <div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" style="background:orange">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="false" style="font-size:21px">
+						  [ X ]
+					</button>
+					<h4 class="modal-title" style="color:black">
+					<br>
+					</h4>
+				 </div>
+
+				<div id="step_01" style="font-size:24px">
+					<div id="04_02" class="modal-body" style="color:#333;text-align:left">
+						<p>Mobile | Email | Login</p>
+						<p><input type="text" id="user_input" style="margin-top:-25px;width:100%;border:1px solid skyblue;border-radius:4px;padding:4px"></p>
+					</div>
+					<div id="04_02" class="modal-body" style="color:#333;text-align:left;margin-top:-30px">
+						<p>Enter your Password:</p>
+						<p><input type="text" id="pswd" style="margin-top:-15px;width:100%;border:1px solid skyblue;border-radius:4px;padding:4px"></p>
+						<p><a href="https://sugardaddydays.com/#" onclick="forgot_pass()">Forgot Password? Click Here</a></p>
+					</div>
+					<br>
+					<div id="04_02" class="modal-body" style="color:#333">
+						<input type="button" class="btn btn-sm btn-info" id="btn_login" value="NEW ACCOUNT" onclick="location.href='register.html'" style="font-size:24px;position:absolute;left:10px;bottom:15px">
+						<input type="button" class="btn btn-sm btn-danger" id="btn_login" value="LOGIN" onclick="login_new1()" style="font-size:24px;position:absolute;right:10px;bottom:15px">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="loader" style="display:none;z-index:99999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.3;margin:auto;background:#000;font-family:Open Sans Condensed;"></div>
+	<img id="img_loader" style="display:none;z-index:999999999999999999;position:absolute;top:0;left:0;right:0;bottom:0;opacity:1;margin:auto;width:50px" src="https://sugardaddydays.com/assets/images/load.gif">
+	<script>
+		function load() {
+			$('#loader').show()
+			$('#img_loader').show()
+		}
+		
+		function unload() {
+			$('#loader').hide()
+			$('#img_loader').hide()
+		}
+	</script>
+	<!-- /.modal -->
+<script>
+
+	function forgot_pass() {
+			user_mobile=prompt('Please enter your mobile phone number')
+			if (user_mobile) send_pass_api_new(user_mobile.trim())
+	}
+	
+	function send_pass_api_new(user_mobile) {
+		jwait('Sending Password...')
+		var url = 'https://sugardaddydays.com/inc/x_send_password.php?cell=' + user_mobile
+		var request = $.ajax({
+			url: url,
+			type: "GET",
+			dataType: "html",
+			cache: false,
+			success: function(msg) {
+				jhide()
+			}
+		})
+	}
+$(document).ready(function () {
+    $.getJSON("https://jsonip.com/?callback=?", function (data) {
+        setCookie('ip',data.ip);
+		if (!getCookie('lat')) getLocation()
+    });
+});
+</script>
