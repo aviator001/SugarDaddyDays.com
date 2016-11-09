@@ -725,21 +725,20 @@
 	function invoke_help() {
 		
 	}
-        function getImage() {
-			navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-				destinationType: Camera.DestinationType.FILE_URI });
+		function take_photo() {
+			navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+		}
 
-			function onSuccess(imageURI) {
-				var image = document.getElementById('myImage');
-				image.src = imageURI;
-				image.style.display='block'
-			}
+		function onSuccess(imageURI) {
+			var image = document.getElementById('myImage');
+			image.src = imageURI;
+			uploadPhoto(imageURI)		
+		}
 
-			function onFail(message) {
-				alert('Failed because: ' + message);
-			}	
-        }
- 
+		function onFail(message) {
+			alert('Failed because: ' + message);
+		}
+
         function uploadPhoto(imageURI) {
             var options = new FileUploadOptions();
             options.fileKey="file";

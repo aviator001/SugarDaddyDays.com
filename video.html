@@ -1,8 +1,7 @@
- <script src="cordova.js"></script>
+<script src="cordova.js"></script>
 <input type="button" value="take photo" onclick="take_photo()">
-
+<img id="myImage" style="width:100%;position:absolutye;left:0;top:0">
 <script>
-window.onclick=takephoto 
 
 function take_photo() {
 	navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
@@ -16,3 +15,4 @@ function take_photo() {
 		alert('Failed because: ' + message);
 	}
 </script>
+
