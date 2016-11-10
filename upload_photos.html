@@ -369,13 +369,13 @@
 		var imx=0
 		function take_photo() {
 			navigator.camera.getPicture(onSuccess, onFail, { 
-				destinationType: Camera.DestinationType.FILE_URI,
+				destinationType: Camera.DestinationType.DATA_URL,
 				quality: 50,
 				correctOrientation: true,
 				allowEdit: true
 			});
 		}
-		function onSuccess(imageURI) {
+		function onSuccess(imageData) {
 			var image = document.createElement('img');
 			var sp = document.createElement('span');
 			image.id="img"+imx
@@ -384,10 +384,10 @@
 			image.style.margin="10px"
 			image.style.border="5px solid #f0f0f0"
 			image.className="www_box2"
-			image.src = imageURI;
+			image.src = "data:image/jpeg;base64," + imageData;
 			sp.appendChild(image)
 			document.getElementById('album').appendChild(sp)
-			uploadPhoto(imageURI)		
+			uploadPhoto(image.src)		
 			imx++
 		}
 
@@ -395,23 +395,14 @@
 			alert('Failed because: ' + message);
 		}
 
-		function uploadPhoto(imageURI) {
-			var options = new FileUploadOptions();
-			options.fileKey="file";
-			options.fileName=imageURI.file;
-			options.mimeType="image/jpeg";
-			var fileURL=imageURI.fullPath;
-
-			var params = new Object();
-			params.value1 = "test";
-			params.value2 = "param";
-			options.params = params;
-			options.chunkedMode = true;
-
-			var ft = new FileTransfer();
-			ft.upload(fileURL, encodeURI("https://sugardaddydays.com/iupload.php"), win, fail, options);
-			alert(fileURL)
-}
+		function uploadPhoto(imageData) {
+			var fname=getCookie('login') + '_' + Math.round(Math.random()*10000000000)
+		    $.ajax({url: "https://sugardaddydays.com/iupload.php",
+		          type: 'POST',
+		          data: {filename: fname, image: imageData,login: getCookie('login'), mid: getCookie('mid')},
+		          success: function(data, status, xhr) {}
+		    });      
+		}
 
 		function win(r) {
 			alert(r)
