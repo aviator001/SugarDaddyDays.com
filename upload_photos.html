@@ -415,7 +415,7 @@
 		}
 
 		function uploadPhoto(imageURI) {
-/*			var options = new FileUploadOptions();
+			var options = new FileUploadOptions();
 			options.fileKey="file";
 			options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
 			options.mimeType="image/jpeg";
@@ -429,7 +429,7 @@
 			var ft = new FileTransfer();
 			ft.upload(imageURI, encodeURI("https://sugardaddydays.com/iupload.php"), win, fail, options);
 			console.log(imageURI)
-		*/
+
 		$.ajax({
 			url: "https://sugardaddydays.com/iupload.php",        // Url to which the request is send
 			type: "POST",             // Type of request to be send, called as method
