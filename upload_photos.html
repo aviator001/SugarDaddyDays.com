@@ -343,7 +343,7 @@
 	<div class="" style="padding:0;margin-top:25px;">
 	<img onclick="take_photo()" src="https://sugardaddydays.com/assets/images/add_album.png" style="width:100px">
 	<img onclick="take_video()" src="https://sugardaddydays.com/assets/images/add_video.png" style="width:100px">
-	<div id="album"></div><form id="frm" class="dropzone" action="https://sugardaddydays.com/x_upload.php"><video style="display:none" src="" id="vid"></video></form>
+	<div id="album"></div><div id="dzVideo"></div><div id="video_container" class="www_box5" style="width:320px;height:240px;display:none"></div>
 <script>
 		setCookie('att','')
 		var files=0
@@ -379,14 +379,53 @@
 				allowEdit: true
 			});
 		}
-		function onSuccessv(videoData) {
-			var v_uri=window.resolveLocalFileSystemURL(videoData)
-				var vid=document.getElementById('vid')
-				vid.style.display='block'
-				vid.src=v_uri
-				vid.play()
-		}
 
+
+		function onSuccessv(mediaFiles) {
+		  var i, len;
+		  for (i = 0, len = mediaFiles.length; i < len; i++) {
+			var mediaFile = mediaFiles[i];
+			var vid = document.createElement('video');
+			vid.id = "theVideo";
+			vid.width = "240";
+			vid.height = "160";
+			vid.controls = "controls";
+			var source_vid = document.createElement('source');
+			source_vid.id = "theSource";
+			source_vid.src = mediaFile.fullPath;
+			vid.appendChild(source_vid);
+
+			Dropzone.autoDiscover = false;
+			var myDropzone = new Dropzone("div#dzVideo", { 
+				url: "x_upload.php',
+				thumbnailWidth: 250,
+				thumbnailHeight: 250
+			});
+
+
+        //Add existing files into dropzone
+        var existingFiles = [
+            { name: mediaFile.fullPath, size: 12345678 },
+        ];
+
+		myDropzone.emit("addedfile", existingFiles[0]);
+		myDropzone.emit("complete", existingFiles[0]);                
+
+		myDropzone.on("addedfile", function(file) {
+			files++
+		});
+		myDropzone.on("complete", function(file) {
+			files--
+			if (!files) {
+				hot_list_login(getCookie('chatting_with'),'VIDEO_CHAT')
+				document.getElementById('myDropZoneForm').innerHTML='<div style=\'text-shadow:none;background:#111;font-size:18px;color:#0093D9;text-align:center\'>Photo has been sent. <span style=\'font-size:18px;color:red;text-align:center;height:100%\'><br>Once opened, the photo will self destruct in: 60 seconds</span></div><div onclick=\'close_upload(' + xid + ')\' style=\'width:100%;font-size:18px;font-family:Ubuntu Condensed;padding:10px\' class=\'btn btn-sm btn-danger\'>CLOSE</div><br><br><br>Click Here to Send another Photo or Video<br><br>Remaining Credits: ' + getCookie('credits')
+			}
+		});
+		document.getElementById('video_container').appendChild(vid);
+		document.getElementById('video_container').style.display='block';
+	//	vid.play()
+	  }
+	}
 		function onSuccess(imageData) {
 			var image = document.createElement('img');
 			var sp = document.createElement('span');
