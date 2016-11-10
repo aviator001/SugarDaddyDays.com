@@ -140,6 +140,7 @@
                             HEADER
   =========================================================-->
 <script type="text/javascript">
+if (getCookie('mid')=='') location.fref='index.html?force=yes'
   WebFontConfig = {
     google: { families: [ 'Ubuntu+Condensed::latin'] }
   };
@@ -352,6 +353,7 @@ var src=[]
 var member_id=getCookie('mid')
 setTimeout('get_photos('+member_id+')',100)
 function get_photos(member_id) {
+	console.log('https://sugardaddydays.com/inc/x_photo_ids.php?member_id=' + member_id)
 	var request = $.ajax({
 		url: 'https://sugardaddydays.com/inc/x_photo_ids.php?member_id=' + member_id, 
 		type: "GET",
