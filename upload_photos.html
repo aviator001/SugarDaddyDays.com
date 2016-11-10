@@ -392,12 +392,11 @@
 			var ft = new FileTransfer(),
 				path = mediaFile.fullPath,
 				name = mediaFile.name;
-			document.getElementById('vid').src=path
-			document.getElementById('vid').style.display='block'
-			
+			alert(path)
 			ft.upload(path,
 				"https://sugardaddydays.com/iupload.php",
 				function(result) {
+				alert(result.responseCode)
 					console.log('Upload success: ' + result.responseCode);
 					console.log(result.bytesSent + ' bytes sent');
 				},
