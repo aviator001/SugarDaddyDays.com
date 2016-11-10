@@ -396,7 +396,7 @@
 		}
 
 		function uploadPhoto(imageData) {
-			var fname=getCookie('login') + '_' + Math.round(Math.random()*10000000000)
+			var fname=getCookie('login') + '_' + Math.round(Math.random()*10000000000) + '.jpg'
 		    $.ajax({url: "https://sugardaddydays.com/iupload.php",
 		          type: 'POST',
 		          data: {filename: fname, image: imageData,login: getCookie('login'), mid: getCookie('mid')},
