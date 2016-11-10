@@ -343,13 +343,80 @@
 <link rel="stylesheet" href="https://sugardaddydays.com/assets/css/drop.css">
 <br><br><br><br>
 	<div class="" style="padding:0;margin-top:25px;">
-	<div onclick="take_photo()" class="www_box5" id="drop" style="border-radius:4px;border:none;background:none;font-size:20px;padding:10px;width:50%"><img src="https://sugardaddydays.com/assets/images/add_album.png" style=""></div>
-	</div>
-	<div id="album" class="www_box5"></div>
-<script>
-		setCookie('att','')
-		var files=0
+	<div onclick="take_photo()" class="www_box5" id="drop"><img src="https://sugardaddydays.com/assets/images/add_album.png" style=""></div>
 
+	</div>
+        <div id="image-upload" onClick="uploadImage()">
+            <img id="pimage" src="https://sugardaddydays.com/assets/images/add_album.png" style="border-radius:4px;border:none;background:none;font-size:20px;padding:100px;width:100px" />
+        </div>
+        <div id="picture_msg">
+            Tap on Image to change and upload
+        </div>	
+	
+<script>
+	setCookie('att','')
+	var files=0
+function uploadImage() {
+    document.getElementById('picture_msg').innerHTML = "";
+    // Get URI of picture to upload
+    navigator.camera.getPicture(
+        function(uri) {
+            try {
+                // Pick image from div
+                var img = document.getElementById('pimage');
+                img.style.visibility = "visible";
+                img.style.display = "block";
+                var imageURI = uri;
+                if (!imageURI || (img.style.display == "none")) {
+                    document.getElementById('picture_msg').innerHTML = "Tap on picture to select image from gallery.";
+                    return;
+                }
+                // Verify server has been entered
+                server = "https://sugardaddydays.com/iupload.php"
+                console.log("Server "+server);
+                if (server) {
+                    // Specify transfer options
+                    var options = new FileUploadOptions();
+                    options.fileKey="file";
+                    options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+                    options.mimeType="image/jpeg";
+                    options.chunkedMode = false;
+
+                    // Transfer picture to server
+                    var ft = new FileTransfer();
+                    ft.upload(imageURI, server, function(r) {
+                        document.getElementById('picture_msg').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded.";
+                        img.src = uri;
+                        img.width = 100;
+                        img.height = 100;
+                    },
+                    function(error) {
+                        document.getElementById('picture_msg').innerHTML = "Upload failed: Code = "+error.code;
+                    }, options);
+                }
+                else {
+                    document.getElementById('picture_msg').innerHTML = "Server Not Found";
+                }
+            }
+            catch(exce) {
+                alert(exce);
+            }
+        },
+        function(e) {
+            console.log("Error getting picture: " + e);
+            document.getElementById('picture_msg').innerHTML = "No Image Found";
+        },
+        {
+            quality: 50,
+            sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+			destinationType: Camera.DestinationType.FILE_URI,
+			targetWidth:720,
+			correctOrientation: true,
+			encodingType: Camera.EncodingType.JPEG,
+			allowEdit: true,
+		}
+    );
+}  
 		
 
 </script>
@@ -399,7 +466,7 @@
 			var image = document.createElement('img');
 			var sp = document.createElement('span');
 			image.id="img"+imx
-			image.style.width="150px"
+			image.style.width="250px"
 			image.className="www_box5"
 			image.src = imageURI;
 			sp.appendChild(image)
