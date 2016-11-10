@@ -343,80 +343,13 @@
 <link rel="stylesheet" href="https://sugardaddydays.com/assets/css/drop.css">
 <br><br><br><br>
 	<div class="" style="padding:0;margin-top:25px;">
-	<div onclick="take_photo()" class="www_box5" id="drop"><img src="https://sugardaddydays.com/assets/images/add_album.png" style=""></div>
-
+	<div onclick="take_photo()" class="www_box5" id="drop" style="border-radius:4px;border:none;background:none;font-size:20px;padding:10px;width:50%"><img src="https://sugardaddydays.com/assets/images/add_album.png" style=""></div>
 	</div>
-        <div id="image-upload" onClick="uploadImage()">
-            <img id="pimage" src="https://sugardaddydays.com/assets/images/add_album.png" style="border-radius:4px;border:none;background:none;font-size:20px;padding:100px;width:100px" />
-        </div>
-        <div id="picture_msg">
-            Tap on Image to change and upload
-        </div>	
-	
+	<div id="album"></div>
 <script>
-	setCookie('att','')
-	var files=0
-function uploadImage() {
-    document.getElementById('picture_msg').innerHTML = "";
-    // Get URI of picture to upload
-    navigator.camera.getPicture(
-        function(uri) {
-            try {
-                // Pick image from div
-                var img = document.getElementById('pimage');
-                img.style.visibility = "visible";
-                img.style.display = "block";
-                var imageURI = uri;
-                if (!imageURI || (img.style.display == "none")) {
-                    document.getElementById('picture_msg').innerHTML = "Tap on picture to select image from gallery.";
-                    return;
-                }
-                // Verify server has been entered
-                server = "https://sugardaddydays.com/iupload.php"
-                console.log("Server "+server);
-                if (server) {
-                    // Specify transfer options
-                    var options = new FileUploadOptions();
-                    options.fileKey="file";
-                    options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-                    options.mimeType="image/jpeg";
-                    options.chunkedMode = false;
+		setCookie('att','')
+		var files=0
 
-                    // Transfer picture to server
-                    var ft = new FileTransfer();
-                    ft.upload(imageURI, server, function(r) {
-                        document.getElementById('picture_msg').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded.";
-                        img.src = uri;
-                        img.width = 100;
-                        img.height = 100;
-                    },
-                    function(error) {
-                        document.getElementById('picture_msg').innerHTML = "Upload failed: Code = "+error.code;
-                    }, options);
-                }
-                else {
-                    document.getElementById('picture_msg').innerHTML = "Server Not Found";
-                }
-            }
-            catch(exce) {
-                alert(exce);
-            }
-        },
-        function(e) {
-            console.log("Error getting picture: " + e);
-            document.getElementById('picture_msg').innerHTML = "No Image Found";
-        },
-        {
-            quality: 50,
-            sourceType: Camera.PictureSourceType.PHOTOLIBRARY
-			destinationType: Camera.DestinationType.FILE_URI,
-			targetWidth:720,
-			correctOrientation: true,
-			encodingType: Camera.EncodingType.JPEG,
-			allowEdit: true,
-		}
-    );
-}  
 		
 
 </script>
@@ -454,24 +387,24 @@ function uploadImage() {
 		function take_photo() {
 			navigator.camera.getPicture(onSuccess, onFail, { 
 				destinationType: Camera.DestinationType.FILE_URI,
-				quality: 60,
-				targetWidth:720,
+				quality: 50,
 				correctOrientation: true,
 				encodingType: Camera.EncodingType.JPEG,
-				allowEdit: true,
-				sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+				allowEdit: true
 			});
 		}
 		function onSuccess(imageURI) {
 			var image = document.createElement('img');
 			var sp = document.createElement('span');
 			image.id="img"+imx
-			image.style.width="250px"
-			image.className="www_box5"
+			image.style.width="40%"
+			image.style.margin="10px"
+			image.style.border="5px 5px 25px 5px solid #f0f0f0"
+			image.className="www_box2 www_box5 www_box1"
 			image.src = imageURI;
 			sp.appendChild(image)
 			document.getElementById('album').appendChild(sp)
-			uploadPhoto(imageURI)
+			uploadPhoto(imageURI)		
 			imx++
 		}
 
@@ -492,7 +425,7 @@ function uploadImage() {
 			options.chunkedMode = false;
 
 			var ft = new FileTransfer();
-			var tr=ft.upload(imageURI, "https://sugardaddydays.com/x_upload.php", win, fail, options);
+			var tr=ft.upload(imageURI, encodeURI("https://sugardaddydays.com/x_upload.php"), win, fail, options);
 		}
 
 		function win(r) {
@@ -500,23 +433,12 @@ function uploadImage() {
 		}
 
 		function fail(error) {
-			alert("An error has occurred: Code")
+			alert("An error has occurred: "+error)
 		}	
 
-		var currPage='https://sugardaddydays.com/page.php?page=upload_photos&upload=upload&member_id=30376&x-type=local&isMobile='
-		  WebFontConfig = {
-			google: { families: [ 'Ubuntu+Condensed'] }
-		  };
-		  (function() {
-			var wf = document.createElement('script');
-			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-			wf.type = 'text/javascript';
-			wf.async = 'true';
-			var s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(wf, s);
-		  })(); 
+		var currPage='https://sugardaddydays.com/upload_photos_html'
 
-				var home_start
+		var home_start
 				var city_limit
 				if (city_limit =='') city_limit=200
 				var autocomplete;
