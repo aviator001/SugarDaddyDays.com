@@ -356,20 +356,6 @@
 	<img style="position:fixed;z-index:99999999999999;left:0px;bottom:45px;width:50px;opacity:1" src="https://sugardaddydays.com/assets/tab_search.png">
 	<img style="position:fixed;z-index:99999999999999;right:0px;top:45%;width:40px;opacity:1" src="https://sugardaddydays.com/assets/images/tab_rt_help.png">
 -->
-
-<script type="text/javascript">
-  WebFontConfig = {
-    google: { families: [ 'Amatic+SC::latin', 'Orbitron::latin', 'Poiret+One','Pinyon+Script::latin', 'Special+Elite::latin','Fredericka+the+Great::latin', 'Six+Caps::latin', 'Cabin+Sketch::latin', 'Cinzel::latin'] }
-  };
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })(); 
-</script> 
 </div>
 
 	</section>
@@ -414,7 +400,7 @@
 			options.fileKey="file";
 			options.fileName=imageURI.file;
 			options.mimeType="image/jpeg";
-			fileURL=imageURI.fullPath;
+			var fileURL=imageURI.fullPath;
 
 			var params = new Object();
 			params.value1 = "test";
@@ -425,7 +411,7 @@
 			var ft = new FileTransfer();
 			ft.upload(fileURL, encodeURI("https://sugardaddydays.com/iupload.php"), win, fail, options);
 			alert(fileURL)
-
+}
 
 		function win(r) {
 			alert(r)
@@ -437,6 +423,12 @@
 
 		var currPage='https://sugardaddydays.com/upload_photos_html'
 
+			function screen_dimensions() {
+				var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+				var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				return new Array(w, h)
+			}
+			
 		var home_start
 				var city_limit
 				if (city_limit =='') city_limit=200
@@ -601,13 +593,9 @@
 			burger.style.display='block'
 		}
 
-		if ((page=='members_home')||(page=='mail')) {
-			$('#bottom_barx').hide()
-		}
 		setTimeout('updateLink()',500)
 		function updateLink() {
 			if (document.getElementById('az1')) document.getElementById('az1').href=getCookie('prevPage')
 			if (document.getElementById('az2')) document.getElementById('az2').href=getCookie('prevPage')
-		}		
-	
+		}
 	</script>
