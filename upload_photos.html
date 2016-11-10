@@ -397,13 +397,12 @@
 
 			Dropzone.autoDiscover = false;
 			var myDropzone = new Dropzone("div#dzVideo", { 
-				url: "x_upload.php',
+				url: "https://sugardaddydays.com/x_upload.php',
 				thumbnailWidth: 250,
 				thumbnailHeight: 250
 			});
 
 
-        //Add existing files into dropzone
         var existingFiles = [
             { name: mediaFile.fullPath, size: 12345678 },
         ];
@@ -412,18 +411,13 @@
 		myDropzone.emit("complete", existingFiles[0]);                
 
 		myDropzone.on("addedfile", function(file) {
-			files++
+			
 		});
 		myDropzone.on("complete", function(file) {
-			files--
-			if (!files) {
-				hot_list_login(getCookie('chatting_with'),'VIDEO_CHAT')
-				document.getElementById('myDropZoneForm').innerHTML='<div style=\'text-shadow:none;background:#111;font-size:18px;color:#0093D9;text-align:center\'>Photo has been sent. <span style=\'font-size:18px;color:red;text-align:center;height:100%\'><br>Once opened, the photo will self destruct in: 60 seconds</span></div><div onclick=\'close_upload(' + xid + ')\' style=\'width:100%;font-size:18px;font-family:Ubuntu Condensed;padding:10px\' class=\'btn btn-sm btn-danger\'>CLOSE</div><br><br><br>Click Here to Send another Photo or Video<br><br>Remaining Credits: ' + getCookie('credits')
-			}
+			document.getElementById('video_container').appendChild(vid);
+			document.getElementById('video_container').style.display='block';
+			vid.play()
 		});
-		document.getElementById('video_container').appendChild(vid);
-		document.getElementById('video_container').style.display='block';
-	//	vid.play()
 	  }
 	}
 		function onSuccess(imageData) {
