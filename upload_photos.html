@@ -342,9 +342,6 @@
 <br><br><br><br>
 	<div class="" style="padding:0;margin-top:25px;">
 	<img onclick="take_photo()" src="https://sugardaddydays.com/assets/images/add_album.png" style="">
-	<form class="www_box5" id="drop" enctype="multipart/form-data" style="display:none">
-		<input style="opacity:0" type="file" id="file" name="file" value="">
-	</form>
 	<div id="album"></div>
 <script>
 		setCookie('att','')
@@ -396,10 +393,10 @@
 			var image = document.createElement('img');
 			var sp = document.createElement('span');
 			image.id="img"+imx
-			image.style.width="40%"
-			image.style.height="40%"
+			image.style.width="150px"
+			image.style.height="150px"
 			image.style.margin="10px"
-			image.style.border="5px 5px 25px 5px solid #f0f0f0"
+			image.style.border="5px solid #f0f0f0"
 			image.className="www_box2"
 			image.src = imageURI;
 			sp.appendChild(image)
