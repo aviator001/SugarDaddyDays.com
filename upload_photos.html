@@ -360,8 +360,6 @@
 </div>
 
 	</section>
-	
-	
 		<script href="https://sugardaddydays.com/assets/js/framework.js"></script>
 		<script href="https://sugardaddydays.com/js/jquery-migrate-1.2.1.js"></script>
 		<script src="https://sugardaddydays.com/assets/js/jquery.js"></script>
@@ -391,9 +389,8 @@
 				vid.style.display='block'
 				vid.src=v_uri
 				vid.play()
-
-			
 		}
+
 		function onSuccess(imageData) {
 			var image = document.createElement('img');
 			var sp = document.createElement('span');
@@ -411,6 +408,10 @@
 		}
 
 		function onFail(message) {
+			alert('Failed because: ' + message);
+		}
+
+		function onFailv(message) {
 			alert('Failed because: ' + message);
 		}
 
