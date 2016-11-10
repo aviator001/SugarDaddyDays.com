@@ -367,12 +367,8 @@
 		<script>
 		var imx=0
 		function take_video(){
-			navigator.camera.getPicture(onSuccessv, onFailv, { 
-				destinationType: Camera.DestinationType.FILE_URI,
-				quality: 20,
-				correctOrientation: true,
-				mediaType: 1
-			});
+			var options = { limit: 1, quality: 0 };
+			navigator.device.capture.captureVideo(onSuccessv, onFailv, options);			
 		};
 		
 		function take_photo() {
