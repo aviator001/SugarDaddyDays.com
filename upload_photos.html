@@ -392,12 +392,10 @@
 			var ft = new FileTransfer(),
 				path = mediaFile.fullPath,
 				name = mediaFile.name;
-			alert(path)
 			ft.upload(path,
-				"https://sugardaddydays.com/iupload.php",
+				"https://sugardaddydays.com/snapchat_upload.php",
 				function(result) {
-				alert(result.responseCode)
-					console.log('Upload success: ' + result.responseCode);
+					alert('Upload success: ' + result.responseCode);
 					console.log(result.bytesSent + ' bytes sent');
 				},
 				function(error) {
