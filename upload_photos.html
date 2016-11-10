@@ -1,631 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>		
-		<title>SugarDaddyDays.com :: Sugar Daddy Dating Site</title>		
-		<meta name="keywords" content="sugar daddy, sugardaddy, sugardaddy, wealthy men, twink, hot young women, sugar daddy dating site, find sugar daddy, SugarDaddyDays" />		
-		<meta name="description" content="A place that connects handsome wealthy and caring men to hot young women" />		
-		<meta name="Author" content="Gautam Sharma" />		
-		<!-- mobile settings -->		 
-		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />		
-		<!-- Fav Icons -->		
-		<link rel="icon" href="https://sugardaddydays.com/assets/img/favicon.ico">		
-		<link rel="apple-touch-icon" href="https://sugardaddydays.com/assets/img/favicon.ico">		
-		<!-- WEB FONTS -->		
-		<style>
-			iframe { width: 100%; }
-    html,body {
-        margin: 0 0;
-        max-width: 100%;
-		height:100%;
-		width:125%;
-        -webkit-overflow-scrolling: touch;
-    }	
-			</style>
-		<link href='https://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
-		<meta charset="utf-8">
-		<meta name="format-detection" content="telephone=no"/>
-		<link rel="icon" href="https://sugardaddydays.com/images/favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="https://sugardaddydays.com/css/grid.css">
-		<link rel="stylesheet" href="https://sugardaddydays.com/css/style.css">
-		<link rel="stylesheet" href="https://sugardaddydays.com/css/camera.css"/>
-		<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/stream.css"/>
-		<style>
-    html,body {
-        margin: 0 0;
-        width: 100%;
-        overflow: none;
-        -webkit-overflow-scrolling: touch;
-		max-width:500px!Important;
-    }	
-		.lm {padding:10px;font-family:Ubuntu Condensed;font-size:20px;color:#111;left:10px;margin:0}
-		li {background:#f0f0f0}
-		.tspacer {
-			background:#fff;
-			opacity:0.7;
-			font-family:Economica;
-			font-size:18px
-		}
-		.tspacer1 {
-			background:#fff;
-			opacity:0.7;
-			font-family:Economica;
-			font-size:18px;
-			height:32px;
-		}		
-		.tspacer2 {
-			background:#000;
-			opacity:0.5;
-			font-family:Economica;
-			font-size:22px;
-			height:50px;
-			color:#fff;
-			padding-top:10px;
-		}
-		.tspacer3 {
-			background:red;
-			opacity:0.6;
-			font-family:Economica;
-			font-size:22px;
-			height:50px;
-			color:#fff;
-			padding-top:10px;
-		}
-		.homeImg{
-			width:80px;
-			height:33px!Important;
-		}
-		</style>
-<link rel="stylesheet" href="https://sugardaddydays.com/assets/css/font-awesome.css">
-<link rel="stylesheet" href="https://sugardaddydays.com/css/bootstrap.css">		
-<script src="https://sugardaddydays.com/assets/js/jquery.js"></script>
-<script src="https://sugardaddydays.com/assets/js/drop.js"></script><script type="text/javascript" src="https://sugardaddydays.com/assets/js/jquery-ui.min.js"></script> 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-	<link href='https://fonts.googleapis.com/css?family=Poiret+One|Open+Sans|Economica' rel='stylesheet' type='text/css'>
-	<style>
-		html,body,div,span,p,table,td,tr,section,label,tbody, input,iframe, button,select, slide {
-			font-family:Economica!Important;
-		}
-		h1,h2,h3,h4,h5,h6,h7 {
-			font-family:Poiret One!Important;
-		}
-	</style>
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>	
-
-	</head>
-	<body style="overflow:auto!Important;">
-			<div id="notify" style="display:none;opacity:0.8;right:10px;top:100px;z-index:99999999999999;background:#333;box-shadow:0 0 20px #000;width:250px;height:40px;position:fixed;border-radius:4px">
-				<span id="notify_txt"  style="padding:5px;color:#f0f0f0"></span>
-			</div>
-	<div onclick="jmodalhide()" id="j_modal" style="display:none;position:fixed;width:100%;height:100%;left:0;right:0;top:0;bottom:0;background:#000;opacity:0.8;z-index:999999999999999999"></div>	
-	<div onclick="jmodalhide()" id="j_modal_text" style="display:none;position:fixed;width:250px;height:100px;left:0;right:0;top:0;bottom:0;background:#fcfcfc;opacity:1;z-index:999999999999999999;margin:auto;padding:10px;border-radius:5px;font-family:Ubuntu Condensed;font-size:18px" class="www_box2"></div>	
-	
-	<div id="panel_menu" style="display:none;position:fixed;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background:#000;z-index:999999999999999999999999999999999999;opacity:0.8"></div>
-	<div  id="panel_menu2" class="www_box2 www_box5" style="display:none;border-left:15px solid rgba(0,0,0,0.3);box-shadow:5px 5px 10px rgba(0,0,0,0.5);display:;width:200px;height:100%;z-index:9999999999999999999999999999999999999;position:fixed;right:-0px;top:40px;bottom:0;background:#f0f0f0;opacity:1">
-		<table cellpadding=10 STYLE="BACKGROUND:NONE;font-family:Open Sans Condensed!Important;font-size:24px!Important;">	
-			<tr style="border-top:1px solid silver"><td colspan=2><br></td></tr>
-			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="home.html"><span><i class="fa fa-home" style="margin-left:5px;font-size:18px;color:grey"></i></span></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="home.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">MEMBERS HOME</span></a></div></td></tr>
-			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="view_album.html"><i class="fa fa-camera" style="margin-left:5px;color:grey;font-size:18px"></i></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="view_album.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">MY ALBUM</span></a></div></td></tr>
-			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="javascript:view_profile()"><i class="fa fa-male" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="javascript:view_profile()"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">MY PROFILE</span></a></div></td></tr>					
-			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="javascript:upload_photos()"><i class="fa fa-upload" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="javascript:upload_photos()"<span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">UPLOAD PICS</span></a></div></td></tr>
-			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="search.html"><i class="fa fa-search" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="search.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">SEARCH</span></a></div></td></tr>	
-			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="my_account.html"><i class="fa fa-archive" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="my_account.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">MY ACCOUNT</span></a></div></td></tr>
-			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="user_hot_lists.html"><i class="fa fa-flash" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="user_hot_lists.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">HOTLISTS</span></a></div></td></tr>
-			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="mail.html"><i class="fa fa-inbox" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="mail.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">INBOX</span></a></div></td></tr>
-			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="view_album.html?edit=yes"><i class="fa fa-edit" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="view_album.html?edit=yes"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">EDIT PHOTOS</span></a></div></td></tr>
-			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="reports.html"><i class="fa fa-dashboard" style="margin-left:5px;color:grey;font-size:18px"></i></a></td><td style="text-align:left;padding:5px!Important;padding-left:5px"><a href="reports.html"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">REPORTS</span></a></div></td></tr>
-			<tr style="border-top:1px solid silver"><td style="text-align:left;padding:5px!Important"><div style="background:#f0f0f0;color:#000"><a href="logout.html"><i class="fa fa-sign-out" style="margin-left:5px;font-size:18px;color:grey"></i></a></td><td style="text-align:left;padding-left:5px"><a href="logout.html"><span style=";text-shadow:none"><span style="margin:5px!Important;font-size:18px!Important;color:#000!Important;">LOGOUT</span></a></div></td></tr>
-		</table>
-	</div>
-	<div class="www_box2 www_box5" id="pillar" ondrop="drop(event)" ondragover="allowDrop(event)" style="border-left:15px solid rgba(0,0,0,0.3);box-shadow:5px 5px 10px rgba(0,0,0,0.5);display:none;width:150px;height:100%;position:fixed;right:0;top:0;bottom:0;background:url(https://sugardaddydays.com/assets2/blue.png) no-repeat;background-size: cover;"></div>
-	<img class="www_box4" id="pay_modal" ondrop="drop(event)" style="border-left:15px solid rgba(0,0,0,0.3);box-shadow:5px 5px 10px rgba(0,0,0,0.5);display:;width:75%;height:auto;position:fixed;right:0;left:0;top:0;bottom:0;margin:auto;background:url(https://sugardaddydays.com/assets2/blue.png) no-repeat;background-size: cover;">
-	<img id="img1" style="display:;position:fixed;z-index:99999;right:5px;bottom:5px;width:150px;" href="https://sugardaddydays.com/assets2/baby_bag.png">
-	
-
-	<div id="modal_text" onkeyup="deduct()" class="modal_window" style="padding:20px;border-radius:6px;position:absolute;z-index:9999999999999;display:none;background:#f0f0f0;top:100px;left:0;right:0;margin:auto;width:320px;max-width:320px;height:500px;font-family:Ubuntu Condensed;font-size:24px;"><span id="tip" style='color:brown;font-family:Ubuntu Condensed'>SEND ANONYMOUS SMS<br><br><span style="font-size:18px;color:#333;font-family:Ubuntu Condensed">1. Your number will not be revealed<br>2. Message will show as coming from </span></span><br><br><div contentEditable onblur='fill_txt()' onclick='erase_txt()' id='message_text' style='word-wrap:break-word;font-family:Ubuntu Condensed;font-size:24px;contentEditable:true;color:#0093D9;cursor:hand;cursor:pointer;border-radius:4px;border:3px solid lightblue;height:170px;max-height:170px;color:#333;overflow-y:scroll;overflow-x:hidden;color:grey;background:#fff;padding:20px;background:#fff'>Type Message Here</div><div><span style="left:20px;position:absolute">CHARACTERS REMAINING: <b><span id="cr">160</span></b></span></div><br><br><div style='margin-top:10px'><span style="font-size:22px"  class="btn btn-info" onclick='send_sms()' id="send_mail">SEND</span>&nbsp;<span style="font-size:22px"  class="btn btn-danger" onclick="document.all.modal_text.style.display='none'" id="">GO BACK</span></div></div>
-	
-	<div id="modal_text" onkeyup="deduct()" class="modal_window" style="padding:20px;border-radius:6px;position:absolute;z-index:9999999999999;box-shadow:0 0 150px #000;display:none;background:#f0f0f0;top:0;bottom:0;left:0;right:0;margin:auto;width:320px;max-width:320px;height:300px;font-family:Open Sans Condensed;font-size:18px;"><span style='color:brown;font-family:Ubuntu Condensed'>SEND ANONYMOUS SMS<br><span style="font-size:14px;color:grey">1. Your number will not be revealed<br>2. Message will show as coming from </span></span><br><div contentEditable id='message_text' style='word-wrap:break-word;font-family:Ubuntu Condensed;font-size:32px;contentEditable:true;color:#0093D9;cursor:hand;cursor:pointer;border-radius:4px;border:1px solid lightblue;height:170px;max-height:170px;color:#333;overflow-y:scroll;overflow-x:hidden'>Type Message Here</div><div style='margin-top:10px'><span  class="btn btn-danger" onclick='sendSMS()' id="send_mail">Send</span><span  class="btn btn-info" onclick="document.all.message_text.innerHTML='';hide_text()" id="">Cancel</span></div><div><span style="left:20px;position:absolute">CHARACTERS REMAINING: <b><span id="cr">160</span></b></span></div></div>
-	
-	<style></style>
-	<div id="usersOnline" style="position:absolute;display:none"></div>
-
-	<script>
-		function upload_photos(member_id) {
-			location.href='upload_photos.html?member_id='+getCookie('mid')
-		}
-		function view_profile(member_id) {
-			location.href='view_profile.html?member_id='+getCookie('mid')
-		}
-		function qs(name, url) {
-			if (!url) {
-			  url = window.location.href;
-			}
-			name = name.replace(/[\[\]]/g, "\\$&");
-			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-				results = regex.exec(url);
-			if (!results) return null;
-			if (!results[2]) return '';
-			return decodeURIComponent(results[2].replace(/\+/g, " "));
-		}
-
-	var wl = window.location.href;
-	var mob = (window.location.href.indexOf('file://')>=0);
-
-	function setCookie(cname,cvalue)	{
-		if (window.location.href.indexOf('file://')>=0) {
-			window.localStorage.setItem(cname, cvalue);
-		} else {
-			var d = new Date(); 
-			d.setTime(d.getTime()+(1*24*60*60*1000)); 
-			var expires = "expires="+d.toGMTString(); 
-			document.cookie = cname + "=" + cvalue + "; " + expires; 
-		}
-	} 
-
-	function getCookie(cname)	{ 
-		if (window.location.href.indexOf('file://')>=0) {
-			var cvalue = window.localStorage.getItem(cname);
-			return cvalue
-		} else {
-			var name = cname + "="; 
-			var ca = document.cookie.split(';'); 
-			for(var i=0; i<ca.length; i++) { 
-			  var c = ca[i].trim(); 
-			  if (c.indexOf(name)==0) return c.substring(name.length,c.length); 
-			} 
-			return ""; 
-		}
-	} 
-
-	function delCookie(cname) {
-		if (mob===true) {
-			window.localStorage.removeItem(cname);
-		} else {
-			var d = new Date();
-			d.setTime(d.getTime());
-			var expires = "expires="+d.toGMTString();
-			document.cookie = cname + "=" + "" + "; " + expires;
-		}
-	}
-	
-	function clear_all() {
-		if (mob===true) {
-			 window.localStorage.clear();
-		} else {
-			document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
-		}	
-	}		
-	</script>
-	  <!--========================================================
-                            HEADER
-  =========================================================-->
-<script type="text/javascript">
-  WebFontConfig = {
-    google: { families: [ 'Ubuntu+Condensed::latin'] }
-  };
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })(); 
-
-  function checkHistory() {
-	  var a=window.location+''
-	  if ((a.split('?')[1].split('&')[0].split('=')[1])=='members_home') {
-			if (document.getElementById('bback')) document.getElementById('bback').style.display='none'
-	  } else {
-		if (document.getElementById('bback')) document.getElementById('bback').style.display='block'
-	  }
-  }
+<html>
+<head>
+<title>Capture Audio,Image,Video</title>
+<script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="json2.js"></script>
+<script type="text/javascript" charset="utf-8">
+// Called when capture operation is finished
+//
+function captureSuccess(mediaFiles) {
+var i, len;
+for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+uploadFile(mediaFiles[i]);
+}
+}
+function captureSuccess2(mediaFiles) {
+var i, len;
+for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+uploadFile2(mediaFiles[i]);
+}
+}
+function captureSuccess3(mediaFiles) {
+var i, len;
+for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+uploadFile3(mediaFiles[i]);
+}
+}
+// Called if something bad happens.
+//
+function captureError(error) {
+var msg = "An error occurred during capture: " + error.code;
+navigator.notification.alert(msg, null, "Uh oh!");
+}
+function captureError2(error) {
+var msg = "An error occurred during capture: " + error.code;
+navigator.notification.alert(msg, null, "Uh oh!");
+}
+function captureError3(error) {
+var msg = "An error occurred during capture: " + error.code;
+navigator.notification.alert(msg, null, "Uh oh!");
+}
+// A button will call this function
+//
+function captureAudio() {
+// Launch device audio recording application,
+// allowing user to capture up to 2 audio clips
+navigator.device.capture.captureAudio(captureSuccess, captureError, {limit: 2});
+}
+function captureImage()
+{
+// Launch device camera application,
+// allowing user to capture up to 2 images
+navigator.device.capture.captureImage(captureSuccess2, captureError2, {limit: 2});
+}
+function captureVideo() {
+// Launch device video recording application,
+// allowing user to capture up to 2 video clips
+navigator.device.capture.captureVideo(captureSuccess3, captureError3, {limit: 2});
+}
+// Upload files to server
+function uploadFile(mediaFile) {
+var win = function (r) {
+alert("Code = " + r.responseCode);
+alert("Bytes Sent = " + r.bytesSent);
+alert("Audio Uploaded");
+}
+var fail = function (error) {
+alert("An error has occurred: Code = " + error.code);
+alert("upload error source " + error.source);
+alert("upload error target " + error.target);
+}
+var options = new FileUploadOptions();
+//options.fileKey = mediafile.file;
+options.fileName = mediaFile.file;
+options.mimeType = "audio/wav";
+fileURL=mediaFile.fullPath;
+var ft = new FileTransfer();
+ft.upload(fileURL, encodeURI("http://192.168.1.101:80/myfile.php"), win, fail,
+options);
+}
+function uploadFile2(mediaFile) {
+var win = function (r) {
+alert("Code = " + r.responseCode);
+alert("Bytes Sent = " + r.bytesSent);
+alert("Image Uploaded");
+}
+var fail = function (error) {
+alert("An error has occurred: Code = " + error.code);
+alert("upload error source " + error.source);
+alert("upload error target " + error.target);
+}
+var options = new FileUploadOptions();
+//options.fileKey = mediafile.file;
+options.fileName = mediaFile.file;
+options.mimeType = "text/plain";
+ImageURL=mediaFile.fullPath;
+var ft = new FileTransfer();
+ft.upload(ImageURL, encodeURI("http://192.168.1.101:80/myfile.php"), win, fail,
+options);
+}
+function uploadFile3(mediaFile) {
+var win = function (r) {
+alert("Code = " + r.responseCode);
+alert("Bytes Sent = " + r.bytesSent);
+alert("Video Uploaded");
+}
+var fail = function (error) {
+alert("An error has occurred: Code = " + error.code);
+alert("upload error source " + error.source);
+alert("upload error target " + error.target);
+}
+var options = new FileUploadOptions();
+//options.fileKey = mediafile.file;
+options.fileName = mediaFile.file;
+options.mimeType = "video/mpeg";
+VideoURL=mediaFile.fullPath;
+var ft = new FileTransfer();
+ft.upload(VideoURL, encodeURI("http://sugardaddydays.com/iupload.php"), win, fail,
+options);
+}
 </script>
-			<style>
-					li {padding:5px;color:#666;border-top:1px solid rgba(10,10,10,0.9);background:#111}
-				.dropdown-menu {padding:5px;opacity:1;border-radius:2px}
-				.mm{border-radius:0 0 5px 5px;position:fixed;width:200px;height:100%;left:0px;top:55px;padding:0px;z-index:99999999999999999999999;text-align:left;display:block}
-			</style>
-			<header id="header" class="header" style="width:100%;opacity:1;background:#111;position:fixed;z-index:999999999999">
-						<div style="background:url(https://sugardaddydays.com/assets/images/xxx_big.png),#111;background-size:cover;position:fixed;width:100%;left:0;height:60px;top:-10px;z-index:999999999">
-						<a href="search.html"><i class="fa fa-search" style="color:#0093D9;font-size:28px;position:absolute;right:10px;top:18px"></i></a>
-						<a href="home.html"><img src="https://sugardaddydays.com/assets/images/logo_m.png" alt="Sugar Daddy Dating" style="width:200px;top:10px;right:0px;left:0;margin:auto;opacity:1;overflow:hidden;z-index:999999999;position:fixed"></a>
-						<a onclick="show_menuf()" href="#">
-							<img src="https://sugardaddydays.com/assets/3_bars.png" style="position:absolute;top:17px;left:5px;opacity:1;overflow:hidden;z-index:999999999;margin:2px;width:35px">
-						</a>
-						</div>
-			
-
-			<style>
-				.magic_box {
-				background:#f0f0f0;
-				opacity:0.3;
-				border-radius:6px;
-				color:#000;
-				-ms-filter:blur(+10);
-				filter:blur(+10);
-				-webkit-filter:blur(+10);
-				padding:20px
-			 }
-			</style>
-			
-			<link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
-</header>
-
-<br>
-	<div id="bottom_barx" style="display:none;width:105%;position:fixed;bottom:0px;left:-5px;height:50px;background:url(https://sugardaddydays.com/assets/x_toolbar.png);background-size:cover;z-index:999999999999999999999999999;padding-left:10px">
-		<table style="width:100%">
-			<tr>
-				<td><a id="az1" href="home.html"><img src="https://sugardaddydays.com/assets/images/ax0.png" style="width:25px;margin-top:15px"></a></td>
-				<td><a href="search.html"><img src="https://sugardaddydays.com/assets/images/ax2.png" style="width:25px;margin-top:15px"></a></td>
-				<td><a href="send_sms.html"><img src="https://sugardaddydays.com/assets/images/t1.png" style="width:35px;margin-top:10px"></a></td>
-				<td><a href="javascript:view_profile()"><img src="https://sugardaddydays.com/assets/images/xbg10.png" style="width:25px;margin-top:15px"></a></td>
-				<td><a href="javascript:upload_photos()"><img src="https://sugardaddydays.com/assets/images/a7p.png" style="width:35px;margin-top:15px"></a></td>
-				<td><a href="mail.html"><img src="https://sugardaddydays.com/assets/images/ax10.png" style="width:25px;margin-top:20px"></a></td>
-			</tr>
-
-			</tr>
-		</table>
-	</div>
-
-		<script>
-			var mt
-			var show_menu='0'
-			function show_menuf() {
-				if (show_menu=='0') {
-					document.getElementById('panel_menu').style.display='block'
-					document.getElementById('panel_menu2').style.display='block'
-					mt=setTimeout('hide_menuf()',30000)
-					show_menu='1'
-				} else {
-					hide_menuf()
-				}
-			}
-			function show_more() {
-				document.getElementById('dd').style.display='block'
-			}
-			function hide_menuf() {
-				show_menu='0'
-				document.getElementById('panel_menu').style.display='none'
-				document.getElementById('panel_menu2').style.display='none'
-			}
-			var fmz=$('#3D')
-
-		</script>
-		
-<div align=center style='background:;overflow:hidden'>  <!-- Modal -->
-  <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Bungee+Hairline|Bungee+Inline|Bungee+Outline|Codystar|Monoton" rel="stylesheet">
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="padding:35px 50px;">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
-        </div>
-        <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter password">
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
-            </div>
-              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>Not a member? <a href="#">Sign Up</a></p>
-          <p>Forgot <a href="#">Password?</a></p>
-        </div>
-      </div>
-      
-    </div>
-  </div> 
- <style>
-.m10 {margin:0px!Important}
-</style> 
-
-<div id='chief' align=center style='background:;overflow:hidden;background:url(https://sugardaddydays.com/assets/images/b5.jpg);background-size:cover'>
-<br><br><br><br>
-	<div class="" style="padding:0;margin-top:25px;">
-	<img onclick="take_photo()" src="https://sugardaddydays.com/assets/images/add_album.png" style="">
-	<form class="www_box5" id="drop" enctype="multipart/form-data" style="display:none">
-		<input style="opacity:0" type="file" id="file" name="file" value="">
-	</form>
-	<div id="album"></div>
-<script>
-		setCookie('att','')
-		var files=0
-
-		
-
-</script>
-</div><!--
-	<img style="position:fixed;z-index:99999999999999;left:0px;bottom:0px;width:50px;" src="https://sugardaddydays.com/assets/images/tab_messaging.png">
-	<img style="position:fixed;z-index:99999999999999;left:0px;top:5px;width:50px;opacity:1" src="https://sugardaddydays.com/assets/tab_home.png">
-	<img style="position:fixed;z-index:99999999999999;left:0px;bottom:45px;width:50px;opacity:1" src="https://sugardaddydays.com/assets/tab_search.png">
-	<img style="position:fixed;z-index:99999999999999;right:0px;top:45%;width:40px;opacity:1" src="https://sugardaddydays.com/assets/images/tab_rt_help.png">
--->
-
-<script type="text/javascript">
-  WebFontConfig = {
-    google: { families: [ 'Amatic+SC::latin', 'Orbitron::latin', 'Poiret+One','Pinyon+Script::latin', 'Special+Elite::latin','Fredericka+the+Great::latin', 'Six+Caps::latin', 'Cabin+Sketch::latin', 'Cinzel::latin'] }
-  };
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })(); 
-</script> 
-</div>
-
-	</section>
-	
-	
-		<script href="https://sugardaddydays.com/assets/js/framework.js"></script>
-		<script href="https://sugardaddydays.com/js/jquery-migrate-1.2.1.js"></script>
-		<script src="https://sugardaddydays.com/assets/js/jquery.js"></script>
-		<script src="cordova.js"></script>
-		<script>
-		var imx=0
-		function take_photo() {
-			navigator.camera.getPicture(onSuccess, onFail, { 
-				destinationType: Camera.DestinationType.FILE_URI,
-				quality: 50,
-				correctOrientation: true,
-				allowEdit: true,
-			});
-		}
-		function onSuccess(imageURI) {
-			var image = document.createElement('img');
-			var sp = document.createElement('span');
-			var f = document.getElementById('file');
-			f.value=imageURI
-			image.id="img"+imx
-			image.style.width="40%"
-			image.style.height="40%"
-			image.style.margin="10px"
-			image.style.border="5px 5px 25px 5px solid #f0f0f0"
-			image.className="www_box2 www_box5 www_box1"
-			image.src = imageURI;
-			sp.appendChild(image)
-			document.getElementById('album').appendChild(sp)
-			uploadPhoto(imageURI)		
-			imx++
-		}
-
-		function onFail(message) {
-			alert('Failed because: ' + message);
-		}
-
-		function uploadPhoto(imageURI) {
-			var options = new FileUploadOptions();
-			options.fileKey="file";
-			options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-			options.mimeType="image/jpeg";
-
-			var params = new Object();
-			params.value1 = "test";
-			params.value2 = "param";
-			options.params = params;
-			options.chunkedMode = false;
-
-			var ft = new FileTransfer();
-			ft.upload(imageURI, encodeURI("https://sugardaddydays.com/iupload.php"), win, fail, options);
-			console.log(imageURI)
-
-		$.ajax({
-			url: "https://sugardaddydays.com/iupload.php",        // Url to which the request is send
-			type: "POST",             // Type of request to be send, called as method
-			data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
-			contentType: false,       // The content type used when sending data to the server.
-			cache: false,             // To unable request pages to be cached
-			processData:false,        // To send DOMDocument or non processed data file it is set to false
-			success: function(data)   // A function to be called if request succeeds
-			{
-				$(".upload-msg").html(data);
-			}
-		});
-
-	}
-
-		function win(r) {
-			alert(r)
-		}
-
-		function fail(error) {
-			alert("An error has occurred: "+error)
-		}	
-
-		var currPage='https://sugardaddydays.com/upload_photos_html'
-
-		var home_start
-				var city_limit
-				if (city_limit =='') city_limit=200
-				var autocomplete;
-				var componentForm = {
-				  locality: 'long_name',
-				  administrative_area_level_1: 'short_name',
-				  postal_code: 'short_name'
-				};
-				function initAutocomplete() {
-				  autocomplete = new google.maps.places.Autocomplete(
-						(document.getElementById('location')), 
-						{types: ['(cities)']});
-					autocomplete.addListener('place_changed', fillInAddress);
-				}
-
-				function fillInAddress() {
-				  var place = autocomplete.getPlace();
-					console.log(place.address_components)
-					var add=place.address_components
-					for (var i = 0; i < add.length; i++) {
-						var addr = add[i];
-						if (addr.types[0] == ['administrative_area_level_1'])
-							x_state=addr.short_name;
-						else if (addr.types[0] == ['locality'])
-							x_city=addr.short_name;
-					}
-					document.getElementById('location').value = x_city + ', ' + x_state
-					setCookie('location_original', document.getElementById('location').value)
-					xs = '&city=' + x_city + '&state=' + x_state
-					setCookie('location', x_city + ' ' + x_state)
-					locx=1
-				}
-				
-			if (document.getElementById("miles")) {
-				if(!document.getElementById("miles").value){
-					document.getElementById("miles").value=getCookie('x-miles')
-					miles=document.getElementById("miles").value
-					setCookie('x-miles',miles)
-				} else {
-					miles=document.getElementById("miles").value
-					setCookie('x-miles',miles)
-				}
-			}
-			if (document.getElementById("zip")) {
-				if (document.getElementById("zip").value) {
-					zip=document.getElementById("zip").value
-					setCookie('x-zip',zip)
-				} else {
-					if (!getCookie('x-zip')) {
-						setCookie('x-zip', getCookie('x-zip'))
-					}
-					zip = getCookie('x-zip')
-					document.getElementById("zip").value=getCookie('x-zip')
-				}
-			}
-			if (document.getElementById("location")) {
-				if (document.getElementById("location").value == '') {
-					if (getCookie('x-location')=='') {
-						setCookie('x-location', getCookie('city') + ' ' + getCookie('state'))
-					} 
-					document.getElementById("location").value=getCookie('x-location')
-				} else {
-					setCookie('x-location', document.getElementById("location").value)
-				}
-			}
-			xcs=getCookie('x-location')
-			var iih=(screen_dimensions()[1])
-			var iiw=(screen_dimensions()[0])
-			var sr1h=iih
-			iih=iih*1-150;
-			var ttx=iiw*1/4
-			ttx=Math.round(ttx,0)
-			if (document.getElementById('iit1')) {
-				document.getElementById('iit1').style.position='fixed'
-				document.getElementById('iit1').style.top='-100px'
-			}
-			document.getElementById('chief').style.height=sr1h+'px'
-			for (r=0;r<=9;r++) {
-				if (document.getElementById('ii'+r)) {
-			//		document.getElementById('ii'+r).style.width=ttx+'px'
-			//		document.getElementById('ii'+r).style.height=ttx+'px'
-				}
-			}
-		var ar=[]
-		var mr=[]
-		function show_accounts() {
-			setTimeout('hide_mm(3)',5000)
-			document.getElementById('iit5').style.display='none'
-			document.getElementById('iit4').style.display='none'
-			document.getElementById('iit3').style.left='65px'
-			document.getElementById('iit3').style.display='block'
-			document.getElementById('iit2').style.display='none'
-			document.getElementById('people').src='https://sugardaddydays.com/assets/images/header_people.png'
-			document.getElementById('activity').src='https://sugardaddydays.com/assets/images/header_activity.png'
-			document.getElementById('connect').src='https://sugardaddydays.com/assets/images/header_connect.png'
-		}
-		function show_people() {
-			setTimeout('hide_mm(2)',5000)
-			document.getElementById('iit5').style.display='none'
-			document.getElementById('iit4').style.display='none'
-			document.getElementById('iit3').style.display='none'
-			document.getElementById('iit2').style.left='-25px'
-			document.getElementById('iit2').style.display='block'
-			document.getElementById('accounts').src='https://sugardaddydays.com/assets/images/header_account.png'
-			document.getElementById('activity').src='https://sugardaddydays.com/assets/images/header_activity.png'
-			document.getElementById('connect').src='https://sugardaddydays.com/assets/images/header_connect.png'
-		}
-		function show_activity() {
-			setTimeout('hide_mm(4)',5000)
-			document.getElementById('iit5').style.display='none'
-			document.getElementById('iit4').style.display='block'
-			document.getElementById('iit3').style.display='none'
-			document.getElementById('iit2').style.display='none'
-			document.getElementById('iit4').style.left='160px'
-			document.getElementById('people').src='https://sugardaddydays.com/assets/images/header_people.png'
-			document.getElementById('accounts').src='https://sugardaddydays.com/assets/images/header_account.png'
-			document.getElementById('connect').src='https://sugardaddydays.com/assets/images/header_connect.png'
-		}
-		function show_connect() {
-			setTimeout('hide_mm(5)',5000)
-			document.getElementById('iit5').style.display='block'
-			document.getElementById('iit4').style.display='none'
-			document.getElementById('iit3').style.display='none'
-			document.getElementById('iit2').style.display='none'
-			document.getElementById('iit5').style.left='255px'
-			document.getElementById('iit5').style.width='93px'
-			document.getElementById('people').src='https://sugardaddydays.com/assets/images/header_people.png'
-			document.getElementById('accounts').src='https://sugardaddydays.com/assets/images/header_account.png'
-			document.getElementById('activity').src='https://sugardaddydays.com/assets/images/header_activity.png'
-		}
-		function hide_mm(w) {
-			document.getElementById('iit'+w).style.display='none'
-			document.getElementById('people').src='https://sugardaddydays.com/assets/images/header_people.png'
-			document.getElementById('accounts').src='https://sugardaddydays.com/assets/images/header_account.png'
-			document.getElementById('activity').src='https://sugardaddydays.com/assets/images/header_activity.png'
-			document.getElementById('connect').src='https://sugardaddydays.com/assets/images/header_connect.png'			
-		}
-		
-		function show_drop_down_menu() {
-			var k
-			for (k=2;k<=7;k++) {
-				setTimeout('sddm('+k+')',100*k)
-			}
-			setTimeout('hide_drop_down_menu()',3000)
-		}
-		var moomoo=2
-		function hide_drop_down_menu() {
-			for (k=7;k>=2;k--) {
-				setTimeout('sddh('+k+')',100*moomoo)
-				moomoo++
-			}			
-		}
-		
-		function sddh(moo) {
-			var meow=document.getElementById('m'+moo)
-			meow.style.display='none'
-		}
-		
-		function sddm(meowmeow) {
-			var burger=document.getElementById('m'+meowmeow)
-			burger.style.display='block'
-		}
-
-		if ((page=='members_home')||(page=='mail')) {
-			$('#bottom_barx').hide()
-		}
-		setTimeout('updateLink()',500)
-		function updateLink() {
-			if (document.getElementById('az1')) document.getElementById('az1').href=getCookie('prevPage')
-			if (document.getElementById('az2')) document.getElementById('az2').href=getCookie('prevPage')
-		}		
-	
-	</script>
+</head>
+<body>
+<center><h1>MCA3B Capture Session</h1></center><br><br>
+<center> <button onclick="captureAudio();">Capture Audio</button> <br><br>
+<button onclick="captureImage();">Capture Image</button> <br><br>
+<button onclick="captureVideo();">Capture Video</button> <br>
+</center>
+</body>
+</html>  
