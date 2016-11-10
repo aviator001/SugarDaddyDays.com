@@ -389,20 +389,34 @@
 		}
 
 		function uploadFile(mediaFile) {
-			var ft = new FileTransfer(),
-				path = mediaFile.fullPath,
-				name = mediaFile.name;
-			ft.upload(path,
-				"https://sugardaddydays.com/snapchat_upload.php",
-				function(result) {
-					alert('Upload success: ' + result.responseCode);
-					console.log(result.bytesSent + ' bytes sent');
-				},
-				function(error) {
-					console.log('Error uploading file ' + path + ': ' + error.code);
-				},
-				{ fileName: name });
+			var fileURL = mediaFile.toURL();
+			var success = function (r) {
+				console.log("Successful upload...");
+				console.log("Code = " + r.responseCode);
+			}
+			var fail = function (error) {
+				alert("An error has occurred: Code = " + error.code);
+			}
+			var options = new FileUploadOptions();
+			options.fileKey = "file";
+			options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+			options.mimeType = "video/mp4";
+			var params = {};
+			params.value1 = "test";
+			params.value2 = "param";
+			options.params = params;
+			var ft = new FileTransfer();
+			ft.upload(fileURL, encodeURI(SERVER), success1, fail1, options);
 		}
+
+		function success1() {
+		
+		}
+
+		function fail1() {
+		
+		}
+
 		function onSuccess(imageData) {
 			var image = document.createElement('img');
 			var sp = document.createElement('span');
