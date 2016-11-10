@@ -342,36 +342,16 @@
 <div id='chief' align=center style='background:;overflow:hidden'><script src="https://sugardaddydays.com/assets/js/drop.js"></script>
 <link rel="stylesheet" href="https://sugardaddydays.com/assets/css/drop.css">
 <br><br><br><br>
-	<div class="" style="padding:0;margin-top:50px;">
-	<div onclick="take_photo()" class="www_box5" id="drop" style="border:none;background:none;font-size:20px;padding-top:30px;width:90%"></div>
+	<div class="" style="padding:0;margin-top:25px;">
+	<div onclick="take_photo()" class="www_box5" id="drop" style="border-radius:4px;border:none;background:none;font-size:20px;padding:10px;width:50%"><img src="https://sugardaddydays.com/assets/images/add_album.png" style=""></div>
 	</div>
-	<img id="myImg" class="www_box2">
+	<div id="album" class="www_box5"></div>
 <script>
 		setCookie('att','')
 		var files=0
 
-		myDropzone = new Dropzone("#drop", { 
-			url: "https://sugardaddydays.com/x_upload.php"
-		});
-		$('#drop').text('')
-		$('#drop').html('<br><img src="https://sugardaddydays.com/assets/images/add_album.png" style="width:200px;margin-right:20px"><BR><BR>CLICK IN THIS BOX TO ADD PHOTOS TO YOUR PROFILE')
-		myDropzone.on("addedfile", function(file) {
-			if (getCookie('att')=='') {
-				att=getCookie('attach_id')
-			} else {
-				att=getCookie('att')+'|'+getCookie('attach_id')
-			}
-			setCookie('att',att)
-			console.log(att)
-			files++
-		});
 		
-		myDropzone.on("complete", function(file) {
-			files--
-			if (files==0) {
-				location.href='view_album.html'
-			}
-		})
+
 </script>
 </div><!--
 	<img style="position:fixed;z-index:99999999999999;left:0px;bottom:0px;width:50px;" src="https://sugardaddydays.com/assets/images/tab_messaging.png">
@@ -402,17 +382,23 @@
 		<script href="https://sugardaddydays.com/js/jquery-migrate-1.2.1.js"></script>
 		<script src="https://sugardaddydays.com/assets/js/jquery.js"></script>
 		<script src="cordova.js"></script>
-		<input type="button" value="take photo" onclick="take_photo()">
-		<img id="myImage" style="width:100%;position:absolutye;left:0;top:0">
 		<script>
-
+		var imx=0
 		function take_photo() {
-			navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+			navigator.camera.getPicture(onSuccess, onFail, { quality: 100, destinationType: Camera.DestinationType.FILE_URI });
 		}
 		function onSuccess(imageURI) {
-			var image = document.getElementById('myImage');
+			var image = document.createElement('img');
+			var sp = document.createElement('span');
+			image.id="img"+imx
+			image.style.width="75px"
+			image.className="www_box2"
+			image.style.border="8px solid white"
 			image.src = imageURI;
+			sp.appendChild(image)
+			document.getElementById('album').appendChild(sp)
 			uploadPhoto(imageURI)		
+			imx++
 		}
 
 		function onFail(message) {
@@ -428,18 +414,15 @@
 			var params = new Object();
 			params.value1 = "test";
 			params.value2 = "param";
-
 			options.params = params;
 			options.chunkedMode = false;
 
 			var ft = new FileTransfer();
-			ft.upload(imageURI, "https://sugardaddydays.com/x_upload.php", win, fail, options);
+			var tr=ft.upload(imageURI, "https://sugardaddydays.com/x_upload.php", win, fail, options);
 		}
 
 		function win(r) {
-			console.log("Code = " + r.responseCode);
-			console.log("Response = " + r.response);
-			console.log("Sent = " + r.bytesSent);
+			alert(r)
 		}
 
 		function fail(error) {
