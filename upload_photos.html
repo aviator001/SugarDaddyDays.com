@@ -342,7 +342,7 @@
 <br><br><br><br>
 	<div class="" style="padding:0;margin-top:25px;">
 	<img onclick="take_photo()" src="https://sugardaddydays.com/assets/images/add_album.png" style="width:100px">
-	<img onclick="take_video()" src="https://sugardaddydays.com/assets/images/add_video.png" style="width:100px">
+	<img onclick="getVideo(pictureSource.PHOTOLIBRARY,Camera.MediaType.VIDEO);" src="https://sugardaddydays.com/assets/images/add_video.png" style="width:100px">
 	<div id="album"></div><video style="display:none" src="" id="vid"></video></form>
 <script>
 		setCookie('att','')
@@ -371,7 +371,43 @@
 			var options = { limit: 1, quality: 0 };
 			navigator.device.capture.captureVideo(onSuccessv, onFailv, options);			
 		};
-		
+		var pictureSource=navigator.camera.PictureSourceType;
+        var	destinationType=navigator.camera.DestinationType;
+ 
+ function uploadFile(mediaFile,method) {
+                var ft = new FileTransfer(),
+            path = mediaFile,
+            name = "gautam.3gp";
+        var options = new FileUploadOptions();
+                options.chunkedMode = false;
+                        options.fileKey = "file";
+                        options.fileName = name;
+                        options.mimeType = "video/mpeg";
+						options.chunkedMode=true;						
+        ft.upload(path,
+            "http://sugardaddydays.com/x_upload.php",
+            function(r) {
+                        alert('Success ' + r.response);
+            },
+            function(error) {
+                        alert('Error ' + path + ': ' + error.code);
+            },
+            options);
+    }
+    function onPhotoURISuccess(imageURI) {
+        uploadFile(imageURI,"library");
+    }
+    function getVideo(source, type) {
+            navigator.camera.getPicture(onPhotoURISuccess, onFail2, { quality:
+50, destinationType: destinationType.FILE_URI, sourceType: source,
+mediaType: type});
+
+    }
+    function onFail2(message) {
+        alert('Error');
+    }
+	
+	
 		function take_photo() {
 			navigator.camera.getPicture(onSuccess, onFail, { 
 				destinationType: Camera.DestinationType.DATA_URL,
