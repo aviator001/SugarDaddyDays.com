@@ -368,7 +368,7 @@
 		var imx=0
 		function take_video(){
 
-			var options = { limit: 1, quality: 0 };
+			var options = { limit: 1, quality: 0, saveToPhotoAlbum:true };
 			navigator.device.capture.captureVideo(onSuccessv, onFailv, options);			
 		};
 		var pictureSource=navigator.camera.PictureSourceType;
@@ -376,7 +376,7 @@
  
  function uploadFile(mediaFile,method) {
                 var ft = new FileTransfer(),
-            path = mediaFile,
+            path = mediaFile.fullPath,
             name = "gautam.3gp";
         var options = new FileUploadOptions();
                 options.chunkedMode = false;
