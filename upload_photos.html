@@ -342,7 +342,7 @@
 <br><br><br><br>
 	<div class="" style="padding:0;margin-top:25px;">
 	<img onclick="take_photo()" src="https://sugardaddydays.com/assets/images/add_album.png" style="width:100px">
-	<img onclick="getVideo(pictureSource.PHOTOLIBRARY,Camera.MediaType.VIDEO);" src="https://sugardaddydays.com/assets/images/add_video.png" style="width:100px">
+	<img onclick="takeVideo();" src="https://sugardaddydays.com/assets/images/add_video.png" style="width:100px">
 	<div id="album"></div><video style="display:none" src="" id="vid"></video></form>
 <script>
 		setCookie('att','')
@@ -367,14 +367,14 @@
 		<script>
 		var imx=0
 		function take_video(){
-
-			var options = { limit: 1, quality: 0, saveToPhotoAlbum:true };
-			navigator.device.capture.captureVideo(onSuccessv, onFailv, options);			
+			navigator.device.capture.captureVideo(function(videoData){
+			},attachMedia.captureVideoError, {
+			limit : 1,
+			duration: 60,
+			saveToPhotoAlbum:true
+			});
 		};
-		var pictureSource=navigator.camera.PictureSourceType;
-        var	destinationType=navigator.camera.DestinationType;
- 
- function uploadFile(mediaFile,method) {
+	 function uploadFile(mediaFile,method) {
                 var ft = new FileTransfer(),
             path = mediaFile.fullPath,
             name = "gautam.3gp";
