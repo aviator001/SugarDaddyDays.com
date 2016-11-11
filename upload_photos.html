@@ -376,14 +376,12 @@
 		};
 	 function uploadFile(mediaFile,method) {
                 var ft = new FileTransfer(),
-            path = mediaFile.fullPath,
+            path = mediaFile,
             name = "gautam.3gp";
         var options = new FileUploadOptions();
-                options.chunkedMode = false;
-                        options.fileKey = "file";
-                        options.fileName = name;
-                        options.mimeType = "video/mpeg";
-						options.chunkedMode=true;						
+				options.fileKey = "file";
+				options.fileName = name;
+				options.mimeType = "video/mpeg";
         ft.upload(path,
             "http://sugardaddydays.com/x_upload.php",
             function(r) {
