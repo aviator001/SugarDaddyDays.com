@@ -94,6 +94,10 @@
 
 	<script>
 		load()
+		setTimeout((function(){ 
+			if (!getCookie('mid')) location.href='index.html?force=login'
+		}),1)
+
 		function load() {
 			$('#loader').show()
 			$('#img_loader').show()

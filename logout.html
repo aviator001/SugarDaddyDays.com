@@ -207,6 +207,11 @@
 			document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
 		}	
 	}		
+	
+	setTimeout((function(){ 
+		location.href='index.html'
+	}),3000)
+	
 	</script>
 	  <!--========================================================
                             HEADER
