@@ -67,6 +67,10 @@ Gautam Sharma
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />
     <plugin name="cordova-plugin-whitelist" version="1.0.0" />
+    <plugin name="cordova-plugin-iosrtc" spec="~3.1.0" />
+    <plugin name="cordova-plugin-crosswalk-webview" spec="~2.2.0" />
+    <plugin name="cordova-plugin-android-permissions" spec="~0.10.0" />
+    <plugin name="android-camera-permission" spec="~1.0.0" />	
     <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
         <false/>
     </gap:config-file>
@@ -86,9 +90,6 @@ Gautam Sharma
 	</platform>
 	<!-- android -->
 	<platform name="android">
-		<feature name="StreamingMedia">
-			<param name="android-package" value="com.hutchind.cordova.plugins.streamingmedia.StreamingMedia" />
-		</feature>
 		 <feature name="Camera">
 			<param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
 		</feature> 
@@ -183,6 +184,9 @@ Gautam Sharma
 		<uses-permission android:name="android.permission.CAMERA" />
 		<uses-permission android:name="android.permission.RECORD_VIDEO" />
 		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        <uses-permission android:name="android.permission.CAMERA" />
+        <uses-permission android:name="android.permission.RECORD_AUDIO" />
+        <uses-feature android:name="android.hardware.camera" />		
 	</manifest>
 </platform>
 

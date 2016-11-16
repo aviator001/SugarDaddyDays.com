@@ -1,23 +1,29 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <style>
         .remote video {
-            width: 100% !important;
-            max-height: 300px;
+				position:absolute;
+				width:100%;
+				height:100;
+				object-fit:cover
+        }
+        video {
+				position:absolute;
+				width:100%;
+				height:100;
+				object-fit:cover
         }
     </style>
-
+ 
     <script src="https://cloud.apizee.com/libs/jquery-1.9.0.min.js"></script>
     <script src="cordova.js"></script>
     <script src="https://cloud.apizee.com/apiRTC/apiRTC-latest.min.js"></script>
 </head>
-
+ 
 <body>
-
+ 
 <div class="container-fluid" style="margin-top: 35px;margin-left: 5px; margin-right: 5px">
     <div class="row">
         <input type="number" id="number" value="" class="form-control" placeholder="Enter Destination ID"/>
@@ -38,18 +44,16 @@
         <video width="30%" height="30%" id="myMiniVideo" autoplay style="display: none"></video>
     </div>
 </div>
-
-
-
+ 
+ 
+ 
 <script>
-
     function refreshVideoView() {
         if ((typeof device !== "undefined") && device.platform == 'iOS'){
             console.log("REFRESH");
             cordova.plugins.iosrtc.refreshVideos();
         }
     }
-
     function incomingCallHandler(e) {
         $("#call").hide();
         $("#number").hide();
@@ -57,7 +61,6 @@
         $('#status').hide();
         setTimeout(refreshVideoView,2000);
     }
-
     function hangupHandler(e) {
         $("#call").show();
         $("#number").show();
@@ -65,133 +68,197 @@
         $('#status').html(e.detail.reason);
         $('#status').show();
     }
-
     function userMediaErrorHandler(e) {
         $("#call").show();
         $("#number").show();
         $("#hangup").hide();
     }
-
     function remoteStreamAddedHandler(e) {
         refreshVideoView();
     }
-
     function sessionReadyHandler(e) {
-
         apiRTC.addEventListener("incomingCall", incomingCallHandler);
         apiRTC.addEventListener("userMediaError", userMediaErrorHandler);
         apiRTC.addEventListener("remoteStreamAdded", remoteStreamAddedHandler);
         apiRTC.addEventListener("hangup", hangupHandler);
-
         var webRTCClient = apiCC.session.createWebRTCClient({
             minilocalVideo : "myMiniVideo",
             remoteVideo : "myRemoteVideo"
         });
-
         $('#localNumber').html("Your local ID :<BR/>"+apiCC.session.apiCCId);
         $('#myMiniVideo').show();
         $('#status').hide();
-
         $("#call").click(function () {
             $("#call").hide();
             $("#number").hide();
             $("#hangup").show();
             $('#status').hide();
-
             destNumber = $("#number").val();
             console.log("send REFRESH");
             setTimeout(refreshVideoView,4000);
             webRTCClient.call(destNumber);
         });
-
         $("#hangup").click(function () {
             $("#call").show();
             $("#number").show();
             $("#hangup").hide();
-
             webRTCClient.hangUp();
         });
     }
-
     function onDeviceReady() {
-
         if ((typeof device !== "undefined") && device.platform == 'iOS'){
             cordova.plugins.iosrtc.registerGlobals();
         }
-
+        if ((typeof device !== "undefined") && device.platform == 'Android'){
+            var permissions = cordova.plugins.permissions;
+            permissions.hasPermission(permissions.CAMERA, checkVideoPermissionCallback, null);
+            permissions.hasPermission(permissions.RECORD_AUDIO, checkAudioPermissionCallback, null);
+            function checkVideoPermissionCallback(status) {
+                if(!status.hasPermission) {
+                    var errorCallback = function() {
+                        alert('Camera permission is not turned on');
+                    }
+                    permissions.requestPermission(
+                            permissions.CAMERA,
+                            function(status) {
+                                if(!status.hasPermission) {
+                                    errorCallback();
+                                }
+                            },
+                            errorCallback);
+                }
+            }
+            function checkAudioPermissionCallback(status) {
+                if(!status.hasPermission) {
+                    var errorCallback = function() {
+                        alert('Audio permission is not turned on');
+                    }
+                    permissions.requestPermission(
+                            permissions.RECORD_AUDIO,
+                            function(status) {
+                                if(!status.hasPermission) {
+                                    errorCallback();
+                                }
+                            },
+                            errorCallback);
+                }
+            }
+        }
+		var mobile=getCookie('mobile')
+		if (!mobile) mobile=qs('mobile')
         apiRTC.init({
-            apiCCId : getCookie('mobile'), // Your can overide your number
+            apiCCId : mobile, // Your can overide your number
             onReady: sessionReadyHandler,
-            apiKey : "myDemoApiKey"
+            apiKey : "sugardaddydays"
         });
-
     }
-
+	
     var app = document.URL.indexOf( 'https://' ) === -1;
     if ( app ) {
         document.addEventListener("deviceready", onDeviceReady, false);
     } else {
         onDeviceReady();
     }
+	
+	function start() {
+		document.getElementById('mobile').value=getCookie('mobile')
+		setCookie('attach_id', makeid())
+	}
+	var WebFontConfig = {
+	google: { families: [ 'Poiret+One::latin', 'Open+Sans+Condensed:300' ] }};
+	(function() {
+		var wf = document.createElement('script');
+		wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+		'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+		wf.type = 'text/javascript';
+		wf.async = 'true';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(wf, s);
+	})();
+	function qs(name, url) {
+		if (!url) {
+		  url = window.location.href;
+		}
+		name = name.replace(/[\[\]]/g, "\\$&");
+		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+			results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, " "));
+	}
 
-	function sms(to,from,txt,cnf) {
-		if (!cnf) var cnf='SMS Sent'
-		var url = 'https://sugardaddydays.com/inc/x_send_api.php?to=' + to + '&from=' + from + '&message=' +  txt + '&message_type=INDEX_NOTIFY_CODE'
-		console.log(url)
+	function delCookie(cname) {
+		var d = new Date();
+		d.setTime(d.getTime());
+		var expires = "expires="+d.toGMTString();
+		document.cookie = cname + "=" + "" + "; " + expires;
+	 }
+
+	function setCookie(cname,cvalue,exdays)	{
+		var d = new Date();
+		d.setTime(d.getTime()+(exdays*24*60*60*1000));
+		var expires = "expires="+d.toGMTString();
+		document.cookie = cname + "=" + cvalue + "; " + expires;
+	 }
+
+	function getCookie(cname)	{
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++) {
+		  var c = ca[i].trim();
+		  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+		}
+		return "";
+	}
+function genID(x) {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for( var i=0; i < x*1; i++ ) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+	}
+    return text;
+}	
+
+	function sendSMS(a,b) {
+		var url = 'https://sugardaddydays.com/voice/send_sms.php?to=' + a + '&control=' + b + '&x=' + Math.random() * 10000000000000000000
+		console.log('URL: ' + url)
 		var request = $.ajax({
-			url: url, 
+			url: url,
 			type: "GET",
 			dataType: "html",
 			cache: false,
 			success: function(msg) {
-				ntfy(cnf)
 			}
 		})
+	}		
+
+	function isValidMobile(nx,format) {
+		if (!format) format=false
+		nx=nx.replace(/ /g,'')
+		nx=nx.replace(/\+/g,'')
+		nx=nx.replace(/\(/g,'')
+		nx=nx.replace(/\)/g,'')
+		nx=nx.replace(/-/g,'')
+		if (!$.isNumeric(nx)) return false
+		if (nx.length>11) return false
+		if (nx.length == 11) {
+			if (nx.substring(0,1) != '1') {
+				return false
+			} else {
+				nx=nx.substring(1,11)
+			}
+		}
+		if (nx.length<10) return false
+		if ((nx.substring(0,1) == '0') || (nx.substring(0,1) == '1')) return false
+		nx = (nx.length==11) ? nx : '1' + '' + nx
+		if (format) return formatMobile(nx)
+			else return nx
+	}
+
+	function formatMobile(mx) {
+		console.log(mx)
+		return ('1' + ' ' + '(' + mx.substring(1,4) + ')' + ' ' + mx.substring(4,7) + '-' + mx.substring(7,11))
 	}	
-
-	function jwait(objTxt) {
-		if (!objTxt) objTxt='Please Wait'
-		objT.innerHTML=objTxt
-		jModalWn.appendChild(objWait)
-		jModalWn.appendChild(objT)
-		jModalWn.style.display='block'
-	}
-
-	function jhide() {
-		document.getElementById('jModalWn').style.display=='none'
-		jModalWn.style.display='none'
-		objW.style.display='none'
-		objT.style.display='none'
-	}
-	var wl = window.location.href;
-	var mob = (window.location.href.indexOf('file://')>=0);
-
-	function setCookie(cname,cvalue)	{
-		if (mob===true) {
-			window.localStorage.setItem(cname, cvalue);
-		} else {
-			var d = new Date(); 
-			d.setTime(d.getTime()+(1*24*60*60*1000)); 
-			var expires = "expires="+d.toGMTString(); 
-			document.cookie = cname + "=" + cvalue + "; " + expires; 
-		}
-	} 
-
-	function getCookie(cname)	{ 
-		if (mob===true) {
-			var cvalue = window.localStorage.getItem(cname);
-			return cvalue
-		} else {
-			var name = cname + "="; 
-			var ca = document.cookie.split(';'); 
-			for(var i=0; i<ca.length; i++) { 
-			  var c = ca[i].trim(); 
-			  if (c.indexOf(name)==0) return c.substring(name.length,c.length); 
-			} 
-			return ""; 
-		}
-	} 
-	
 </script>
 </body>
 </html>
