@@ -203,12 +203,14 @@
 	<div id="bottom_barx" style="width:105%;position:fixed;bottom:0px;left:-5px;height:50px;background:url(https://sugardaddydays.com/assets/x_toolbar.png);background-size:cover;z-index:999999999999999999999999999;padding-left:10px">
 		<table style="width:100%">
 			<tr>
-				<td><a id="az1" href="home.html"><img src="https://sugardaddydays.com/assets/images/ax0.png" style="width:25px;margin-top:15px"></a></td>
-				<td><a href="search.html"><img src="https://sugardaddydays.com/assets/images/ax2.png" style="width:25px;margin-top:15px"></a></td>
-				<td><a href="send_sms.html"><img src="https://sugardaddydays.com/assets/images/t1.png" style="width:35px;margin-top:10px"></a></td>
-				<td><a href="javascript:view_profile()"><img src="https://sugardaddydays.com/assets/images/xbg10.png" style="width:25px;margin-top:15px"></a></td>
-				<td><a href="javascript:upload_photos()"><img src="https://sugardaddydays.com/assets/images/a7p.png" style="width:35px;margin-top:15px"></a></td>
-				<td><a href="mail.html"><img src="https://sugardaddydays.com/assets/images/ax10.png" style="width:25px;margin-top:20px"></a></td>
+				<td style="width:12.5%;text-align:center"><img src="https://sugardaddydays.com/assets/images/ax0.png" style="width:25px;margin-top:15px" onclick="javascript:xback()"></td>
+				<td style="width:12.5%;text-align:center"><a href="home.html"><img src="https://sugardaddydays.com/assets/images/ax1.png" style="width:25px;margin-top:15px"></a></td>
+				<td style="width:12.5%;text-align:center"><a href="most.html"><img src="https://sugardaddydays.com/assets/images/ax6.png" style="width:25px;margin-top:10px"></a></td>
+				<td style="width:12.5%;text-align:center"><a href="javascript:view_profile()"><img src="https://sugardaddydays.com/assets/images/ax3.png" style="width:25px;margin-top:12px"></a></td>
+				<td style="width:12.5%;text-align:center"><a href="javascript:upload_photos()"><img src="https://sugardaddydays.com/assets/images/upload_photo_line.png" style="width:40px;margin-top:10px"></a></td>
+				<td style="width:12.5%;text-align:center"><a href="mail.html"><img src="https://sugardaddydays.com/assets/images/ax10.png" style="width:25px;margin-top:20px"></a></td>
+				<td style="width:12.5%;text-align:center"><a href="reports.html"><img src="https://sugardaddydays.com/assets/images/browse.png" style="width:30px;margin-top:10px"></a></td>
+				<td style="width:12.5%;text-align:center"><a href="logout.html"><img src="https://sugardaddydays.com/assets/images/a16.png" style="width:30px;margin-top:12px"></a></td>
 			</tr>
 
 			</tr>
@@ -453,7 +455,7 @@ animation-duration: 3s;
 <body onload="unload()" style="overflow:hidden">
 <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Bungee+Hairline|Bungee+Outline|Monoton|Pinyon+Script" rel="stylesheet">	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<div id="main_content" style="display:;position:fixed;left:0;right:0;margin:auto;z-index:99999;width:320px;max-width:320px"></div>
+<div id="main_content" style="display:;position:fixed;left:0;right:0;margin:auto;z-index:99999;width:320px;max-width:320px;margin-top:30px"></div>
 <input id="search_results" type="hidden">
 <script>
 	var my_mid=window.localStorage.getItem('mid');
@@ -467,11 +469,15 @@ animation-duration: 3s;
 	var back=false
 	
 		function upload_photos() {
-			location.href='upload_photos.html?member_id='+getCookie('mid')
+			if(!getCookie('mid')) location.href='index.html?force=login'
+				else location.href='upload_photos.html?member_id='+getCookie('mid')
 		}
+		
 		function view_profile() {
- 			location.href='view_profile.html?member_id='+getCookie('mid')
+			if(!getCookie('mid')) location.href='index.html?force=login'
+				else location.href='view_profile.html?member_id='+getCookie('mid')
 		}
+		
 		function qs(name, url) {
 			if (!url) {
 			  url = window.location.href;

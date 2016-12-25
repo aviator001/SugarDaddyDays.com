@@ -151,11 +151,12 @@
 
 	<script>
 		function upload_photos() {
-			location.href='upload_photos.html?member_id='+getCookie('mid')
+			if(!getCookie('mid')) location.href='index.html?force=login'
+				else location.href='upload_photos.html?member_id='+getCookie('mid')
 		}
 		function view_profile() {
-			alert(getCookie('mid'))
-			location.href='view_profile.html?member_id='+getCookie('mid')
+			if(!getCookie('mid')) location.href='index.html?force=login'
+				else location.href='view_profile.html?member_id='+getCookie('mid')
 		}
 		function qs(name, url) {
 			if (!url) {
@@ -371,77 +372,115 @@
 						<table id="iit21" style="position:fixed;z-index:9999;margin-top:50px">
 							<tr>
 								<td>
-									<img onclick="show_people()" id="people" src="https://sugardaddydays.com/assets/images/nb1.png"  class="www_box2 "></div>
-									<div style="color:#000;font-size:18px"></div>
+									<div><img onclick="show_people()" id="people" src="https://sugardaddydays.com/assets/images/nb1.png"  class="www_box2"></div>
+									<div id="iit2" style="display:none">
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+									</div>
 								</td>
 								<td>
 									<div><img id="accounts" onclick="show_accounts()" src="https://sugardaddydays.com/assets/images/nb2.png" class="www_box2 "></div>
-									<div style="color:#000;font-size:18px"></div>
+									<div id="iit3" style="display:none">
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+									</div>								
 								</td>
 								<td>
 									<div><img onclick="show_activity()"  id="activity" src="https://sugardaddydays.com/assets/images/nb3.png" class="www_box2 "></div>
-									<div style="color:#000;font-size:18px"></div>
+									<div id="iit4" style="display:none">
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+									</div>									
 								</td>
 								<td>
 									<div><img onclick="show_connect()"  id="connect" src="https://sugardaddydays.com/assets/images/nb4.png"  class="www_box2 "></div>
-									<div style="color:#000;font-size:18px"></div>
+									<div id="iit5" style="display:none">
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+										<div onclick="" id="" style="background:url(https://sugardaddydays.com/assets/images/nb11.png);background-size:cover;height:40px;padding:10px;color:#fff;font-size:18px"  class="www_box2">hello</div>
+									</div>									
 								</td>
 							</tr>
 						</table>
-								<table onclick="load()" style="position:absolute;width:100%;margin:0;padding:0;bottom:50px;z-index:999">
-								<tr>
-									<td style="text-align:right">
-										<a href="reports.html"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r11.png" style="width:100px;margin:0px"></a>
-									</td>
-									<td style="text-align:left">
-										<a href="search.html"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r12.png" style="width:100px;margin:0px"></a>
-									</td>
-									<td style="text-align:right">
-										<a href="browse.html?type=local"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r13.png" style="width:100px;margin:0px"></a>
-									</td>
-									<td style="text-align:left">
-										<a href="user_hot_lists.html"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r14.png" style="width:100px;margin:0px"></a>
-									</td>
-									<td style="text-align:left">
-										<a href="user_hot_lists.html"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r15.png" style="width:100px;margin:0px"></a>
-									</td>
-								</tr>
-								<tr>
-									<td style="text-align:right">
-										<a href="browse.html?type=gallery"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r21.png" style="width:100px;margin:0px"></a>
-									</td> 
-									<td style="text-align:left;opacity:1" id="cct">
-										<a href="javascript:take_photo()"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r22.png" style="width:100px;margin:0px"></a>
-									</td>
-									<td style="text-align:right">
-										<a href="most.html"><img class="www_box5" src="https://sugardaddydays.com/assets/images/r23.png" style="width:100px;margin:0px"></a>
-									</td>
-									<td style="text-align:left">
-										<a href="search.html"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r24.png" style="width:100px;margin:0px"></a>
-									</td>									
-									<td style="text-align:left">
-										<a href="search.html"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r25.png" style="width:100px;margin:0px"></a>
-									</td>
-								</tr>
-							</table>							
-	<div onclick="load()" id="bottom_barx1" style="display:;width:105%;position:fixed;bottom:0px;left:-5px;height:50px;background:url(https://sugardaddydays.com/assets/x_toolbar.png);background-size:cover;z-index:999999999999999999999999999;padding-left:10px">
+<div style="display:;width:100%;position:fixed;bottom:0px;height:125px;left:0px;background:url(https://sugardaddydays.com/assets/x_toolbar.png);background-size:cover;z-index:999999999999999999999999999">
+	<table style="width:100%;display:">
+		<tbody><tr>
+			<td style="text-align:">
+				<a href="page.php?page=search"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r11.png" style="width:100px;margin:0px"></a>
+			</td>
+			<td style="text-align:">
+				<a href="browse.php?type=most"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r12.png" style="width:100px;margin:0px"></a>
+			</td>
+			<td style="text-align:">
+				<a href="browse.html?type=local"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r13.png" style="width:100px;margin:0px"></a>
+			</td>
+			<td style="text-align:">
+				<a href="browse.html?type=new"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r14.png" style="width:100px;margin:0px"></a>
+			</td>
+			<td style="text-align:">
+				<a href="most_viewed.php"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r15.png" style="width:100px;margin:0px"></a>
+			</td>
+		</tr>
+		<tr style="display:none">
+			<td>
+				<a href="page.php?page=my_account"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r21.png" style="width:100px;margin:0px;margin-top:-1px"></a>
+			</td> 
+			<td style="text-align:;opacity:1" id="cct">
+				<a href="page.php?page=upload_photos"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r22.png" style="width:100px;margin:0px;margin-top:-1px"></a>
+			</td>
+			<td style="text-align:">
+				<a href="page.php?page=mail"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r23.png" style="width:100px;margin:0px;margin-top:-1px"></a>
+			</td>
+			<td style="text-align:">
+				<a href="javascript:alert('coming soon')"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r24.png" style="width:100px;margin:0px;margin-top:-1px"></a>
+			</td>									
+			<td style="text-align:">
+				<a href="page.php?page=user_hot_lists&amp;mid=3128037"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r25.png" style="width:100px;margin:0px;margin-top:-1px"></a>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+<style>
+.m10 {
+	margin-left:-40px;
+	width:100px;
+}
+</style>
+<div id="bottom_barx" style="display:;width:100%;position:fixed;bottom:0px;left:0;height:50px;background:url(https://sugardaddydays.com/assets/images/xbr5.png);background-size:cover;z-index:999999999999999999999999999;">
 		<table style="width:100%">
-			<tr>
-				<td><a id="az1" href="home.html"><img src="https://sugardaddydays.com/assets/images/ax0.png" style="width:25px;margin-top:15px"></a></td>
-				<td><a href="search.html"><img src="https://sugardaddydays.com/assets/images/ax2.png" style="width:25px;margin-top:15px"></a></td>
-				<td><a href="send_sms.html"><img src="https://sugardaddydays.com/assets/images/t1.png" style="width:35px;margin-top:10px"></a></td>
-				<td><a href="webrtc.html"><img src="https://sugardaddydays.com/assets/images/xbg10.png" style="width:25px;margin-top:15px"></a></td>
-				<td><a href="javascript:upload_photos()"><img src="https://sugardaddydays.com/assets/images/a7p.png" style="width:35px;margin-top:15px"></a></td>
-				<td><a href="mail.html"><img src="https://sugardaddydays.com/assets/images/ax10.png" style="width:25px;margin-top:20px"></a></td>
+			<tbody><tr>
+				<td style="width:12.5%;text-align:center"><img src="https://sugardaddydays.com/assets/images/ax0.png" style="width:25px;margin-top:15px" onclick="javascript:xback()"></td>
+				<td style="width:12.5%;text-align:center"><a href="home.html"><img src="https://sugardaddydays.com/assets/images/ax1.png" style="width:25px;margin-top:15px"></a></td>
+				<td style="width:12.5%;text-align:center"><a href="most.html"><img src="https://sugardaddydays.com/assets/images/ax6.png" style="width:25px;margin-top:10px"></a></td>
+				<td style="width:12.5%;text-align:center"><a href="javascript:view_profile()"><img src="https://sugardaddydays.com/assets/images/ax3.png" style="width:25px;margin-top:12px"></a></td>
+				<td style="width:12.5%;text-align:center"><a href="javascript:upload_photos()"><img src="https://sugardaddydays.com/assets/images/upload_photo_line.png" style="width:40px;margin-top:10px"></a></td>
+				<td style="width:12.5%;text-align:center"><a href="mail.html"><img src="https://sugardaddydays.com/assets/images/ax10.png" style="width:25px;margin-top:20px"></a></td>
+				<td style="width:12.5%;text-align:center"><a href="reports.html"><img src="https://sugardaddydays.com/assets/images/browse.png" style="width:30px;margin-top:10px"></a></td>
+				<td style="width:12.5%;text-align:center"><a href="logout.html"><img src="https://sugardaddydays.com/assets/images/a16.png" style="width:30px;margin-top:12px"></a></td>
 			</tr>
 
-		</table>
-	</div>
-
-		<script>
-
-		</script>
-		
+			
+		</tbody></table>
+	</div>		
 <div align=center style='background:;overflow:hidden'>
 <div style="position:fixed;z-index:1;left:0;right:0;top:0;bottom:0;margin:auto;text-align:center;margin:auto;width:350px;width:100%;height:5;background:url(https://sugardaddydays.com/assets/images/b38.jpg); background-size:cover;margin:0;padding:0;font-size:18px" id="sr1" class="">
 <br><br>
@@ -456,56 +495,12 @@
 				</tr>
 				<tr>
 					<td style="text-align:center;background:">
-						<table id="iit2" style="position:absolute;left:0;margin:auto;display:none;z-index:99">
-							<tr>
-								<td>
-									<div class="m10"><a href="search.html"><img src="https://sugardaddydays.com/assets/images/img00.png" id="ii0"  class="www_box2" style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="reports.html"><img id="ii1" src="https://sugardaddydays.com/assets/images/img02.png" class="www_box2" style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="most.html"><img id="ii3" src="https://sugardaddydays.com/assets/images/img01.png" class="www_box2" style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="browse.html?type=local"><img id="ii11" src="https://sugardaddydays.com/assets/images/img11.png" class="www_box2" style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="browse.html?type=most"><img id="ii4" src="https://sugardaddydays.com/assets/images/img10.png" class="www_box2" style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="browse.html?type=new"><img id="ii4" src="https://sugardaddydays.com/assets/images/img10.png" class="www_box2" style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="browse.html?type=gallery"><img id="ii4" src="https://sugardaddydays.com/assets/images/img10.png" class="www_box2" style="height:53px;width:80px"></a></div>
-								</td>
-							</tr>
-						</table>
-						<table id="iit3" style="position:absolute;left:120px;margin:auto;display:none;z-index:99">
-							<tr>
-								<td>
-									<div class="m10"><a href="my_account.html"><img src="https://sugardaddydays.com/assets/images/img41.png" id="ii5"  class="www_box2"style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="javascript:view_profile()"><img id="ii6" src="https://sugardaddydays.com/assets/images/img21.png" class="www_box2"style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="view_album.html?edit=yes"><img id="ii7" src="https://sugardaddydays.com/assets/images/img33.png" class="www_box2"style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="my_account.html"><img id="ii8" src="https://sugardaddydays.com/assets/images/img30.png" class="www_box2"style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="javascript:upload_photos()"><img id="ii9" src="https://sugardaddydays.com/assets/images/img32.png" class="www_box2"style="height:53px;width:80px"></a></div>
-								</td>
-							</tr>
-						</table>
-						<table id="iit4" style="position:absolute;left:0;margin:auto;display:none;z-index:99">
-							<tr>
-								<td>
-										<div class="m10"><a href="user_hot_lists.html"><img src="https://sugardaddydays.com/assets/images/img03.png" id="ii5" class="www_box2"style="height:53px;width:80px"></a></div>
-										<div class="m10"><a href="message_logs.html"><img src="https://sugardaddydays.com/assets/images/img20.png" id="ii5" class="www_box2"style="height:53px;width:80px"></a></div>
-								</td>
-							</tr>
-						</table>
-						<table id="iit5" style="position:absolute;left:0;margin:auto;display:none;z-index:99">
-							<tr>
-								<td>
-									<div class="m10"><a href="mail.html"><img src="https://sugardaddydays.com/assets/images/img23.png" id="ii5"  class="www_box2"style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="send_sms.html"><img id="ii6" src="https://sugardaddydays.com/assets/images/img31.png" class="www_box2"style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="billing.html"><img id="ii7" src="https://sugardaddydays.com/assets/images/img22.png" class="www_box2"style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="https://sugardaddydays.com/help"><img id="ii8" src="https://sugardaddydays.com/assets/images/img40.png" class="www_box2"style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="https://sugardaddydays.com/help/?kb=1"><img id="ii9" src="https://sugardaddydays.com/assets/images/img43.png" class="www_box2"style="height:53px;width:80px"></a></div>
-									<div class="m10"><a href="logout.html"><img id="ii20" src="https://sugardaddydays.com/assets/images/img100.png" class="www_box2"style="height:53px;width:80px"></a></div>
-								</td>
-							</tr>
-						</table>
 					</td>
-					<td colspan=2 style="text-align:center;font-size:24px;color:#333;text-shadow:1px 1px 1px #fff">
+					<td colspan=2 style="text-align:center;font-size:20px;color:#333;text-shadow:0px 0px 1px #fff">
 							<br>
 							<span id="greet"></span>
 							<img id="myImage" style="position:absolute;width:100px;display:none" class="www_box2">
-							<table style="width:100%">
+							<table style="width:100%;display:none">
 								<tr>
 									<td style="text-align:center;font-size:24px;color:#000;margin-top:10px" colspan=2>
 										<br><span>Your secure + anonymous mobile no. is:</span>
@@ -528,23 +523,26 @@
 									</td>
 								</tr> 
 								</table>
-							Welcome. To get started, please click on one of the links below to begin your search. All SMS messages sent by you will show as coming from the number displayed above.<br>Here is the <a href="https://sugardaddydays.com/help"><label1>HELP and FAQs</label1></a> collection, should you get stuck.<br>You are safe here. Enjoy!
-							<table style="display:none">
-								<tr>
+							Welcome. To get started, please click on one of the links below to begin your search. All SMS messages sent by you will show as coming from an anonymous number. <b style="text-shadow:none">You are always safe here. Enjoy!</b>
+<table style="width:100%;margin-top:10px;display:">
+								<tbody><tr>
 									<td style="text-align:right">
-										<a href="my_account.html"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r20.png" style="width:100px;margin:0px"></a>
+										<a href="most_viewed.php"><img src="https://sugardaddydays.com/assets/images/v1.png" style="width:100px;height:100px;margin:5px"></a>
 									</td>
 									<td style="text-align:left">
-										<a href="javascript:upload_photos()"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r21.png" style="width:100px;margin:0px">
-									</td>
-									<td style="text-align:right">
-										<a href="javascript:view_profile()"><img class="www_box5" src="https://sugardaddydays.com/assets/images/r22.png" style="width:100px;margin:0px"></a>
-									</td>
-									<td style="text-align:left">
-										<a href="user_hot_lists.html"><img class="www_box2" src="https://sugardaddydays.com/assets/images/r23.png" style="width:100px;margin:0px">
+										<a href="browse.php?type=local"><img src="https://sugardaddydays.com/assets/images/v0.png" style="width:100px;height:100px;margin:5px"></a>
 									</td>
 								</tr>
-							</table>
+								<tr>
+									<td style="text-align:right">
+										<a href="page.php?page=user_hot_lists"><img src="https://sugardaddydays.com/assets/images/v00.png" style="width:100px;height:100px;margin:5px">
+									</a></td>
+									<td style="text-align:left">
+									<a href="javascript:video_call()"><img src="https://sugardaddydays.com/assets/images/vc.png" style="width:100px;height:100px;margin:5px">
+									<!--	<a href="page.php?page=members_who_like_me"><img src="https://sugardaddydays.com/assets/images/vc.png" style="width:100px;height:100px;margin:5px">-->
+									</a></td>
+								</tr>
+							</tbody></table>
 					</td>
 				</tr>
 				</table>
@@ -630,7 +628,9 @@
 			setCookie('currPage',currPage)
 
 			var winH, winW
-
+			function video_call() {
+				location.href='v.html?mobile='+getCookie('mobile')
+			}
 			function window_height() {
 				if (document.body) {
 				 winH = document.body.offsetHeight;
